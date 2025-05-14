@@ -3,26 +3,26 @@
     "_generations": [
         {
             "data": [
-                "f08a29f3-c96c-4a9c-b3eb-66a18e27314c"
+                "0b7b6763-10fc-4f43-bb01-bd9fab4854ef"
             ],
             "generation_num": 0,
-            "label": "initial_assumptions",
+            "label": "extended_initial_assumptions",
             "metadata": {},
             "_class_path": "golem.core.optimisers.opt_history_objects.generation/Generation"
         },
         {
             "data": [
-                "aa59b1d4-b1e6-42ba-a0d5-fbf977581782"
+                "24065f9c-808c-4a31-86e8-c52783cdaa2c"
             ],
             "generation_num": 1,
-            "label": "initial_assumptions",
+            "label": "extended_initial_assumptions",
             "metadata": {},
             "_class_path": "golem.core.optimisers.opt_history_objects.generation/Generation"
         },
         {
             "data": [
-                "aa59b1d4-b1e6-42ba-a0d5-fbf977581782",
-                "f08a29f3-c96c-4a9c-b3eb-66a18e27314c"
+                "0b7b6763-10fc-4f43-bb01-bd9fab4854ef",
+                "24065f9c-808c-4a31-86e8-c52783cdaa2c"
             ],
             "generation_num": 2,
             "label": "final_choices",
@@ -43,7 +43,7 @@
             "_nodes": [
                 {
                     "_nodes_from": [
-                        "b5836345-015e-4191-9e8b-88b5083e3c1d"
+                        "d720c326-6a78-4774-9e24-6348d81087c9"
                     ],
                     "content": {
                         "name": "low_rank_model",
@@ -51,7 +51,7 @@
                             "log_each": 1,
                             "eval_each": null,
                             "save_each": null,
-                            "epochs": 5,
+                            "epochs": 10,
                             "optimizer": "adam",
                             "scheduler": null,
                             "criterion": "rmse",
@@ -66,7 +66,7 @@
                                 "custom_model_params": {}
                             },
                             "strategy": "explained_variance",
-                            "rank_prune_each": 1,
+                            "rank_prune_each": 3,
                             "compose_mode": "two_layers",
                             "non_adaptive_threshold": 0.8,
                             "finetune_params": {
@@ -92,12 +92,12 @@
                             "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                         }
                     },
-                    "uid": "848d77d9-9382-4190-be07-6cd2b67ab592",
+                    "uid": "a1472183-3ba0-4acd-836e-5c927021d97c",
                     "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                 },
                 {
                     "_nodes_from": [
-                        "c9c0ca65-88b1-4c36-b0a8-2e6f9d478832"
+                        "bbc3c31c-c987-450d-a928-908943cb529a"
                     ],
                     "content": {
                         "name": "low_rank_model",
@@ -105,7 +105,7 @@
                             "log_each": 1,
                             "eval_each": null,
                             "save_each": null,
-                            "epochs": 5,
+                            "epochs": 10,
                             "optimizer": "adam",
                             "scheduler": null,
                             "criterion": "rmse",
@@ -120,7 +120,7 @@
                                 "custom_model_params": {}
                             },
                             "strategy": "explained_variance",
-                            "rank_prune_each": 1,
+                            "rank_prune_each": 3,
                             "compose_mode": "two_layers",
                             "non_adaptive_threshold": 0.8,
                             "finetune_params": {
@@ -146,12 +146,12 @@
                             "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                         }
                     },
-                    "uid": "b5836345-015e-4191-9e8b-88b5083e3c1d",
+                    "uid": "d720c326-6a78-4774-9e24-6348d81087c9",
                     "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                 },
                 {
                     "_nodes_from": [
-                        "e0cbb993-0ba8-4dbf-862b-a85507d04d74"
+                        "2e6fa029-f801-40c1-bc91-a570d45b5d98"
                     ],
                     "content": {
                         "name": "low_rank_model",
@@ -159,7 +159,7 @@
                             "log_each": 1,
                             "eval_each": null,
                             "save_each": null,
-                            "epochs": 5,
+                            "epochs": 10,
                             "optimizer": "adam",
                             "scheduler": null,
                             "criterion": "rmse",
@@ -174,7 +174,7 @@
                                 "custom_model_params": {}
                             },
                             "strategy": "explained_variance",
-                            "rank_prune_each": 1,
+                            "rank_prune_each": 3,
                             "compose_mode": "two_layers",
                             "non_adaptive_threshold": 0.8,
                             "finetune_params": {
@@ -200,7 +200,277 @@
                             "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                         }
                     },
-                    "uid": "c9c0ca65-88b1-4c36-b0a8-2e6f9d478832",
+                    "uid": "bbc3c31c-c987-450d-a928-908943cb529a",
+                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                },
+                {
+                    "_nodes_from": [
+                        "cd95919c-effc-41a8-b3b3-6a387b2582f4"
+                    ],
+                    "content": {
+                        "name": "low_rank_model",
+                        "params": {
+                            "log_each": 1,
+                            "eval_each": null,
+                            "save_each": null,
+                            "epochs": 10,
+                            "optimizer": "adam",
+                            "scheduler": null,
+                            "criterion": "rmse",
+                            "custom_learning_params": {},
+                            "custom_criterions": {
+                                "hoer": 5
+                            },
+                            "model_architecture": {
+                                "input_dim": null,
+                                "output_dim": null,
+                                "depth": 3,
+                                "custom_model_params": {}
+                            },
+                            "strategy": "explained_variance",
+                            "rank_prune_each": 3,
+                            "compose_mode": "two_layers",
+                            "non_adaptive_threshold": 0.8,
+                            "finetune_params": {
+                                "log_each": 1,
+                                "eval_each": null,
+                                "save_each": null,
+                                "epochs": 1,
+                                "optimizer": "adam",
+                                "scheduler": null,
+                                "criterion": "rmse",
+                                "custom_learning_params": {},
+                                "custom_criterions": {},
+                                "model_architecture": {
+                                    "input_dim": null,
+                                    "output_dim": null,
+                                    "depth": 3,
+                                    "custom_model_params": {}
+                                }
+                            }
+                        },
+                        "metadata": {
+                            "metric": null,
+                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                        }
+                    },
+                    "uid": "2e6fa029-f801-40c1-bc91-a570d45b5d98",
+                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                },
+                {
+                    "_nodes_from": [
+                        "ff0dff51-2fac-44ad-84d3-fba47ad108c7"
+                    ],
+                    "content": {
+                        "name": "low_rank_model",
+                        "params": {
+                            "log_each": 1,
+                            "eval_each": null,
+                            "save_each": null,
+                            "epochs": 10,
+                            "optimizer": "adam",
+                            "scheduler": null,
+                            "criterion": "rmse",
+                            "custom_learning_params": {},
+                            "custom_criterions": {
+                                "hoer": 5
+                            },
+                            "model_architecture": {
+                                "input_dim": null,
+                                "output_dim": null,
+                                "depth": 3,
+                                "custom_model_params": {}
+                            },
+                            "strategy": "explained_variance",
+                            "rank_prune_each": 3,
+                            "compose_mode": "two_layers",
+                            "non_adaptive_threshold": 0.8,
+                            "finetune_params": {
+                                "log_each": 1,
+                                "eval_each": null,
+                                "save_each": null,
+                                "epochs": 1,
+                                "optimizer": "adam",
+                                "scheduler": null,
+                                "criterion": "rmse",
+                                "custom_learning_params": {},
+                                "custom_criterions": {},
+                                "model_architecture": {
+                                    "input_dim": null,
+                                    "output_dim": null,
+                                    "depth": 3,
+                                    "custom_model_params": {}
+                                }
+                            }
+                        },
+                        "metadata": {
+                            "metric": null,
+                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                        }
+                    },
+                    "uid": "cd95919c-effc-41a8-b3b3-6a387b2582f4",
+                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                },
+                {
+                    "_nodes_from": [
+                        "6feecde3-cfcd-4a64-859c-a3e58a70066b"
+                    ],
+                    "content": {
+                        "name": "low_rank_model",
+                        "params": {
+                            "log_each": 1,
+                            "eval_each": null,
+                            "save_each": null,
+                            "epochs": 10,
+                            "optimizer": "adam",
+                            "scheduler": null,
+                            "criterion": "rmse",
+                            "custom_learning_params": {},
+                            "custom_criterions": {
+                                "hoer": 5
+                            },
+                            "model_architecture": {
+                                "input_dim": null,
+                                "output_dim": null,
+                                "depth": 3,
+                                "custom_model_params": {}
+                            },
+                            "strategy": "explained_variance",
+                            "rank_prune_each": 3,
+                            "compose_mode": "two_layers",
+                            "non_adaptive_threshold": 0.8,
+                            "finetune_params": {
+                                "log_each": 1,
+                                "eval_each": null,
+                                "save_each": null,
+                                "epochs": 1,
+                                "optimizer": "adam",
+                                "scheduler": null,
+                                "criterion": "rmse",
+                                "custom_learning_params": {},
+                                "custom_criterions": {},
+                                "model_architecture": {
+                                    "input_dim": null,
+                                    "output_dim": null,
+                                    "depth": 3,
+                                    "custom_model_params": {}
+                                }
+                            }
+                        },
+                        "metadata": {
+                            "metric": null,
+                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                        }
+                    },
+                    "uid": "ff0dff51-2fac-44ad-84d3-fba47ad108c7",
+                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                },
+                {
+                    "_nodes_from": [
+                        "1ae7074c-1029-4966-8e28-67610d2fac27"
+                    ],
+                    "content": {
+                        "name": "low_rank_model",
+                        "params": {
+                            "log_each": 1,
+                            "eval_each": null,
+                            "save_each": null,
+                            "epochs": 10,
+                            "optimizer": "adam",
+                            "scheduler": null,
+                            "criterion": "rmse",
+                            "custom_learning_params": {},
+                            "custom_criterions": {
+                                "hoer": 5
+                            },
+                            "model_architecture": {
+                                "input_dim": null,
+                                "output_dim": null,
+                                "depth": 3,
+                                "custom_model_params": {}
+                            },
+                            "strategy": "explained_variance",
+                            "rank_prune_each": 3,
+                            "compose_mode": "two_layers",
+                            "non_adaptive_threshold": 0.8,
+                            "finetune_params": {
+                                "log_each": 1,
+                                "eval_each": null,
+                                "save_each": null,
+                                "epochs": 1,
+                                "optimizer": "adam",
+                                "scheduler": null,
+                                "criterion": "rmse",
+                                "custom_learning_params": {},
+                                "custom_criterions": {},
+                                "model_architecture": {
+                                    "input_dim": null,
+                                    "output_dim": null,
+                                    "depth": 3,
+                                    "custom_model_params": {}
+                                }
+                            }
+                        },
+                        "metadata": {
+                            "metric": null,
+                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                        }
+                    },
+                    "uid": "6feecde3-cfcd-4a64-859c-a3e58a70066b",
+                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                },
+                {
+                    "_nodes_from": [
+                        "4d959f0a-7434-4705-82a4-f79579dabe39"
+                    ],
+                    "content": {
+                        "name": "low_rank_model",
+                        "params": {
+                            "log_each": 1,
+                            "eval_each": null,
+                            "save_each": null,
+                            "epochs": 10,
+                            "optimizer": "adam",
+                            "scheduler": null,
+                            "criterion": "rmse",
+                            "custom_learning_params": {},
+                            "custom_criterions": {
+                                "hoer": 5
+                            },
+                            "model_architecture": {
+                                "input_dim": null,
+                                "output_dim": null,
+                                "depth": 3,
+                                "custom_model_params": {}
+                            },
+                            "strategy": "explained_variance",
+                            "rank_prune_each": 3,
+                            "compose_mode": "two_layers",
+                            "non_adaptive_threshold": 0.8,
+                            "finetune_params": {
+                                "log_each": 1,
+                                "eval_each": null,
+                                "save_each": null,
+                                "epochs": 1,
+                                "optimizer": "adam",
+                                "scheduler": null,
+                                "criterion": "rmse",
+                                "custom_learning_params": {},
+                                "custom_criterions": {},
+                                "model_architecture": {
+                                    "input_dim": null,
+                                    "output_dim": null,
+                                    "depth": 3,
+                                    "custom_model_params": {}
+                                }
+                            }
+                        },
+                        "metadata": {
+                            "metric": null,
+                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                        }
+                    },
+                    "uid": "1ae7074c-1029-4966-8e28-67610d2fac27",
                     "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                 },
                 {
@@ -211,7 +481,7 @@
                             "log_each": 1,
                             "eval_each": null,
                             "save_each": null,
-                            "epochs": 5,
+                            "epochs": 10,
                             "optimizer": "adam",
                             "scheduler": null,
                             "criterion": "rmse",
@@ -226,7 +496,7 @@
                                 "custom_model_params": {}
                             },
                             "strategy": "explained_variance",
-                            "rank_prune_each": 1,
+                            "rank_prune_each": 3,
                             "compose_mode": "two_layers",
                             "non_adaptive_threshold": 0.8,
                             "finetune_params": {
@@ -252,7 +522,7 @@
                             "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                         }
                     },
-                    "uid": "e0cbb993-0ba8-4dbf-862b-a85507d04d74",
+                    "uid": "4d959f0a-7434-4705-82a4-f79579dabe39",
                     "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                 }
             ],
@@ -265,15 +535,15 @@
     },
     "archive_history": [
         [
-            "f08a29f3-c96c-4a9c-b3eb-66a18e27314c"
+            "0b7b6763-10fc-4f43-bb01-bd9fab4854ef"
         ],
         [
-            "aa59b1d4-b1e6-42ba-a0d5-fbf977581782",
-            "f08a29f3-c96c-4a9c-b3eb-66a18e27314c"
+            "0b7b6763-10fc-4f43-bb01-bd9fab4854ef",
+            "24065f9c-808c-4a31-86e8-c52783cdaa2c"
         ],
         [
-            "aa59b1d4-b1e6-42ba-a0d5-fbf977581782",
-            "f08a29f3-c96c-4a9c-b3eb-66a18e27314c"
+            "0b7b6763-10fc-4f43-bb01-bd9fab4854ef",
+            "24065f9c-808c-4a31-86e8-c52783cdaa2c"
         ]
     ],
     "individuals_pool": [
@@ -284,8 +554,8 @@
                     1.0
                 ],
                 "wvalues": [
-                    9.11724016591051,
-                    8.897679178338302
+                    8.051951731639516,
+                    5.53797890010633
                 ],
                 "_class_path": "golem.core.optimisers.fitness.multi_objective_fitness/MultiObjFitness"
             },
@@ -294,7 +564,7 @@
                     "_nodes": [
                         {
                             "_nodes_from": [
-                                "cdc2cf05-9870-40a1-95e4-a9a3ee2790f5"
+                                "021ec21d-ec15-4b03-a50c-2331470d4ddb"
                             ],
                             "content": {
                                 "name": "low_rank_model",
@@ -302,7 +572,7 @@
                                     "log_each": 1,
                                     "eval_each": null,
                                     "save_each": null,
-                                    "epochs": 5,
+                                    "epochs": 10,
                                     "optimizer": "adam",
                                     "scheduler": null,
                                     "criterion": "rmse",
@@ -317,7 +587,7 @@
                                         "custom_model_params": {}
                                     },
                                     "strategy": "explained_variance",
-                                    "rank_prune_each": 1,
+                                    "rank_prune_each": 3,
                                     "compose_mode": "two_layers",
                                     "non_adaptive_threshold": 0.8,
                                     "finetune_params": {
@@ -343,12 +613,12 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "04c210ed-bf6e-4da8-a46a-c5b3779694f3",
+                            "uid": "2356b4d2-498b-4e27-9596-a4219cc116b9",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         },
                         {
                             "_nodes_from": [
-                                "2ff3ab27-4533-41bc-8a9e-e379be715e5e"
+                                "ae768d8c-5921-4361-a22f-3d6199ca2295"
                             ],
                             "content": {
                                 "name": "low_rank_model",
@@ -356,7 +626,7 @@
                                     "log_each": 1,
                                     "eval_each": null,
                                     "save_each": null,
-                                    "epochs": 5,
+                                    "epochs": 10,
                                     "optimizer": "adam",
                                     "scheduler": null,
                                     "criterion": "rmse",
@@ -371,7 +641,7 @@
                                         "custom_model_params": {}
                                     },
                                     "strategy": "explained_variance",
-                                    "rank_prune_each": 1,
+                                    "rank_prune_each": 3,
                                     "compose_mode": "two_layers",
                                     "non_adaptive_threshold": 0.8,
                                     "finetune_params": {
@@ -397,12 +667,12 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "cdc2cf05-9870-40a1-95e4-a9a3ee2790f5",
+                            "uid": "021ec21d-ec15-4b03-a50c-2331470d4ddb",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         },
                         {
                             "_nodes_from": [
-                                "b59d690d-342c-4fe3-aba1-e021c3335ee5"
+                                "c9ada1ca-6888-435c-9ecd-d08eeecd2f94"
                             ],
                             "content": {
                                 "name": "low_rank_model",
@@ -410,7 +680,7 @@
                                     "log_each": 1,
                                     "eval_each": null,
                                     "save_each": null,
-                                    "epochs": 5,
+                                    "epochs": 10,
                                     "optimizer": "adam",
                                     "scheduler": null,
                                     "criterion": "rmse",
@@ -425,7 +695,7 @@
                                         "custom_model_params": {}
                                     },
                                     "strategy": "explained_variance",
-                                    "rank_prune_each": 1,
+                                    "rank_prune_each": 3,
                                     "compose_mode": "two_layers",
                                     "non_adaptive_threshold": 0.8,
                                     "finetune_params": {
@@ -451,7 +721,277 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "2ff3ab27-4533-41bc-8a9e-e379be715e5e",
+                            "uid": "ae768d8c-5921-4361-a22f-3d6199ca2295",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [
+                                "55703635-3285-47ae-84be-d000b7cc2fba"
+                            ],
+                            "content": {
+                                "name": "low_rank_model",
+                                "params": {
+                                    "log_each": 1,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 10,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {
+                                        "hoer": 5
+                                    },
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "strategy": "explained_variance",
+                                    "rank_prune_each": 3,
+                                    "compose_mode": "two_layers",
+                                    "non_adaptive_threshold": 0.8,
+                                    "finetune_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "c9ada1ca-6888-435c-9ecd-d08eeecd2f94",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [
+                                "7c7193a2-d97c-4916-9b21-2c37a7459139"
+                            ],
+                            "content": {
+                                "name": "low_rank_model",
+                                "params": {
+                                    "log_each": 1,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 10,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {
+                                        "hoer": 5
+                                    },
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "strategy": "explained_variance",
+                                    "rank_prune_each": 3,
+                                    "compose_mode": "two_layers",
+                                    "non_adaptive_threshold": 0.8,
+                                    "finetune_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "55703635-3285-47ae-84be-d000b7cc2fba",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [
+                                "bc6ad916-38bf-499f-9121-8daf7f99e6b4"
+                            ],
+                            "content": {
+                                "name": "low_rank_model",
+                                "params": {
+                                    "log_each": 1,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 10,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {
+                                        "hoer": 5
+                                    },
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "strategy": "explained_variance",
+                                    "rank_prune_each": 3,
+                                    "compose_mode": "two_layers",
+                                    "non_adaptive_threshold": 0.8,
+                                    "finetune_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "7c7193a2-d97c-4916-9b21-2c37a7459139",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [
+                                "8bc20e04-b259-4ce3-bfeb-39e753c09077"
+                            ],
+                            "content": {
+                                "name": "low_rank_model",
+                                "params": {
+                                    "log_each": 1,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 10,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {
+                                        "hoer": 5
+                                    },
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "strategy": "explained_variance",
+                                    "rank_prune_each": 3,
+                                    "compose_mode": "two_layers",
+                                    "non_adaptive_threshold": 0.8,
+                                    "finetune_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "bc6ad916-38bf-499f-9121-8daf7f99e6b4",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [
+                                "b5df57a4-4750-45cc-97c3-ae5dd7c1a4b2"
+                            ],
+                            "content": {
+                                "name": "low_rank_model",
+                                "params": {
+                                    "log_each": 1,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 10,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {
+                                        "hoer": 5
+                                    },
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "strategy": "explained_variance",
+                                    "rank_prune_each": 3,
+                                    "compose_mode": "two_layers",
+                                    "non_adaptive_threshold": 0.8,
+                                    "finetune_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "8bc20e04-b259-4ce3-bfeb-39e753c09077",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         },
                         {
@@ -462,7 +1002,7 @@
                                     "log_each": 1,
                                     "eval_each": null,
                                     "save_each": null,
-                                    "epochs": 5,
+                                    "epochs": 10,
                                     "optimizer": "adam",
                                     "scheduler": null,
                                     "criterion": "rmse",
@@ -477,7 +1017,7 @@
                                         "custom_model_params": {}
                                     },
                                     "strategy": "explained_variance",
-                                    "rank_prune_each": 1,
+                                    "rank_prune_each": 3,
                                     "compose_mode": "two_layers",
                                     "non_adaptive_threshold": 0.8,
                                     "finetune_params": {
@@ -503,7 +1043,7 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "b59d690d-342c-4fe3-aba1-e021c3335ee5",
+                            "uid": "b5df57a4-4750-45cc-97c3-ae5dd7c1a4b2",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         }
                     ],
@@ -516,12 +1056,12 @@
             },
             "metadata": {
                 "use_input_preprocessing": false,
-                "computation_time_in_seconds": 30.071301841002423,
-                "evaluation_time_iso": "2025-05-14T13:03:45.234821"
+                "computation_time_in_seconds": 170.07343180497992,
+                "evaluation_time_iso": "2025-05-14T14:57:34.834073"
             },
             "native_generation": 0,
             "parent_operator": null,
-            "uid": "f08a29f3-c96c-4a9c-b3eb-66a18e27314c",
+            "uid": "0b7b6763-10fc-4f43-bb01-bd9fab4854ef",
             "_class_path": "golem.core.optimisers.opt_history_objects.individual/Individual"
         },
         {
@@ -531,8 +1071,8 @@
                     1.0
                 ],
                 "wvalues": [
-                    9.104884940695555,
-                    12.403550348783794
+                    8.08240741983774,
+                    4.263631193261397
                 ],
                 "_class_path": "golem.core.optimisers.fitness.multi_objective_fitness/MultiObjFitness"
             },
@@ -541,7 +1081,7 @@
                     "_nodes": [
                         {
                             "_nodes_from": [
-                                "7390341e-40bf-4408-94ff-8f11ca0dae69"
+                                "b5d32b67-7de1-45e6-a541-5222b0512770"
                             ],
                             "content": {
                                 "name": "low_rank_model",
@@ -549,7 +1089,7 @@
                                     "log_each": 1,
                                     "eval_each": null,
                                     "save_each": null,
-                                    "epochs": 5,
+                                    "epochs": 10,
                                     "optimizer": "adam",
                                     "scheduler": null,
                                     "criterion": "rmse",
@@ -564,7 +1104,7 @@
                                         "custom_model_params": {}
                                     },
                                     "strategy": "explained_variance",
-                                    "rank_prune_each": 1,
+                                    "rank_prune_each": 3,
                                     "compose_mode": "two_layers",
                                     "non_adaptive_threshold": 0.8,
                                     "finetune_params": {
@@ -590,12 +1130,12 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "17a0498b-87ed-4771-8b50-5af1c4968fd3",
+                            "uid": "f47f8416-c7f4-4568-911e-d1f087931f2c",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         },
                         {
                             "_nodes_from": [
-                                "0b79a319-f590-49b9-a35d-3160478108bb"
+                                "486033fd-65db-424b-8a3c-3d0946982746"
                             ],
                             "content": {
                                 "name": "low_rank_model",
@@ -603,7 +1143,7 @@
                                     "log_each": 1,
                                     "eval_each": null,
                                     "save_each": null,
-                                    "epochs": 5,
+                                    "epochs": 10,
                                     "optimizer": "adam",
                                     "scheduler": null,
                                     "criterion": "rmse",
@@ -618,7 +1158,7 @@
                                         "custom_model_params": {}
                                     },
                                     "strategy": "explained_variance",
-                                    "rank_prune_each": 1,
+                                    "rank_prune_each": 3,
                                     "compose_mode": "two_layers",
                                     "non_adaptive_threshold": 0.8,
                                     "finetune_params": {
@@ -644,12 +1184,12 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "7390341e-40bf-4408-94ff-8f11ca0dae69",
+                            "uid": "b5d32b67-7de1-45e6-a541-5222b0512770",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         },
                         {
                             "_nodes_from": [
-                                "a4fe76dd-5999-4d0d-a1bf-deed909752f9"
+                                "eb4a16ad-4867-4e0d-924d-7d7275badfab"
                             ],
                             "content": {
                                 "name": "low_rank_model",
@@ -657,7 +1197,7 @@
                                     "log_each": 1,
                                     "eval_each": null,
                                     "save_each": null,
-                                    "epochs": 5,
+                                    "epochs": 10,
                                     "optimizer": "adam",
                                     "scheduler": null,
                                     "criterion": "rmse",
@@ -672,7 +1212,7 @@
                                         "custom_model_params": {}
                                     },
                                     "strategy": "explained_variance",
-                                    "rank_prune_each": 1,
+                                    "rank_prune_each": 3,
                                     "compose_mode": "two_layers",
                                     "non_adaptive_threshold": 0.8,
                                     "finetune_params": {
@@ -698,7 +1238,277 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "0b79a319-f590-49b9-a35d-3160478108bb",
+                            "uid": "486033fd-65db-424b-8a3c-3d0946982746",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [
+                                "965a92b8-db17-41e8-8089-8112fa111abb"
+                            ],
+                            "content": {
+                                "name": "low_rank_model",
+                                "params": {
+                                    "log_each": 1,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 10,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {
+                                        "hoer": 5
+                                    },
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "strategy": "explained_variance",
+                                    "rank_prune_each": 3,
+                                    "compose_mode": "two_layers",
+                                    "non_adaptive_threshold": 0.8,
+                                    "finetune_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "eb4a16ad-4867-4e0d-924d-7d7275badfab",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [
+                                "dd3a3b9b-fb54-43f2-8f6a-9ef6c76cc61e"
+                            ],
+                            "content": {
+                                "name": "low_rank_model",
+                                "params": {
+                                    "log_each": 1,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 10,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {
+                                        "hoer": 5
+                                    },
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "strategy": "explained_variance",
+                                    "rank_prune_each": 3,
+                                    "compose_mode": "two_layers",
+                                    "non_adaptive_threshold": 0.8,
+                                    "finetune_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "965a92b8-db17-41e8-8089-8112fa111abb",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [
+                                "33793023-2b22-4d40-95e5-a8d89194638b"
+                            ],
+                            "content": {
+                                "name": "low_rank_model",
+                                "params": {
+                                    "log_each": 1,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 10,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {
+                                        "hoer": 5
+                                    },
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "strategy": "explained_variance",
+                                    "rank_prune_each": 3,
+                                    "compose_mode": "two_layers",
+                                    "non_adaptive_threshold": 0.8,
+                                    "finetune_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "dd3a3b9b-fb54-43f2-8f6a-9ef6c76cc61e",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [
+                                "634865b5-e647-450a-8b60-f73fe330c004"
+                            ],
+                            "content": {
+                                "name": "low_rank_model",
+                                "params": {
+                                    "log_each": 1,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 10,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {
+                                        "hoer": 5
+                                    },
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "strategy": "explained_variance",
+                                    "rank_prune_each": 3,
+                                    "compose_mode": "two_layers",
+                                    "non_adaptive_threshold": 0.8,
+                                    "finetune_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "33793023-2b22-4d40-95e5-a8d89194638b",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [
+                                "5607ffa1-fffe-4d2e-a157-5aba58ef8fee"
+                            ],
+                            "content": {
+                                "name": "low_rank_model",
+                                "params": {
+                                    "log_each": 1,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 10,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {
+                                        "hoer": 5
+                                    },
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "strategy": "explained_variance",
+                                    "rank_prune_each": 3,
+                                    "compose_mode": "two_layers",
+                                    "non_adaptive_threshold": 0.8,
+                                    "finetune_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "634865b5-e647-450a-8b60-f73fe330c004",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         },
                         {
@@ -709,7 +1519,7 @@
                                     "log_each": 1,
                                     "eval_each": null,
                                     "save_each": null,
-                                    "epochs": 5,
+                                    "epochs": 10,
                                     "optimizer": "adam",
                                     "scheduler": null,
                                     "criterion": "rmse",
@@ -724,7 +1534,7 @@
                                         "custom_model_params": {}
                                     },
                                     "strategy": "explained_variance",
-                                    "rank_prune_each": 1,
+                                    "rank_prune_each": 3,
                                     "compose_mode": "two_layers",
                                     "non_adaptive_threshold": 0.8,
                                     "finetune_params": {
@@ -750,7 +1560,7 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "a4fe76dd-5999-4d0d-a1bf-deed909752f9",
+                            "uid": "5607ffa1-fffe-4d2e-a157-5aba58ef8fee",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         }
                     ],
@@ -763,12 +1573,12 @@
             },
             "metadata": {
                 "use_input_preprocessing": false,
-                "computation_time_in_seconds": 30.071301841002423,
-                "evaluation_time_iso": "2025-05-14T13:03:45.234821"
+                "computation_time_in_seconds": 170.07343180497992,
+                "evaluation_time_iso": "2025-05-14T14:57:34.834073"
             },
             "native_generation": 1,
             "parent_operator": null,
-            "uid": "aa59b1d4-b1e6-42ba-a0d5-fbf977581782",
+            "uid": "24065f9c-808c-4a31-86e8-c52783cdaa2c",
             "_class_path": "golem.core.optimisers.opt_history_objects.individual/Individual"
         }
     ],
