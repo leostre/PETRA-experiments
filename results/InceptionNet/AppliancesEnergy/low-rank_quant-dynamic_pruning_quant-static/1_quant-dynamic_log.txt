@@ -266,7 +266,7 @@ Module: model.gap.flatten, qconfig: QConfig(activation=functools.partial(<class 
 Module: model.fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
 Module: model.fc.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
 Module: model.fc.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
-[DATA] Example input shape: torch.Size([7, 24, 144])
+[DATA] Example input shape: torch.Size([8, 24, 144])
 [PREPARE] Model prepared successfully.
 [HOOK] Performing Dynamic PTQ hook operations.
 [HOOK] Dynamic PTQ setup completed.
@@ -332,9 +332,9 @@ RuntimeError: quantized::linear_prepack_fp16 is currently not supported by ONEDN
 [INIT] dtype: torch.float16, allow_embedding: False, allow_convolution: False
 [INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})}
 
-  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 183.99it/s]
+  0%|          | 0/2 [00:00<?, ?it/s][A100%|##########| 2/2 [00:00<00:00, 87.06it/s]
 
-  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 33.24it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 26.45it/s]
 [QCONFIG] Created qconfig mapping: QConfigMapping (
  global_qconfig
   QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
@@ -351,9 +351,9 @@ RuntimeError: quantized::linear_prepack_fp16 is currently not supported by ONEDN
 [INIT] dtype: torch.float16, allow_embedding: False, allow_convolution: False
 [INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})}
 
-  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 183.91it/s]
+  0%|          | 0/2 [00:00<?, ?it/s][A100%|##########| 2/2 [00:00<00:00, 154.99it/s]
 
-  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 35.74it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 26.06it/s]
 [QCONFIG] Created qconfig mapping: QConfigMapping (
  global_qconfig
   QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
@@ -619,7 +619,7 @@ Module: model.gap.flatten, qconfig: QConfig(activation=functools.partial(<class 
 Module: model.fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
 Module: model.fc.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
 Module: model.fc.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
-[DATA] Example input shape: torch.Size([7, 24, 144])
+[DATA] Example input shape: torch.Size([8, 24, 144])
 [PREPARE] Model prepared successfully.
 [HOOK] Performing Dynamic PTQ hook operations.
 [HOOK] Dynamic PTQ setup completed.
@@ -685,9 +685,9 @@ RuntimeError: quantized::linear_prepack_fp16 is currently not supported by ONEDN
 [INIT] dtype: torch.float16, allow_embedding: False, allow_convolution: False
 [INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})}
 
-  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 156.19it/s]
+  0%|          | 0/2 [00:00<?, ?it/s][A100%|##########| 2/2 [00:00<00:00, 176.66it/s]
 
-  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 31.24it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 23.28it/s]
 [QCONFIG] Created qconfig mapping: QConfigMapping (
  global_qconfig
   QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
@@ -704,8 +704,8 @@ RuntimeError: quantized::linear_prepack_fp16 is currently not supported by ONEDN
 [INIT] dtype: torch.float16, allow_embedding: False, allow_convolution: False
 [INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})}
 
-  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 172.29it/s]
+  0%|          | 0/2 [00:00<?, ?it/s][A100%|##########| 2/2 [00:00<00:00, 192.07it/s]
 
-  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 33.17it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|##########| 1/1 [00:00<00:00, 22.41it/s]
 'NoneType' object is not iterable
 Generations:   0%|          | 0/10000 [00:02<?, ?gen/s]
