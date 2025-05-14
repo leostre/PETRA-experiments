@@ -3,7 +3,7 @@
     "_generations": [
         {
             "data": [
-                "41ed2b84-dadf-4a54-94c9-d6518dde5e7f"
+                "8dff3122-dca2-4da4-93aa-b28db47ec1aa"
             ],
             "generation_num": 0,
             "label": "initial_assumptions",
@@ -12,7 +12,7 @@
         },
         {
             "data": [
-                "058680da-5997-4c95-8eec-8d05c8126842"
+                "fb60d082-bdc0-48a0-8e45-02afb045e5e3"
             ],
             "generation_num": 1,
             "label": "initial_assumptions",
@@ -21,8 +21,7 @@
         },
         {
             "data": [
-                "41ed2b84-dadf-4a54-94c9-d6518dde5e7f",
-                "058680da-5997-4c95-8eec-8d05c8126842"
+                "8dff3122-dca2-4da4-93aa-b28db47ec1aa"
             ],
             "generation_num": 2,
             "label": "final_choices",
@@ -43,7 +42,7 @@
             "_nodes": [
                 {
                     "_nodes_from": [
-                        "9bfb51a1-5f0a-4e91-b175-2fdaa8c57fac"
+                        "8576f9d3-31c8-4c0e-acfb-0955e2e2f2db"
                     ],
                     "content": {
                         "name": "quantization_model",
@@ -70,7 +69,7 @@
                                 "log_each": 1,
                                 "eval_each": null,
                                 "save_each": null,
-                                "epochs": 1,
+                                "epochs": 5,
                                 "optimizer": "adam",
                                 "scheduler": null,
                                 "criterion": "cross_entropy",
@@ -89,12 +88,12 @@
                             "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                         }
                     },
-                    "uid": "7ac99c1e-751c-4c93-be67-215e72febfc4",
+                    "uid": "0b606cb9-d769-4a3e-b9f0-2a504c1d92b9",
                     "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                 },
                 {
                     "_nodes_from": [
-                        "272ab6bb-7142-4825-b365-e9550091c1c6"
+                        "b57b0958-ccff-4f5f-a184-fab35ce12c43"
                     ],
                     "content": {
                         "name": "quantization_model",
@@ -121,7 +120,7 @@
                                 "log_each": 1,
                                 "eval_each": null,
                                 "save_each": null,
-                                "epochs": 1,
+                                "epochs": 5,
                                 "optimizer": "adam",
                                 "scheduler": null,
                                 "criterion": "cross_entropy",
@@ -140,211 +139,7 @@
                             "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                         }
                     },
-                    "uid": "9bfb51a1-5f0a-4e91-b175-2fdaa8c57fac",
-                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                },
-                {
-                    "_nodes_from": [
-                        "e9e41720-1826-4dce-8d3a-84c5978440eb"
-                    ],
-                    "content": {
-                        "name": "quantization_model",
-                        "params": {
-                            "log_each": null,
-                            "eval_each": null,
-                            "save_each": null,
-                            "epochs": 1,
-                            "optimizer": "adam",
-                            "scheduler": null,
-                            "criterion": "cross_entropy",
-                            "custom_learning_params": {},
-                            "custom_criterions": {},
-                            "model_architecture": {
-                                "input_dim": null,
-                                "output_dim": null,
-                                "depth": 3,
-                                "custom_model_params": {}
-                            },
-                            "quant_type": "static",
-                            "allow_emb": false,
-                            "allow_conv": true,
-                            "qat_params": {
-                                "log_each": 1,
-                                "eval_each": null,
-                                "save_each": null,
-                                "epochs": 1,
-                                "optimizer": "adam",
-                                "scheduler": null,
-                                "criterion": "cross_entropy",
-                                "custom_learning_params": {},
-                                "custom_criterions": {},
-                                "model_architecture": {
-                                    "input_dim": null,
-                                    "output_dim": null,
-                                    "depth": 3,
-                                    "custom_model_params": {}
-                                }
-                            }
-                        },
-                        "metadata": {
-                            "metric": null,
-                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                        }
-                    },
-                    "uid": "272ab6bb-7142-4825-b365-e9550091c1c6",
-                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                },
-                {
-                    "_nodes_from": [
-                        "ab9f9589-0ec3-441f-a942-3abe6d316150"
-                    ],
-                    "content": {
-                        "name": "quantization_model",
-                        "params": {
-                            "log_each": null,
-                            "eval_each": null,
-                            "save_each": null,
-                            "epochs": 1,
-                            "optimizer": "adam",
-                            "scheduler": null,
-                            "criterion": "cross_entropy",
-                            "custom_learning_params": {},
-                            "custom_criterions": {},
-                            "model_architecture": {
-                                "input_dim": null,
-                                "output_dim": null,
-                                "depth": 3,
-                                "custom_model_params": {}
-                            },
-                            "quant_type": "qat",
-                            "allow_emb": false,
-                            "allow_conv": true,
-                            "qat_params": {
-                                "log_each": 1,
-                                "eval_each": null,
-                                "save_each": null,
-                                "epochs": 1,
-                                "optimizer": "adam",
-                                "scheduler": null,
-                                "criterion": "cross_entropy",
-                                "custom_learning_params": {},
-                                "custom_criterions": {},
-                                "model_architecture": {
-                                    "input_dim": null,
-                                    "output_dim": null,
-                                    "depth": 3,
-                                    "custom_model_params": {}
-                                }
-                            }
-                        },
-                        "metadata": {
-                            "metric": null,
-                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                        }
-                    },
-                    "uid": "e9e41720-1826-4dce-8d3a-84c5978440eb",
-                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                },
-                {
-                    "_nodes_from": [
-                        "cc0ee9e8-3b77-41d9-8419-700fb6e14f39"
-                    ],
-                    "content": {
-                        "name": "quantization_model",
-                        "params": {
-                            "log_each": null,
-                            "eval_each": null,
-                            "save_each": null,
-                            "epochs": 1,
-                            "optimizer": "adam",
-                            "scheduler": null,
-                            "criterion": "cross_entropy",
-                            "custom_learning_params": {},
-                            "custom_criterions": {},
-                            "model_architecture": {
-                                "input_dim": null,
-                                "output_dim": null,
-                                "depth": 3,
-                                "custom_model_params": {}
-                            },
-                            "quant_type": "dynamic",
-                            "allow_emb": false,
-                            "allow_conv": true,
-                            "qat_params": {
-                                "log_each": 1,
-                                "eval_each": null,
-                                "save_each": null,
-                                "epochs": 1,
-                                "optimizer": "adam",
-                                "scheduler": null,
-                                "criterion": "cross_entropy",
-                                "custom_learning_params": {},
-                                "custom_criterions": {},
-                                "model_architecture": {
-                                    "input_dim": null,
-                                    "output_dim": null,
-                                    "depth": 3,
-                                    "custom_model_params": {}
-                                }
-                            }
-                        },
-                        "metadata": {
-                            "metric": null,
-                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                        }
-                    },
-                    "uid": "ab9f9589-0ec3-441f-a942-3abe6d316150",
-                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                },
-                {
-                    "_nodes_from": [
-                        "cf52a70a-184f-4d81-9017-4c4526f327dd"
-                    ],
-                    "content": {
-                        "name": "quantization_model",
-                        "params": {
-                            "log_each": null,
-                            "eval_each": null,
-                            "save_each": null,
-                            "epochs": 1,
-                            "optimizer": "adam",
-                            "scheduler": null,
-                            "criterion": "cross_entropy",
-                            "custom_learning_params": {},
-                            "custom_criterions": {},
-                            "model_architecture": {
-                                "input_dim": null,
-                                "output_dim": null,
-                                "depth": 3,
-                                "custom_model_params": {}
-                            },
-                            "quant_type": "static",
-                            "allow_emb": false,
-                            "allow_conv": true,
-                            "qat_params": {
-                                "log_each": 1,
-                                "eval_each": null,
-                                "save_each": null,
-                                "epochs": 1,
-                                "optimizer": "adam",
-                                "scheduler": null,
-                                "criterion": "cross_entropy",
-                                "custom_learning_params": {},
-                                "custom_criterions": {},
-                                "model_architecture": {
-                                    "input_dim": null,
-                                    "output_dim": null,
-                                    "depth": 3,
-                                    "custom_model_params": {}
-                                }
-                            }
-                        },
-                        "metadata": {
-                            "metric": null,
-                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                        }
-                    },
-                    "uid": "cc0ee9e8-3b77-41d9-8419-700fb6e14f39",
+                    "uid": "8576f9d3-31c8-4c0e-acfb-0955e2e2f2db",
                     "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                 },
                 {
@@ -367,14 +162,14 @@
                                 "depth": 3,
                                 "custom_model_params": {}
                             },
-                            "quant_type": "dynamic",
+                            "quant_type": "static",
                             "allow_emb": false,
                             "allow_conv": true,
                             "qat_params": {
                                 "log_each": 1,
                                 "eval_each": null,
                                 "save_each": null,
-                                "epochs": 1,
+                                "epochs": 5,
                                 "optimizer": "adam",
                                 "scheduler": null,
                                 "criterion": "cross_entropy",
@@ -393,7 +188,7 @@
                             "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                         }
                     },
-                    "uid": "cf52a70a-184f-4d81-9017-4c4526f327dd",
+                    "uid": "b57b0958-ccff-4f5f-a184-fab35ce12c43",
                     "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                 }
             ],
@@ -406,15 +201,13 @@
     },
     "archive_history": [
         [
-            "41ed2b84-dadf-4a54-94c9-d6518dde5e7f"
+            "8dff3122-dca2-4da4-93aa-b28db47ec1aa"
         ],
         [
-            "41ed2b84-dadf-4a54-94c9-d6518dde5e7f",
-            "058680da-5997-4c95-8eec-8d05c8126842"
+            "8dff3122-dca2-4da4-93aa-b28db47ec1aa"
         ],
         [
-            "41ed2b84-dadf-4a54-94c9-d6518dde5e7f",
-            "058680da-5997-4c95-8eec-8d05c8126842"
+            "8dff3122-dca2-4da4-93aa-b28db47ec1aa"
         ]
     ],
     "individuals_pool": [
@@ -425,8 +218,8 @@
                     1.0
                 ],
                 "wvalues": [
-                    0.09984152139461172,
-                    2.453029720345512
+                    0.09936575052854123,
+                    2.512603262262163
                 ],
                 "_class_path": "golem.core.optimisers.fitness.multi_objective_fitness/MultiObjFitness"
             },
@@ -435,7 +228,7 @@
                     "_nodes": [
                         {
                             "_nodes_from": [
-                                "bbe71cc1-6e98-4ea5-ad32-23c3833a376a"
+                                "9289b1bc-af3d-4555-8c9b-f6577e7ad3b0"
                             ],
                             "content": {
                                 "name": "quantization_model",
@@ -462,7 +255,7 @@
                                         "log_each": 1,
                                         "eval_each": null,
                                         "save_each": null,
-                                        "epochs": 1,
+                                        "epochs": 5,
                                         "optimizer": "adam",
                                         "scheduler": null,
                                         "criterion": "cross_entropy",
@@ -481,12 +274,12 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "235411f3-29b4-427b-a261-82215bcd3b8e",
+                            "uid": "bc82c1a4-32e3-4646-84b7-32c6a48254da",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         },
                         {
                             "_nodes_from": [
-                                "66ed1a73-5519-4a1a-adc8-7fc6896a5031"
+                                "7d3ec656-2f06-455b-bf88-e47b672c66e6"
                             ],
                             "content": {
                                 "name": "quantization_model",
@@ -513,7 +306,7 @@
                                         "log_each": 1,
                                         "eval_each": null,
                                         "save_each": null,
-                                        "epochs": 1,
+                                        "epochs": 5,
                                         "optimizer": "adam",
                                         "scheduler": null,
                                         "criterion": "cross_entropy",
@@ -532,211 +325,7 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "bbe71cc1-6e98-4ea5-ad32-23c3833a376a",
-                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                        },
-                        {
-                            "_nodes_from": [
-                                "e0a547c4-0175-4294-a00d-fae62710a14d"
-                            ],
-                            "content": {
-                                "name": "quantization_model",
-                                "params": {
-                                    "log_each": null,
-                                    "eval_each": null,
-                                    "save_each": null,
-                                    "epochs": 1,
-                                    "optimizer": "adam",
-                                    "scheduler": null,
-                                    "criterion": "cross_entropy",
-                                    "custom_learning_params": {},
-                                    "custom_criterions": {},
-                                    "model_architecture": {
-                                        "input_dim": null,
-                                        "output_dim": null,
-                                        "depth": 3,
-                                        "custom_model_params": {}
-                                    },
-                                    "quant_type": "static",
-                                    "allow_emb": false,
-                                    "allow_conv": true,
-                                    "qat_params": {
-                                        "log_each": 1,
-                                        "eval_each": null,
-                                        "save_each": null,
-                                        "epochs": 1,
-                                        "optimizer": "adam",
-                                        "scheduler": null,
-                                        "criterion": "cross_entropy",
-                                        "custom_learning_params": {},
-                                        "custom_criterions": {},
-                                        "model_architecture": {
-                                            "input_dim": null,
-                                            "output_dim": null,
-                                            "depth": 3,
-                                            "custom_model_params": {}
-                                        }
-                                    }
-                                },
-                                "metadata": {
-                                    "metric": null,
-                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                                }
-                            },
-                            "uid": "66ed1a73-5519-4a1a-adc8-7fc6896a5031",
-                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                        },
-                        {
-                            "_nodes_from": [
-                                "11b626fa-0ca8-4444-8199-994901c1914b"
-                            ],
-                            "content": {
-                                "name": "quantization_model",
-                                "params": {
-                                    "log_each": null,
-                                    "eval_each": null,
-                                    "save_each": null,
-                                    "epochs": 1,
-                                    "optimizer": "adam",
-                                    "scheduler": null,
-                                    "criterion": "cross_entropy",
-                                    "custom_learning_params": {},
-                                    "custom_criterions": {},
-                                    "model_architecture": {
-                                        "input_dim": null,
-                                        "output_dim": null,
-                                        "depth": 3,
-                                        "custom_model_params": {}
-                                    },
-                                    "quant_type": "qat",
-                                    "allow_emb": false,
-                                    "allow_conv": true,
-                                    "qat_params": {
-                                        "log_each": 1,
-                                        "eval_each": null,
-                                        "save_each": null,
-                                        "epochs": 1,
-                                        "optimizer": "adam",
-                                        "scheduler": null,
-                                        "criterion": "cross_entropy",
-                                        "custom_learning_params": {},
-                                        "custom_criterions": {},
-                                        "model_architecture": {
-                                            "input_dim": null,
-                                            "output_dim": null,
-                                            "depth": 3,
-                                            "custom_model_params": {}
-                                        }
-                                    }
-                                },
-                                "metadata": {
-                                    "metric": null,
-                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                                }
-                            },
-                            "uid": "e0a547c4-0175-4294-a00d-fae62710a14d",
-                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                        },
-                        {
-                            "_nodes_from": [
-                                "531839d2-1686-45bb-ad19-2b02803c5578"
-                            ],
-                            "content": {
-                                "name": "quantization_model",
-                                "params": {
-                                    "log_each": null,
-                                    "eval_each": null,
-                                    "save_each": null,
-                                    "epochs": 1,
-                                    "optimizer": "adam",
-                                    "scheduler": null,
-                                    "criterion": "cross_entropy",
-                                    "custom_learning_params": {},
-                                    "custom_criterions": {},
-                                    "model_architecture": {
-                                        "input_dim": null,
-                                        "output_dim": null,
-                                        "depth": 3,
-                                        "custom_model_params": {}
-                                    },
-                                    "quant_type": "dynamic",
-                                    "allow_emb": false,
-                                    "allow_conv": true,
-                                    "qat_params": {
-                                        "log_each": 1,
-                                        "eval_each": null,
-                                        "save_each": null,
-                                        "epochs": 1,
-                                        "optimizer": "adam",
-                                        "scheduler": null,
-                                        "criterion": "cross_entropy",
-                                        "custom_learning_params": {},
-                                        "custom_criterions": {},
-                                        "model_architecture": {
-                                            "input_dim": null,
-                                            "output_dim": null,
-                                            "depth": 3,
-                                            "custom_model_params": {}
-                                        }
-                                    }
-                                },
-                                "metadata": {
-                                    "metric": null,
-                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                                }
-                            },
-                            "uid": "11b626fa-0ca8-4444-8199-994901c1914b",
-                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                        },
-                        {
-                            "_nodes_from": [
-                                "7ba34cf1-5e55-4b95-aa2e-890ae3c7b75d"
-                            ],
-                            "content": {
-                                "name": "quantization_model",
-                                "params": {
-                                    "log_each": null,
-                                    "eval_each": null,
-                                    "save_each": null,
-                                    "epochs": 1,
-                                    "optimizer": "adam",
-                                    "scheduler": null,
-                                    "criterion": "cross_entropy",
-                                    "custom_learning_params": {},
-                                    "custom_criterions": {},
-                                    "model_architecture": {
-                                        "input_dim": null,
-                                        "output_dim": null,
-                                        "depth": 3,
-                                        "custom_model_params": {}
-                                    },
-                                    "quant_type": "static",
-                                    "allow_emb": false,
-                                    "allow_conv": true,
-                                    "qat_params": {
-                                        "log_each": 1,
-                                        "eval_each": null,
-                                        "save_each": null,
-                                        "epochs": 1,
-                                        "optimizer": "adam",
-                                        "scheduler": null,
-                                        "criterion": "cross_entropy",
-                                        "custom_learning_params": {},
-                                        "custom_criterions": {},
-                                        "model_architecture": {
-                                            "input_dim": null,
-                                            "output_dim": null,
-                                            "depth": 3,
-                                            "custom_model_params": {}
-                                        }
-                                    }
-                                },
-                                "metadata": {
-                                    "metric": null,
-                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                                }
-                            },
-                            "uid": "531839d2-1686-45bb-ad19-2b02803c5578",
+                            "uid": "9289b1bc-af3d-4555-8c9b-f6577e7ad3b0",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         },
                         {
@@ -759,14 +348,14 @@
                                         "depth": 3,
                                         "custom_model_params": {}
                                     },
-                                    "quant_type": "dynamic",
+                                    "quant_type": "static",
                                     "allow_emb": false,
                                     "allow_conv": true,
                                     "qat_params": {
                                         "log_each": 1,
                                         "eval_each": null,
                                         "save_each": null,
-                                        "epochs": 1,
+                                        "epochs": 5,
                                         "optimizer": "adam",
                                         "scheduler": null,
                                         "criterion": "cross_entropy",
@@ -785,7 +374,7 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "7ba34cf1-5e55-4b95-aa2e-890ae3c7b75d",
+                            "uid": "7d3ec656-2f06-455b-bf88-e47b672c66e6",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         }
                     ],
@@ -798,12 +387,12 @@
             },
             "metadata": {
                 "use_input_preprocessing": false,
-                "computation_time_in_seconds": 247.99421812400396,
-                "evaluation_time_iso": "2025-05-14T06:24:15.358278"
+                "computation_time_in_seconds": 35.515773222985445,
+                "evaluation_time_iso": "2025-05-14T12:42:44.719731"
             },
             "native_generation": 0,
             "parent_operator": null,
-            "uid": "41ed2b84-dadf-4a54-94c9-d6518dde5e7f",
+            "uid": "8dff3122-dca2-4da4-93aa-b28db47ec1aa",
             "_class_path": "golem.core.optimisers.opt_history_objects.individual/Individual"
         },
         {
@@ -813,8 +402,8 @@
                     1.0
                 ],
                 "wvalues": [
-                    0.10512414157422081,
-                    2.374511441681534
+                    0.11839323467230443,
+                    2.6229437350218694
                 ],
                 "_class_path": "golem.core.optimisers.fitness.multi_objective_fitness/MultiObjFitness"
             },
@@ -823,7 +412,7 @@
                     "_nodes": [
                         {
                             "_nodes_from": [
-                                "a1e439ea-7a99-4bd4-92f1-cf6507336da2"
+                                "46b77b0f-0986-4ffc-bac9-8821cc35729a"
                             ],
                             "content": {
                                 "name": "quantization_model",
@@ -850,7 +439,7 @@
                                         "log_each": 1,
                                         "eval_each": null,
                                         "save_each": null,
-                                        "epochs": 1,
+                                        "epochs": 5,
                                         "optimizer": "adam",
                                         "scheduler": null,
                                         "criterion": "cross_entropy",
@@ -869,12 +458,12 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "d1fc7d24-840d-4433-9213-dd8f6cb41302",
+                            "uid": "b391a212-0f13-472f-8252-ad0367aaf622",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         },
                         {
                             "_nodes_from": [
-                                "0530dae0-c913-4e79-8c94-7f2fb95a67f6"
+                                "00ab8ba3-b154-4160-a482-dcd5163c5b02"
                             ],
                             "content": {
                                 "name": "quantization_model",
@@ -901,7 +490,7 @@
                                         "log_each": 1,
                                         "eval_each": null,
                                         "save_each": null,
-                                        "epochs": 1,
+                                        "epochs": 5,
                                         "optimizer": "adam",
                                         "scheduler": null,
                                         "criterion": "cross_entropy",
@@ -920,211 +509,7 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "a1e439ea-7a99-4bd4-92f1-cf6507336da2",
-                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                        },
-                        {
-                            "_nodes_from": [
-                                "b65baa2b-cb5b-4073-9482-8558a8d50438"
-                            ],
-                            "content": {
-                                "name": "quantization_model",
-                                "params": {
-                                    "log_each": null,
-                                    "eval_each": null,
-                                    "save_each": null,
-                                    "epochs": 1,
-                                    "optimizer": "adam",
-                                    "scheduler": null,
-                                    "criterion": "cross_entropy",
-                                    "custom_learning_params": {},
-                                    "custom_criterions": {},
-                                    "model_architecture": {
-                                        "input_dim": null,
-                                        "output_dim": null,
-                                        "depth": 3,
-                                        "custom_model_params": {}
-                                    },
-                                    "quant_type": "static",
-                                    "allow_emb": false,
-                                    "allow_conv": true,
-                                    "qat_params": {
-                                        "log_each": 1,
-                                        "eval_each": null,
-                                        "save_each": null,
-                                        "epochs": 1,
-                                        "optimizer": "adam",
-                                        "scheduler": null,
-                                        "criterion": "cross_entropy",
-                                        "custom_learning_params": {},
-                                        "custom_criterions": {},
-                                        "model_architecture": {
-                                            "input_dim": null,
-                                            "output_dim": null,
-                                            "depth": 3,
-                                            "custom_model_params": {}
-                                        }
-                                    }
-                                },
-                                "metadata": {
-                                    "metric": null,
-                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                                }
-                            },
-                            "uid": "0530dae0-c913-4e79-8c94-7f2fb95a67f6",
-                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                        },
-                        {
-                            "_nodes_from": [
-                                "13314f4f-bd9f-4717-a5c8-0794d084f718"
-                            ],
-                            "content": {
-                                "name": "quantization_model",
-                                "params": {
-                                    "log_each": null,
-                                    "eval_each": null,
-                                    "save_each": null,
-                                    "epochs": 1,
-                                    "optimizer": "adam",
-                                    "scheduler": null,
-                                    "criterion": "cross_entropy",
-                                    "custom_learning_params": {},
-                                    "custom_criterions": {},
-                                    "model_architecture": {
-                                        "input_dim": null,
-                                        "output_dim": null,
-                                        "depth": 3,
-                                        "custom_model_params": {}
-                                    },
-                                    "quant_type": "qat",
-                                    "allow_emb": false,
-                                    "allow_conv": true,
-                                    "qat_params": {
-                                        "log_each": 1,
-                                        "eval_each": null,
-                                        "save_each": null,
-                                        "epochs": 1,
-                                        "optimizer": "adam",
-                                        "scheduler": null,
-                                        "criterion": "cross_entropy",
-                                        "custom_learning_params": {},
-                                        "custom_criterions": {},
-                                        "model_architecture": {
-                                            "input_dim": null,
-                                            "output_dim": null,
-                                            "depth": 3,
-                                            "custom_model_params": {}
-                                        }
-                                    }
-                                },
-                                "metadata": {
-                                    "metric": null,
-                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                                }
-                            },
-                            "uid": "b65baa2b-cb5b-4073-9482-8558a8d50438",
-                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                        },
-                        {
-                            "_nodes_from": [
-                                "a8b2eb78-d3b2-4a2d-9094-4f67cdca7410"
-                            ],
-                            "content": {
-                                "name": "quantization_model",
-                                "params": {
-                                    "log_each": null,
-                                    "eval_each": null,
-                                    "save_each": null,
-                                    "epochs": 1,
-                                    "optimizer": "adam",
-                                    "scheduler": null,
-                                    "criterion": "cross_entropy",
-                                    "custom_learning_params": {},
-                                    "custom_criterions": {},
-                                    "model_architecture": {
-                                        "input_dim": null,
-                                        "output_dim": null,
-                                        "depth": 3,
-                                        "custom_model_params": {}
-                                    },
-                                    "quant_type": "dynamic",
-                                    "allow_emb": false,
-                                    "allow_conv": true,
-                                    "qat_params": {
-                                        "log_each": 1,
-                                        "eval_each": null,
-                                        "save_each": null,
-                                        "epochs": 1,
-                                        "optimizer": "adam",
-                                        "scheduler": null,
-                                        "criterion": "cross_entropy",
-                                        "custom_learning_params": {},
-                                        "custom_criterions": {},
-                                        "model_architecture": {
-                                            "input_dim": null,
-                                            "output_dim": null,
-                                            "depth": 3,
-                                            "custom_model_params": {}
-                                        }
-                                    }
-                                },
-                                "metadata": {
-                                    "metric": null,
-                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                                }
-                            },
-                            "uid": "13314f4f-bd9f-4717-a5c8-0794d084f718",
-                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
-                        },
-                        {
-                            "_nodes_from": [
-                                "f307ae22-4d27-4ce2-afaf-1cd825289da1"
-                            ],
-                            "content": {
-                                "name": "quantization_model",
-                                "params": {
-                                    "log_each": null,
-                                    "eval_each": null,
-                                    "save_each": null,
-                                    "epochs": 1,
-                                    "optimizer": "adam",
-                                    "scheduler": null,
-                                    "criterion": "cross_entropy",
-                                    "custom_learning_params": {},
-                                    "custom_criterions": {},
-                                    "model_architecture": {
-                                        "input_dim": null,
-                                        "output_dim": null,
-                                        "depth": 3,
-                                        "custom_model_params": {}
-                                    },
-                                    "quant_type": "static",
-                                    "allow_emb": false,
-                                    "allow_conv": true,
-                                    "qat_params": {
-                                        "log_each": 1,
-                                        "eval_each": null,
-                                        "save_each": null,
-                                        "epochs": 1,
-                                        "optimizer": "adam",
-                                        "scheduler": null,
-                                        "criterion": "cross_entropy",
-                                        "custom_learning_params": {},
-                                        "custom_criterions": {},
-                                        "model_architecture": {
-                                            "input_dim": null,
-                                            "output_dim": null,
-                                            "depth": 3,
-                                            "custom_model_params": {}
-                                        }
-                                    }
-                                },
-                                "metadata": {
-                                    "metric": null,
-                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
-                                }
-                            },
-                            "uid": "a8b2eb78-d3b2-4a2d-9094-4f67cdca7410",
+                            "uid": "46b77b0f-0986-4ffc-bac9-8821cc35729a",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         },
                         {
@@ -1147,14 +532,14 @@
                                         "depth": 3,
                                         "custom_model_params": {}
                                     },
-                                    "quant_type": "dynamic",
+                                    "quant_type": "static",
                                     "allow_emb": false,
                                     "allow_conv": true,
                                     "qat_params": {
                                         "log_each": 1,
                                         "eval_each": null,
                                         "save_each": null,
-                                        "epochs": 1,
+                                        "epochs": 5,
                                         "optimizer": "adam",
                                         "scheduler": null,
                                         "criterion": "cross_entropy",
@@ -1173,7 +558,7 @@
                                     "_class_path": "fedot.core.pipelines.node/NodeMetadata"
                                 }
                             },
-                            "uid": "f307ae22-4d27-4ce2-afaf-1cd825289da1",
+                            "uid": "00ab8ba3-b154-4160-a482-dcd5163c5b02",
                             "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
                         }
                     ],
@@ -1186,12 +571,12 @@
             },
             "metadata": {
                 "use_input_preprocessing": false,
-                "computation_time_in_seconds": 247.99421812400396,
-                "evaluation_time_iso": "2025-05-14T06:24:15.358278"
+                "computation_time_in_seconds": 35.515773222985445,
+                "evaluation_time_iso": "2025-05-14T12:42:44.719731"
             },
             "native_generation": 1,
             "parent_operator": null,
-            "uid": "058680da-5997-4c95-8eec-8d05c8126842",
+            "uid": "fb60d082-bdc0-48a0-8e45-02afb045e5e3",
             "_class_path": "golem.core.optimisers.opt_history_objects.individual/Individual"
         }
     ],
