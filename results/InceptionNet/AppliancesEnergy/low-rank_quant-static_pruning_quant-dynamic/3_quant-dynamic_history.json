@@ -1,0 +1,431 @@
+{
+    "_default_save_dir": "/tmp/FEDOT",
+    "_generations": [
+        {
+            "data": [
+                "19be10a9-b711-46e2-86f8-dfd2fadb6d8c"
+            ],
+            "generation_num": 0,
+            "label": "initial_assumptions",
+            "metadata": {},
+            "_class_path": "golem.core.optimisers.opt_history_objects.generation/Generation"
+        },
+        {
+            "data": [
+                "921675a9-e614-4b94-ba58-546cec7d1fef"
+            ],
+            "generation_num": 1,
+            "label": "initial_assumptions",
+            "metadata": {},
+            "_class_path": "golem.core.optimisers.opt_history_objects.generation/Generation"
+        },
+        {
+            "data": [
+                "921675a9-e614-4b94-ba58-546cec7d1fef"
+            ],
+            "generation_num": 2,
+            "label": "final_choices",
+            "metadata": {},
+            "_class_path": "golem.core.optimisers.opt_history_objects.generation/Generation"
+        }
+    ],
+    "_objective": {
+        "is_multi_objective": true,
+        "metric_names": [
+            "rmse",
+            "latency"
+        ],
+        "_class_path": "golem.core.optimisers.objective.objective/ObjectiveInfo"
+    },
+    "_tuning_result": {
+        "operator": {
+            "_nodes": [
+                {
+                    "_nodes_from": [
+                        "a2b42bcd-9235-4747-a7d5-843ca6340be7"
+                    ],
+                    "content": {
+                        "name": "quantization_model",
+                        "params": {
+                            "log_each": null,
+                            "eval_each": null,
+                            "save_each": null,
+                            "epochs": 1,
+                            "optimizer": "adam",
+                            "scheduler": null,
+                            "criterion": "rmse",
+                            "custom_learning_params": {},
+                            "custom_criterions": {},
+                            "model_architecture": {
+                                "input_dim": null,
+                                "output_dim": null,
+                                "depth": 3,
+                                "custom_model_params": {}
+                            },
+                            "quant_type": "dynamic",
+                            "allow_emb": false,
+                            "allow_conv": true,
+                            "qat_params": {
+                                "log_each": 1,
+                                "eval_each": null,
+                                "save_each": null,
+                                "epochs": 1,
+                                "optimizer": "adam",
+                                "scheduler": null,
+                                "criterion": "rmse",
+                                "custom_learning_params": {},
+                                "custom_criterions": {},
+                                "model_architecture": {
+                                    "input_dim": null,
+                                    "output_dim": null,
+                                    "depth": 3,
+                                    "custom_model_params": {}
+                                }
+                            }
+                        },
+                        "metadata": {
+                            "metric": null,
+                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                        }
+                    },
+                    "uid": "0f64a419-f7f7-426f-be45-5b0f24bb255d",
+                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                },
+                {
+                    "_nodes_from": [],
+                    "content": {
+                        "name": "quantization_model",
+                        "params": {
+                            "log_each": null,
+                            "eval_each": null,
+                            "save_each": null,
+                            "epochs": 1,
+                            "optimizer": "adam",
+                            "scheduler": null,
+                            "criterion": "rmse",
+                            "custom_learning_params": {},
+                            "custom_criterions": {},
+                            "model_architecture": {
+                                "input_dim": null,
+                                "output_dim": null,
+                                "depth": 3,
+                                "custom_model_params": {}
+                            },
+                            "quant_type": "static",
+                            "allow_emb": false,
+                            "allow_conv": true,
+                            "qat_params": {
+                                "log_each": 1,
+                                "eval_each": null,
+                                "save_each": null,
+                                "epochs": 1,
+                                "optimizer": "adam",
+                                "scheduler": null,
+                                "criterion": "rmse",
+                                "custom_learning_params": {},
+                                "custom_criterions": {},
+                                "model_architecture": {
+                                    "input_dim": null,
+                                    "output_dim": null,
+                                    "depth": 3,
+                                    "custom_model_params": {}
+                                }
+                            }
+                        },
+                        "metadata": {
+                            "metric": null,
+                            "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                        }
+                    },
+                    "uid": "a2b42bcd-9235-4747-a7d5-843ca6340be7",
+                    "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                }
+            ],
+            "_postprocess_nodes": {
+                "_class_path": "golem.core.dag.linked_graph/LinkedGraph._empty_postprocess"
+            },
+            "_class_path": "golem.core.dag.linked_graph/LinkedGraph"
+        },
+        "_class_path": "golem.core.dag.graph_delegate/GraphDelegate"
+    },
+    "archive_history": [
+        [
+            "19be10a9-b711-46e2-86f8-dfd2fadb6d8c"
+        ],
+        [
+            "921675a9-e614-4b94-ba58-546cec7d1fef"
+        ],
+        [
+            "921675a9-e614-4b94-ba58-546cec7d1fef"
+        ]
+    ],
+    "individuals_pool": [
+        {
+            "fitness": {
+                "_weights": [
+                    1.0,
+                    1.0
+                ],
+                "wvalues": [
+                    11.255406880597826,
+                    4.863853693008423
+                ],
+                "_class_path": "golem.core.optimisers.fitness.multi_objective_fitness/MultiObjFitness"
+            },
+            "graph": {
+                "operator": {
+                    "_nodes": [
+                        {
+                            "_nodes_from": [
+                                "953803b6-e6e0-47a0-aaf8-1aac5487e5c9"
+                            ],
+                            "content": {
+                                "name": "quantization_model",
+                                "params": {
+                                    "log_each": null,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 1,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {},
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "quant_type": "dynamic",
+                                    "allow_emb": false,
+                                    "allow_conv": true,
+                                    "qat_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "28afc6ac-be1b-4009-ac86-61fd84006f61",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [],
+                            "content": {
+                                "name": "quantization_model",
+                                "params": {
+                                    "log_each": null,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 1,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {},
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "quant_type": "static",
+                                    "allow_emb": false,
+                                    "allow_conv": true,
+                                    "qat_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "953803b6-e6e0-47a0-aaf8-1aac5487e5c9",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        }
+                    ],
+                    "_postprocess_nodes": {
+                        "_class_path": "golem.core.dag.linked_graph/LinkedGraph._empty_postprocess"
+                    },
+                    "_class_path": "golem.core.dag.linked_graph/LinkedGraph"
+                },
+                "_class_path": "golem.core.dag.graph_delegate/GraphDelegate"
+            },
+            "metadata": {
+                "use_input_preprocessing": false,
+                "computation_time_in_seconds": 1.6607128469913732,
+                "evaluation_time_iso": "2025-05-14T12:31:08.207791"
+            },
+            "native_generation": 0,
+            "parent_operator": null,
+            "uid": "19be10a9-b711-46e2-86f8-dfd2fadb6d8c",
+            "_class_path": "golem.core.optimisers.opt_history_objects.individual/Individual"
+        },
+        {
+            "fitness": {
+                "_weights": [
+                    1.0,
+                    1.0
+                ],
+                "wvalues": [
+                    11.180151400960055,
+                    4.26225825718471
+                ],
+                "_class_path": "golem.core.optimisers.fitness.multi_objective_fitness/MultiObjFitness"
+            },
+            "graph": {
+                "operator": {
+                    "_nodes": [
+                        {
+                            "_nodes_from": [
+                                "103f6a25-3553-4dd7-b263-b78e49e61b25"
+                            ],
+                            "content": {
+                                "name": "quantization_model",
+                                "params": {
+                                    "log_each": null,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 1,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {},
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "quant_type": "dynamic",
+                                    "allow_emb": false,
+                                    "allow_conv": true,
+                                    "qat_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "cac500c2-8b09-4f2b-8c5f-c4a1eb98242e",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        },
+                        {
+                            "_nodes_from": [],
+                            "content": {
+                                "name": "quantization_model",
+                                "params": {
+                                    "log_each": null,
+                                    "eval_each": null,
+                                    "save_each": null,
+                                    "epochs": 1,
+                                    "optimizer": "adam",
+                                    "scheduler": null,
+                                    "criterion": "rmse",
+                                    "custom_learning_params": {},
+                                    "custom_criterions": {},
+                                    "model_architecture": {
+                                        "input_dim": null,
+                                        "output_dim": null,
+                                        "depth": 3,
+                                        "custom_model_params": {}
+                                    },
+                                    "quant_type": "static",
+                                    "allow_emb": false,
+                                    "allow_conv": true,
+                                    "qat_params": {
+                                        "log_each": 1,
+                                        "eval_each": null,
+                                        "save_each": null,
+                                        "epochs": 1,
+                                        "optimizer": "adam",
+                                        "scheduler": null,
+                                        "criterion": "rmse",
+                                        "custom_learning_params": {},
+                                        "custom_criterions": {},
+                                        "model_architecture": {
+                                            "input_dim": null,
+                                            "output_dim": null,
+                                            "depth": 3,
+                                            "custom_model_params": {}
+                                        }
+                                    }
+                                },
+                                "metadata": {
+                                    "metric": null,
+                                    "_class_path": "fedot.core.pipelines.node/NodeMetadata"
+                                }
+                            },
+                            "uid": "103f6a25-3553-4dd7-b263-b78e49e61b25",
+                            "_class_path": "golem.core.dag.linked_graph_node/LinkedGraphNode"
+                        }
+                    ],
+                    "_postprocess_nodes": {
+                        "_class_path": "golem.core.dag.linked_graph/LinkedGraph._empty_postprocess"
+                    },
+                    "_class_path": "golem.core.dag.linked_graph/LinkedGraph"
+                },
+                "_class_path": "golem.core.dag.graph_delegate/GraphDelegate"
+            },
+            "metadata": {
+                "use_input_preprocessing": false,
+                "computation_time_in_seconds": 1.6607128469913732,
+                "evaluation_time_iso": "2025-05-14T12:31:08.207791"
+            },
+            "native_generation": 1,
+            "parent_operator": null,
+            "uid": "921675a9-e614-4b94-ba58-546cec7d1fef",
+            "_class_path": "golem.core.optimisers.opt_history_objects.individual/Individual"
+        }
+    ],
+    "_class_path": "golem.core.optimisers.opt_history_objects.opt_history/OptHistory"
+}
