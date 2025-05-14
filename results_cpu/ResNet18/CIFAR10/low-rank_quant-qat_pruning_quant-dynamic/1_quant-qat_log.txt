@@ -1,0 +1,561 @@
+
+>>> PEFT step 2: quant-qat
+Creating Dask Server
+Generations:   0%|                                                                                                                                                            | 0/10000 [00:00<?, ?gen/s][QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[PREPARE ERROR] Exception during preparation:
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\quantizers.py", line 160, in _prepare_model
+    self.quant_model = ParentalReassembler.reassemble(self.quant_model)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 263, in reassemble
+    cls.set_module(model, name, new_module.to(device))
+  File "D:\Python\Fedcore\fedcore\fedcore\architecture\abstraction\accessor.py", line 17, in set_module
+    parent = reduce(getattr, path, m)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'downsample'
+[HOOK] Performing Dynamic PTQ hook operations.
+[HOOK] Dynamic PTQ setup completed.
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: static, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[PREPARE ERROR] Exception during preparation:
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\quantizers.py", line 160, in _prepare_model
+    self.quant_model = ParentalReassembler.reassemble(self.quant_model)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 263, in reassemble
+    cls.set_module(model, name, new_module.to(device))
+  File "D:\Python\Fedcore\fedcore\fedcore\architecture\abstraction\accessor.py", line 17, in set_module
+    parent = reduce(getattr, path, m)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'downsample'
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: static, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[PREPARE ERROR] Exception during preparation:
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\quantizers.py", line 160, in _prepare_model
+    self.quant_model = ParentalReassembler.reassemble(self.quant_model)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 263, in reassemble
+    cls.set_module(model, name, new_module.to(device))
+  File "D:\Python\Fedcore\fedcore\fedcore\architecture\abstraction\accessor.py", line 17, in set_module
+    parent = reduce(getattr, path, m)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'downsample'
+[HOOK] Performing Dynamic PTQ hook operations.
+[HOOK] Dynamic PTQ setup completed.
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[PREPARE ERROR] Exception during preparation:
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\quantizers.py", line 160, in _prepare_model
+    self.quant_model = ParentalReassembler.reassemble(self.quant_model)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 263, in reassemble
+    cls.set_module(model, name, new_module.to(device))
+  File "D:\Python\Fedcore\fedcore\fedcore\architecture\abstraction\accessor.py", line 17, in set_module
+    parent = reduce(getattr, path, m)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'downsample'
+[HOOK] Performing QAT training hook.
+[HOOK] QAT epoch 1/5 started.
+[HOOK][Epoch: 1] Batch 1 Loss: 1.1314
+[HOOK][Epoch: 1] Batch 51 Loss: 0.5689
+[HOOK][Epoch: 1] Batch 101 Loss: 0.5014
+[HOOK][Epoch: 1] Batch 151 Loss: 0.3969
+[HOOK][Epoch: 1] Batch 201 Loss: 0.4044
+[HOOK][Epoch: 1] Batch 251 Loss: 0.6636
+[HOOK][Epoch: 1] Batch 301 Loss: 0.3650
+[HOOK][Epoch: 1] Batch 351 Loss: 0.4285
+[HOOK][Epoch: 1] Batch 401 Loss: 0.4602
+[HOOK][Epoch: 1] Batch 451 Loss: 0.5732
+[HOOK][Epoch: 1] Batch 501 Loss: 0.3447
+[HOOK][Epoch: 1] Batch 551 Loss: 0.3565
+[HOOK][Epoch: 1] Batch 601 Loss: 0.5295
+[HOOK] QAT epoch 2/5 started.
+[HOOK][Epoch: 2] Batch 1 Loss: 0.3043
+[HOOK][Epoch: 2] Batch 51 Loss: 0.1816
+[HOOK][Epoch: 2] Batch 101 Loss: 0.1009
+[HOOK][Epoch: 2] Batch 151 Loss: 0.4957
+[HOOK][Epoch: 2] Batch 201 Loss: 0.2616
+[HOOK][Epoch: 2] Batch 251 Loss: 0.4779
+[HOOK][Epoch: 2] Batch 301 Loss: 0.2197
+[HOOK][Epoch: 2] Batch 351 Loss: 0.4647
+[HOOK][Epoch: 2] Batch 401 Loss: 0.2979
+[HOOK][Epoch: 2] Batch 451 Loss: 0.2820
+[HOOK][Epoch: 2] Batch 501 Loss: 0.2272
+[HOOK][Epoch: 2] Batch 551 Loss: 0.3282
+[HOOK][Epoch: 2] Batch 601 Loss: 0.2060
+[HOOK] QAT epoch 3/5 started.
+[HOOK][Epoch: 3] Batch 1 Loss: 0.1923
+[HOOK][Epoch: 3] Batch 51 Loss: 0.1084
+[HOOK][Epoch: 3] Batch 101 Loss: 0.0770
+[HOOK][Epoch: 3] Batch 151 Loss: 0.0707
+[HOOK][Epoch: 3] Batch 201 Loss: 0.2607
+[HOOK][Epoch: 3] Batch 251 Loss: 0.2879
+[HOOK][Epoch: 3] Batch 301 Loss: 0.1045
+[HOOK][Epoch: 3] Batch 351 Loss: 0.4157
+[HOOK][Epoch: 3] Batch 401 Loss: 0.4176
+[HOOK][Epoch: 3] Batch 451 Loss: 0.5126
+[HOOK][Epoch: 3] Batch 501 Loss: 0.3555
+[HOOK][Epoch: 3] Batch 551 Loss: 0.2398
+[HOOK][Epoch: 3] Batch 601 Loss: 0.3817
+[HOOK] QAT epoch 4/5 started.
+[HOOK][Epoch: 4] Batch 1 Loss: 0.0486
+[HOOK][Epoch: 4] Batch 51 Loss: 0.0813
+[HOOK][Epoch: 4] Batch 101 Loss: 0.1968
+[HOOK][Epoch: 4] Batch 151 Loss: 0.1909
+[HOOK][Epoch: 4] Batch 201 Loss: 0.2538
+[HOOK][Epoch: 4] Batch 251 Loss: 0.1333
+[HOOK][Epoch: 4] Batch 301 Loss: 0.2280
+[HOOK][Epoch: 4] Batch 351 Loss: 0.2916
+[HOOK][Epoch: 4] Batch 401 Loss: 0.3235
+[HOOK][Epoch: 4] Batch 451 Loss: 0.1522
+[HOOK][Epoch: 4] Batch 501 Loss: 0.2935
+[HOOK][Epoch: 4] Batch 551 Loss: 0.3019
+[HOOK][Epoch: 4] Batch 601 Loss: 0.1725
+[HOOK] QAT epoch 5/5 started.
+[HOOK][Epoch: 5] Batch 1 Loss: 0.2061
+[HOOK][Epoch: 5] Batch 51 Loss: 0.1593
+[HOOK][Epoch: 5] Batch 101 Loss: 0.1825
+[HOOK][Epoch: 5] Batch 151 Loss: 0.1738
+[HOOK][Epoch: 5] Batch 201 Loss: 0.2769
+[HOOK][Epoch: 5] Batch 251 Loss: 0.1870
+[HOOK][Epoch: 5] Batch 301 Loss: 0.1469
+[HOOK][Epoch: 5] Batch 351 Loss: 0.2322
+[HOOK][Epoch: 5] Batch 401 Loss: 0.1750
+[HOOK][Epoch: 5] Batch 451 Loss: 0.1226
+[HOOK][Epoch: 5] Batch 501 Loss: 0.3784
+[HOOK][Epoch: 5] Batch 551 Loss: 0.2244
+[HOOK][Epoch: 5] Batch 601 Loss: 0.2153
+[HOOK] QAT training completed.
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: static, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[PREPARE ERROR] Exception during preparation:
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\quantizers.py", line 160, in _prepare_model
+    self.quant_model = ParentalReassembler.reassemble(self.quant_model)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 263, in reassemble
+    cls.set_module(model, name, new_module.to(device))
+  File "D:\Python\Fedcore\fedcore\fedcore\architecture\abstraction\accessor.py", line 17, in set_module
+    parent = reduce(getattr, path, m)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'downsample'
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: static, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[PREPARE ERROR] Exception during preparation:
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\quantizers.py", line 160, in _prepare_model
+    self.quant_model = ParentalReassembler.reassemble(self.quant_model)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 263, in reassemble
+    cls.set_module(model, name, new_module.to(device))
+  File "D:\Python\Fedcore\fedcore\fedcore\architecture\abstraction\accessor.py", line 17, in set_module
+    parent = reduce(getattr, path, m)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'downsample'
+[HOOK] Performing Dynamic PTQ hook operations.
+[HOOK] Dynamic PTQ setup completed.
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: static, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[PREPARE ERROR] Exception during preparation:
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\quantizers.py", line 160, in _prepare_model
+    self.quant_model = ParentalReassembler.reassemble(self.quant_model)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 263, in reassemble
+    cls.set_module(model, name, new_module.to(device))
+  File "D:\Python\Fedcore\fedcore\fedcore\architecture\abstraction\accessor.py", line 17, in set_module
+    parent = reduce(getattr, path, m)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'downsample'
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: static, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, quant_min=0, quant_max=127){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[PREPARE ERROR] Exception during preparation:
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\quantizers.py", line 160, in _prepare_model
+    self.quant_model = ParentalReassembler.reassemble(self.quant_model)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 263, in reassemble
+    cls.set_module(model, name, new_module.to(device))
+  File "D:\Python\Fedcore\fedcore\fedcore\architecture\abstraction\accessor.py", line 17, in set_module
+    parent = reduce(getattr, path, m)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'downsample'
+[HOOK] Performing QAT training hook.
+[HOOK] QAT epoch 1/5 started.
+[HOOK][Epoch: 1] Batch 1 Loss: 1.0551
+[HOOK][Epoch: 1] Batch 51 Loss: 0.6702
+[HOOK][Epoch: 1] Batch 101 Loss: 0.4586
+[HOOK][Epoch: 1] Batch 151 Loss: 0.6179
+[HOOK][Epoch: 1] Batch 201 Loss: 0.4270
+[HOOK][Epoch: 1] Batch 251 Loss: 0.3672
+[HOOK][Epoch: 1] Batch 301 Loss: 0.7013
+[HOOK][Epoch: 1] Batch 351 Loss: 0.2875
+[HOOK][Epoch: 1] Batch 401 Loss: 0.2659
+[HOOK][Epoch: 1] Batch 451 Loss: 0.6055
+[HOOK][Epoch: 1] Batch 501 Loss: 0.4366
+[HOOK][Epoch: 1] Batch 551 Loss: 0.4513
+[HOOK][Epoch: 1] Batch 601 Loss: 0.5377
+[HOOK] QAT epoch 2/5 started.
+[HOOK][Epoch: 2] Batch 1 Loss: 0.2696
+[HOOK][Epoch: 2] Batch 51 Loss: 0.2232
+[HOOK][Epoch: 2] Batch 101 Loss: 0.2493
+[HOOK][Epoch: 2] Batch 151 Loss: 0.2175
+[HOOK][Epoch: 2] Batch 201 Loss: 0.2167
+[HOOK][Epoch: 2] Batch 251 Loss: 0.4311
+[HOOK][Epoch: 2] Batch 301 Loss: 0.1847
+[HOOK][Epoch: 2] Batch 351 Loss: 0.1630
+[HOOK][Epoch: 2] Batch 401 Loss: 0.2671
+[HOOK][Epoch: 2] Batch 451 Loss: 0.2938
+[HOOK][Epoch: 2] Batch 501 Loss: 0.3167
+[HOOK][Epoch: 2] Batch 551 Loss: 0.3667
+[HOOK][Epoch: 2] Batch 601 Loss: 0.3216
+[HOOK] QAT epoch 3/5 started.
+[HOOK][Epoch: 3] Batch 1 Loss: 0.2629
+[HOOK][Epoch: 3] Batch 51 Loss: 0.1449
+[HOOK][Epoch: 3] Batch 101 Loss: 0.1363
+[HOOK][Epoch: 3] Batch 151 Loss: 0.0433
+[HOOK][Epoch: 3] Batch 201 Loss: 0.3305
+[HOOK][Epoch: 3] Batch 251 Loss: 0.2286
+[HOOK][Epoch: 3] Batch 301 Loss: 0.1668
+[HOOK][Epoch: 3] Batch 351 Loss: 0.2640
+[HOOK][Epoch: 3] Batch 401 Loss: 0.2671
+[HOOK][Epoch: 3] Batch 451 Loss: 0.3129
+[HOOK][Epoch: 3] Batch 501 Loss: 0.1282
+[HOOK][Epoch: 3] Batch 551 Loss: 0.3683
+[HOOK][Epoch: 3] Batch 601 Loss: 0.2853
+[HOOK] QAT epoch 4/5 started.
+[HOOK][Epoch: 4] Batch 1 Loss: 0.1635
+[HOOK][Epoch: 4] Batch 51 Loss: 0.2553
+[HOOK][Epoch: 4] Batch 101 Loss: 0.1867
+[HOOK][Epoch: 4] Batch 151 Loss: 0.1609
+[HOOK][Epoch: 4] Batch 201 Loss: 0.1962
+[HOOK][Epoch: 4] Batch 251 Loss: 0.3176
+[HOOK][Epoch: 4] Batch 301 Loss: 0.0790
+[HOOK][Epoch: 4] Batch 351 Loss: 0.3852
+[HOOK][Epoch: 4] Batch 401 Loss: 0.1777
+[HOOK][Epoch: 4] Batch 451 Loss: 0.2751
+[HOOK][Epoch: 4] Batch 501 Loss: 0.0949
+[HOOK][Epoch: 4] Batch 551 Loss: 0.1707
+[HOOK][Epoch: 4] Batch 601 Loss: 0.2814
+[HOOK] QAT epoch 5/5 started.
+[HOOK][Epoch: 5] Batch 1 Loss: 0.1020
+[HOOK][Epoch: 5] Batch 51 Loss: 0.0508
+[HOOK][Epoch: 5] Batch 101 Loss: 0.1132
+[HOOK][Epoch: 5] Batch 151 Loss: 0.0842
+[HOOK][Epoch: 5] Batch 201 Loss: 0.3377
+[HOOK][Epoch: 5] Batch 251 Loss: 0.2757
+[HOOK][Epoch: 5] Batch 301 Loss: 0.2177
+[HOOK][Epoch: 5] Batch 351 Loss: 0.2122
+[HOOK][Epoch: 5] Batch 401 Loss: 0.2384
+[HOOK][Epoch: 5] Batch 451 Loss: 0.2665
+[HOOK][Epoch: 5] Batch 501 Loss: 0.0960
+[HOOK][Epoch: 5] Batch 551 Loss: 0.2458
+[HOOK][Epoch: 5] Batch 601 Loss: 0.4523
+[HOOK] QAT training completed.
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[PREPARE ERROR] Exception during preparation:
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\quantizers.py", line 160, in _prepare_model
+    self.quant_model = ParentalReassembler.reassemble(self.quant_model)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 263, in reassemble
+    cls.set_module(model, name, new_module.to(device))
+  File "D:\Python\Fedcore\fedcore\fedcore\architecture\abstraction\accessor.py", line 17, in set_module
+    parent = reduce(getattr, path, m)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'downsample'
+[HOOK] Performing QAT training hook.
+[HOOK] QAT epoch 1/5 started.
+[HOOK][Epoch: 1] Batch 1 Loss: 1.2516
+[HOOK][Epoch: 1] Batch 51 Loss: 0.8157
+[HOOK][Epoch: 1] Batch 101 Loss: 0.5432
+[HOOK][Epoch: 1] Batch 151 Loss: 0.4692
+[HOOK][Epoch: 1] Batch 201 Loss: 0.8292
+[HOOK][Epoch: 1] Batch 251 Loss: 0.3048
+[HOOK][Epoch: 1] Batch 301 Loss: 0.6057
+Generations:   0%|                                                                                                                                                            | 0/10000 [22:51<?, ?gen/s]
