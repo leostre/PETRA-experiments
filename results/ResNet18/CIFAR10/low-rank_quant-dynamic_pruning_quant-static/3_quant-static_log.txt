@@ -1,0 +1,409 @@
+
+>>> PEFT step 4: quant-static
+Creating Dask Server
+Generations:   0%|          | 0/10000 [00:00<?, ?gen/s][QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: onednn, device: cuda:0
+[INIT] dtype: torch.float16, allow_embedding: False, allow_convolution: False
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})}
+[MODEL] Model initialized and copied for quantization.
+Module: , qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: maxpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.downsample, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.downsample.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.downsample.0.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.downsample.0.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.downsample.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.downsample, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.downsample.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.downsample.0.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.downsample.0.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.downsample.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.downsample, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.downsample.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.downsample.0.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.downsample.0.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.downsample.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: avgpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: fc.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: fc.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+[DATA] Example input shape: torch.Size([64, 3, 32, 32])
+[PREPARE] Model prepared successfully.
+[HOOK] Performing Dynamic PTQ hook operations.
+[HOOK] Dynamic PTQ setup completed.
+[FIT ERROR] Exception during quantization:
+Traceback (most recent call last):
+  File "/ptls-experiments/FedCore/fedcore/algorithm/quantization/quantizers.py", line 205, in fit
+    self.quant_model = quantize_dynamic(
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/quantization/quantize.py", line 476, in quantize_dynamic
+    convert(model, mapping, inplace=True)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/quantization/quantize.py", line 563, in convert
+    _convert(
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/quantization/quantize.py", line 604, in _convert
+    _convert(mod, mapping, True,  # inplace
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/quantization/quantize.py", line 604, in _convert
+    _convert(mod, mapping, True,  # inplace
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/quantization/quantize.py", line 607, in _convert
+    reassign[name] = swap_module(mod, mapping, custom_module_class_mapping, use_precomputed_fake_quant)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/quantization/quantize.py", line 642, in swap_module
+    new_mod = qmod.from_float(mod, use_precomputed_fake_quant=use_precomputed_fake_quant)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/nn/quantized/dynamic/modules/linear.py", line 115, in from_float
+    qlinear = cls(mod.in_features, mod.out_features, dtype=dtype)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/nn/quantized/dynamic/modules/linear.py", line 41, in __init__
+    super().__init__(in_features, out_features, bias_, dtype=dtype)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/nn/quantized/modules/linear.py", line 152, in __init__
+    self._packed_params = LinearPackedParams(dtype)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/nn/quantized/modules/linear.py", line 28, in __init__
+    self.set_weight_bias(wq, None)  # type: ignore[possibly-undefined]
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/nn/quantized/modules/linear.py", line 35, in set_weight_bias
+    self._packed_params = torch.ops.quantized.linear_prepack_fp16(weight, bias)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/_ops.py", line 1061, in __call__
+    return self_._op(*args, **(kwargs or {}))
+RuntimeError: quantized::linear_prepack_fp16 is currently not supported by ONEDNN
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: onednn, device: cuda:0
+[INIT] dtype: torch.float16, allow_embedding: False, allow_convolution: False
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: static, backend: onednn, device: cuda:0
+[INIT] dtype: torch.float16, allow_embedding: False, allow_convolution: False
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})}
+[MODEL] Model initialized and copied for quantization.
+Module: , qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: maxpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.0.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer1.1.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.downsample, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.downsample.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.downsample.0.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.downsample.0.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.0.downsample.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer2.1.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.downsample, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.downsample.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.downsample.0.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.downsample.0.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.0.downsample.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer3.1.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.downsample, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.downsample.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.downsample.0.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.downsample.0.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.0.downsample.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv1.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv1.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv2.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.conv2.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: layer4.1.bn2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: avgpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: fc.0, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+Module: fc.1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+[DATA] Example input shape: torch.Size([64, 3, 32, 32])
+[PREPARE] Model prepared successfully.
+[FIT ERROR] Exception during quantization:
+Traceback (most recent call last):
+  File "/ptls-experiments/FedCore/fedcore/algorithm/quantization/quantizers.py", line 211, in fit
+    convert(self.quant_model, inplace=True)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/quantization/quantize.py", line 563, in convert
+    _convert(
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/quantization/quantize.py", line 604, in _convert
+    _convert(mod, mapping, True,  # inplace
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/quantization/quantize.py", line 607, in _convert
+    reassign[name] = swap_module(mod, mapping, custom_module_class_mapping, use_precomputed_fake_quant)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/quantization/quantize.py", line 642, in swap_module
+    new_mod = qmod.from_float(mod, use_precomputed_fake_quant=use_precomputed_fake_quant)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/nn/quantized/modules/conv.py", line 480, in from_float
+    return _ConvNd.from_float(cls, mod, use_precomputed_fake_quant=use_precomputed_fake_quant)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/nn/quantized/modules/conv.py", line 242, in from_float
+    return cls.get_qconv(mod, activation_post_process, weight_post_process)
+  File "/root/.local/share/virtualenvs/ptls-experiments-H-SwwRmK/lib/python3.8/site-packages/torch/ao/nn/quantized/modules/conv.py", line 202, in get_qconv
+    assert weight_post_process.dtype == torch.qint8, \
+AssertionError: Weight observer must have a dtype of qint8
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: static, backend: onednn, device: cuda:0
+[INIT] dtype: torch.float16, allow_embedding: False, allow_convolution: False
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: onednn, device: cuda:0
+[INIT] dtype: torch.float16, allow_embedding: False, allow_convolution: False
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})}
+
+  0%|          | 0/157 [00:00<?, ?it/s][A
+  5%|5         | 8/157 [00:00<00:01, 79.14it/s][A
+ 10%|#         | 16/157 [00:00<00:01, 78.00it/s][A
+ 15%|#5        | 24/157 [00:00<00:01, 76.72it/s][A
+ 21%|##1       | 33/157 [00:00<00:01, 78.61it/s][A
+ 27%|##6       | 42/157 [00:00<00:01, 80.19it/s][A
+ 32%|###2      | 51/157 [00:00<00:01, 80.88it/s][A
+ 38%|###8      | 60/157 [00:00<00:01, 79.05it/s][A
+ 44%|####3     | 69/157 [00:00<00:01, 79.05it/s][A
+ 50%|####9     | 78/157 [00:00<00:00, 79.49it/s][A
+ 55%|#####4    | 86/157 [00:01<00:00, 79.36it/s][A
+ 60%|#####9    | 94/157 [00:01<00:00, 78.56it/s][A
+ 66%|######5   | 103/157 [00:01<00:00, 79.61it/s][A
+ 71%|#######1  | 112/157 [00:01<00:00, 80.92it/s][A
+ 77%|#######7  | 121/157 [00:01<00:00, 80.96it/s][A
+ 83%|########2 | 130/157 [00:01<00:00, 80.88it/s][A
+ 89%|########8 | 139/157 [00:01<00:00, 79.46it/s][A
+ 94%|#########4| 148/157 [00:01<00:00, 80.01it/s][A 99%|#########8| 155/157 [00:01<00:00, 78.14it/s]
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: onednn, device: cuda:0
+[INIT] dtype: torch.float16, allow_embedding: False, allow_convolution: False
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.float16){})}
+
+  0%|          | 0/157 [00:00<?, ?it/s][A
+  5%|5         | 8/157 [00:00<00:02, 74.26it/s][A
+ 10%|#         | 16/157 [00:00<00:01, 76.39it/s][A
+ 15%|#5        | 24/157 [00:00<00:01, 77.73it/s][A
+ 20%|##        | 32/157 [00:00<00:01, 78.53it/s][A
+ 25%|##5       | 40/157 [00:00<00:01, 77.27it/s][A
+ 31%|###       | 48/157 [00:00<00:01, 77.89it/s][A
+ 36%|###5      | 56/157 [00:00<00:01, 78.53it/s][A
+ 41%|####1     | 65/157 [00:00<00:01, 79.17it/s][A
+ 46%|####6     | 73/157 [00:00<00:01, 79.24it/s][A
+ 52%|#####1    | 81/157 [00:01<00:00, 77.62it/s][A
+ 57%|#####6    | 89/157 [00:01<00:00, 77.86it/s][A
+ 62%|######1   | 97/157 [00:01<00:00, 78.39it/s][A
+ 67%|######6   | 105/157 [00:01<00:00, 78.85it/s][A
+ 72%|#######1  | 113/157 [00:01<00:00, 78.69it/s][A
+ 77%|#######7  | 121/157 [00:01<00:00, 77.52it/s][A
+ 83%|########2 | 130/157 [00:01<00:00, 78.55it/s][A
+ 89%|########8 | 139/157 [00:01<00:00, 79.23it/s][A
+ 94%|#########4| 148/157 [00:01<00:00, 79.78it/s][A 99%|#########8| 155/157 [00:01<00:00, 77.88it/s]
+Generations:   0%|          | 0/10000 [00:10<?, ?gen/s]
