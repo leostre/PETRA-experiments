@@ -1,0 +1,28 @@
+
+\begin{table*}[h]
+\centering
+\caption{Top 5 PEFT Pipelines}
+\label{tab:peft_pipelines}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Pipeline} & \textbf{f1} & \textbf{CPU Latency (ms)} & \textbf{GPU Latency (ms)} & \textbf{CPU Throughput (IPS)} & \textbf{GPU Throughput (IPS)} & \textbf{Model Size (MB)} \
+\midrule
+low-rank_quant-dynamic_pruning_quant-qat & GPU & 0.702 / -7.5\% & $\infty$ & 2.271 / +79.9\% & $\infty$ & 15 / -42.0\% & 43.349 / +1.6\% \\
+\cmidrule{1-7}
+low-rank_quant-static_pruning_quant-qat & GPU & 0.660 / -13.0\% & $\infty$ & 1.901 / +34.5\% & $\infty$ & 17 / -24.4\% & 10.854 / -74.6\% \\
+low-rank_quant-static_pruning_quant-dynamic & GPU & 0.656 / -13.6\% & $\infty$ & 1.873 / +34.9\% & $\infty$ & 17 / -25.0\% & 10.861 / -74.5\% \\
+pruning_quant-dynamic_low-rank_quant-qat & GPU & 0.642 / -15.5\% & $\infty$ & 1.983 / +54.0\% & $\infty$ & 15 / -43.6\% & 10.607 / -75.1\% \\
+pruning_quant-qat_low-rank_quant-dynamic & GPU & 0.639 / -15.9\% & $\infty$ & 2.080 / +83.5\% & $\infty$ & 24 / -18.2\% & 10.607 / -75.1\% \\
+low-rank_quant-dynamic_pruning_quant-qat & CPU & 0.758 / -0.1\% & 0.005 / +9.6\% & $\infty$ & 1436 / -22.8\% & $\infty$ & 44.137 / +3.5\% \\
+low-rank_quant-qat_pruning_quant-static & CPU & 0.747 / -1.6\% & 0.005 / +9.8\% & $\infty$ & 1792 / -9.4\% & $\infty$ & 44.137 / +3.5\% \\
+low-rank_quant-static_pruning_quant-qat & CPU & 0.746 / -1.7\% & 0.004 / -4.9\% & $\infty$ & 1890 / -6.7\% & $\infty$ & 44.198 / +3.6\% \\
+pruning_quant-dynamic_low-rank_quant-qat & CPU & 0.736 / -3.0\% & 0.005 / +2.4\% & $\infty$ & 1912 / -3.2\% & $\infty$ & 43.466 / +1.9\% \\
+quant-dynamic_low-rank_quant-qat_pruning & CPU & 0.736 / -3.0\% & 0.004 / -15.0\% & $\infty$ & 2080 / +7.2\% & $\infty$ & 43.466 / +1.9\% \\
+\bottomrule
+\end{tabular}
+}
+\footnotesize
+\vspace{0.2cm}
+\emph{Note}: Values show final metric / percentage change from original. Best values are bold for non-quantized models and underlined for quantized models. Abbreviations: LR - Low-Rank Decomposition, Pr - Pruning, QAT - Quant-Aware Training, PDQ - Post-training Dynamic Quantization.
+\end{table*}

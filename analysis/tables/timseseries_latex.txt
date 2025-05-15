@@ -1,0 +1,23 @@
+
+\begin{table*}[h]
+\centering
+\caption{Top 5 PEFT Pipelines}
+\label{tab:peft_pipelines}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Pipeline} & \textbf{rmse} & \textbf{CPU Latency (ms)} & \textbf{GPU Latency (ms)} & \textbf{CPU Throughput (IPS)} & \textbf{GPU Throughput (IPS)} & \textbf{Model Size (MB)} \
+\midrule
+pruning_quant-static_low-rank_quant-dynamic & GPU & 3.811 / +10.8\% & $\infty$ & 3.852 / +30.4\% & $\infty$ & 3 / -11.3\% & 0.923 / -68.8\% \\
+\cmidrule{1-7}
+pruning_quant-static_low-rank_quant-qat & GPU & 3.817 / +10.9\% & $\infty$ & 3.538 / +15.8\% & $\infty$ & 3 / -16.1\% & 0.923 / -68.8\% \\
+pruning_quant-qat_low-rank_quant-dynamic & GPU & 3.841 / +11.6\% & $\infty$ & 3.664 / +22.8\% & $\infty$ & 3 / -16.1\% & 0.923 / -68.8\% \\
+pruning_quant-qat_low-rank_quant-static & GPU & 3.845 / +11.7\% & $\infty$ & 3.409 / +3.0\% & $\infty$ & 3 / -11.2\% & 0.923 / -68.8\% \\
+low-rank_quant-qat_pruning_quant-dynamic & GPU & 4.577 / +33.0\% & $\infty$ & 4.427 / +44.2\% & $\infty$ & 2 / -32.1\% & 0.591 / -80.0\% \\
+\bottomrule
+\end{tabular}
+}
+\footnotesize
+\vspace{0.2cm}
+\emph{Note}: Values show final metric / percentage change from original. Best values are bold for non-quantized models and underlined for quantized models. Abbreviations: LR - Low-Rank Decomposition, Pr - Pruning, QAT - Quant-Aware Training, PDQ - Post-training Dynamic Quantization.
+\end{table*}
