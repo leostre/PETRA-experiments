@@ -1,0 +1,272 @@
+
+>>> PEFT step 1: quant-dynamic
+Creating Dask Server
+Generations:   0%|                                                                                                                                                            | 0/10000 [00:00<?, ?gen/s][QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.1' wrapped with ResidualAddWrapper.
+Module: , qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D45AEF0>})
+Module: conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D5B30A0>})
+Module: bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D5B3A30>})
+Module: relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D5B3AC0>})
+Module: maxpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D5B3250>})
+Module: layer1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D5B1FC0>})
+Module: layer1.0, qconfig: None
+Module: layer1.0.module, qconfig: None
+Module: layer1.0.module.conv1, qconfig: None
+Module: layer1.0.module.bn1, qconfig: None
+Module: layer1.0.module.relu, qconfig: None
+Module: layer1.0.module.conv2, qconfig: None
+Module: layer1.0.module.bn2, qconfig: None
+Module: layer1.0.skip_add, qconfig: None
+Module: layer1.0.skip_add.activation_post_process, qconfig: None
+Module: layer1.1, qconfig: None
+Module: layer1.1.module, qconfig: None
+Module: layer1.1.module.conv1, qconfig: None
+Module: layer1.1.module.bn1, qconfig: None
+Module: layer1.1.module.relu, qconfig: None
+Module: layer1.1.module.conv2, qconfig: None
+Module: layer1.1.module.bn2, qconfig: None
+Module: layer1.1.skip_add, qconfig: None
+Module: layer1.1.skip_add.activation_post_process, qconfig: None
+Module: layer2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D5B32E0>})
+Module: layer2.0, qconfig: None
+Module: layer2.0.module, qconfig: None
+Module: layer2.0.module.conv1, qconfig: None
+Module: layer2.0.module.bn1, qconfig: None
+Module: layer2.0.module.relu, qconfig: None
+Module: layer2.0.module.conv2, qconfig: None
+Module: layer2.0.module.bn2, qconfig: None
+Module: layer2.0.module.downsample, qconfig: None
+Module: layer2.0.module.downsample.0, qconfig: None
+Module: layer2.0.module.downsample.1, qconfig: None
+Module: layer2.0.skip_add, qconfig: None
+Module: layer2.0.skip_add.activation_post_process, qconfig: None
+Module: layer2.1, qconfig: None
+Module: layer2.1.module, qconfig: None
+Module: layer2.1.module.conv1, qconfig: None
+Module: layer2.1.module.bn1, qconfig: None
+Module: layer2.1.module.relu, qconfig: None
+Module: layer2.1.module.conv2, qconfig: None
+Module: layer2.1.module.bn2, qconfig: None
+Module: layer2.1.skip_add, qconfig: None
+Module: layer2.1.skip_add.activation_post_process, qconfig: None
+Module: layer3, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C63B0>})
+Module: layer3.0, qconfig: None
+Module: layer3.0.module, qconfig: None
+Module: layer3.0.module.conv1, qconfig: None
+Module: layer3.0.module.bn1, qconfig: None
+Module: layer3.0.module.relu, qconfig: None
+Module: layer3.0.module.conv2, qconfig: None
+Module: layer3.0.module.bn2, qconfig: None
+Module: layer3.0.module.downsample, qconfig: None
+Module: layer3.0.module.downsample.0, qconfig: None
+Module: layer3.0.module.downsample.1, qconfig: None
+Module: layer3.0.skip_add, qconfig: None
+Module: layer3.0.skip_add.activation_post_process, qconfig: None
+Module: layer3.1, qconfig: None
+Module: layer3.1.module, qconfig: None
+Module: layer3.1.module.conv1, qconfig: None
+Module: layer3.1.module.bn1, qconfig: None
+Module: layer3.1.module.relu, qconfig: None
+Module: layer3.1.module.conv2, qconfig: None
+Module: layer3.1.module.bn2, qconfig: None
+Module: layer3.1.skip_add, qconfig: None
+Module: layer3.1.skip_add.activation_post_process, qconfig: None
+Module: layer4, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C6A70>})
+Module: layer4.0, qconfig: None
+Module: layer4.0.module, qconfig: None
+Module: layer4.0.module.conv1, qconfig: None
+Module: layer4.0.module.bn1, qconfig: None
+Module: layer4.0.module.relu, qconfig: None
+Module: layer4.0.module.conv2, qconfig: None
+Module: layer4.0.module.bn2, qconfig: None
+Module: layer4.0.module.downsample, qconfig: None
+Module: layer4.0.module.downsample.0, qconfig: None
+Module: layer4.0.module.downsample.1, qconfig: None
+Module: layer4.0.skip_add, qconfig: None
+Module: layer4.0.skip_add.activation_post_process, qconfig: None
+Module: layer4.1, qconfig: None
+Module: layer4.1.module, qconfig: None
+Module: layer4.1.module.conv1, qconfig: None
+Module: layer4.1.module.bn1, qconfig: None
+Module: layer4.1.module.relu, qconfig: None
+Module: layer4.1.module.conv2, qconfig: None
+Module: layer4.1.module.bn2, qconfig: None
+Module: layer4.1.skip_add, qconfig: None
+Module: layer4.1.skip_add.activation_post_process, qconfig: None
+Module: avgpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C5D80>})
+Module: fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C72E0>})
+[DATA] Example input shape: torch.Size([64, 3, 32, 32])
+[PREPARE] Model prepared successfully.
+[HOOK] Performing Dynamic PTQ hook operations.
+[HOOK] Dynamic PTQ setup completed.
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.1' wrapped with ResidualAddWrapper.
+Module: , qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D5B32E0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D5B32E0>})
+Module: conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C71C0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C71C0>})
+Module: bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C4E50>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C4E50>})
+Module: relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C4CA0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C4CA0>})
+Module: maxpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C6560>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C6560>})
+Module: layer1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C60E0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C60E0>})
+Module: layer1.0, qconfig: None
+Module: layer1.0.module, qconfig: None
+Module: layer1.0.module.conv1, qconfig: None
+Module: layer1.0.module.bn1, qconfig: None
+Module: layer1.0.module.relu, qconfig: None
+Module: layer1.0.module.conv2, qconfig: None
+Module: layer1.0.module.bn2, qconfig: None
+Module: layer1.0.skip_add, qconfig: None
+Module: layer1.0.skip_add.activation_post_process, qconfig: None
+Module: layer1.1, qconfig: None
+Module: layer1.1.module, qconfig: None
+Module: layer1.1.module.conv1, qconfig: None
+Module: layer1.1.module.bn1, qconfig: None
+Module: layer1.1.module.relu, qconfig: None
+Module: layer1.1.module.conv2, qconfig: None
+Module: layer1.1.module.bn2, qconfig: None
+Module: layer1.1.skip_add, qconfig: None
+Module: layer1.1.skip_add.activation_post_process, qconfig: None
+Module: layer2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C4310>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C4310>})
+Module: layer2.0, qconfig: None
+Module: layer2.0.module, qconfig: None
+Module: layer2.0.module.conv1, qconfig: None
+Module: layer2.0.module.bn1, qconfig: None
+Module: layer2.0.module.relu, qconfig: None
+Module: layer2.0.module.conv2, qconfig: None
+Module: layer2.0.module.bn2, qconfig: None
+Module: layer2.0.module.downsample, qconfig: None
+Module: layer2.0.module.downsample.0, qconfig: None
+Module: layer2.0.module.downsample.1, qconfig: None
+Module: layer2.0.skip_add, qconfig: None
+Module: layer2.0.skip_add.activation_post_process, qconfig: None
+Module: layer2.1, qconfig: None
+Module: layer2.1.module, qconfig: None
+Module: layer2.1.module.conv1, qconfig: None
+Module: layer2.1.module.bn1, qconfig: None
+Module: layer2.1.module.relu, qconfig: None
+Module: layer2.1.module.conv2, qconfig: None
+Module: layer2.1.module.bn2, qconfig: None
+Module: layer2.1.skip_add, qconfig: None
+Module: layer2.1.skip_add.activation_post_process, qconfig: None
+Module: layer3, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C6170>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C6170>})
+Module: layer3.0, qconfig: None
+Module: layer3.0.module, qconfig: None
+Module: layer3.0.module.conv1, qconfig: None
+Module: layer3.0.module.bn1, qconfig: None
+Module: layer3.0.module.relu, qconfig: None
+Module: layer3.0.module.conv2, qconfig: None
+Module: layer3.0.module.bn2, qconfig: None
+Module: layer3.0.module.downsample, qconfig: None
+Module: layer3.0.module.downsample.0, qconfig: None
+Module: layer3.0.module.downsample.1, qconfig: None
+Module: layer3.0.skip_add, qconfig: None
+Module: layer3.0.skip_add.activation_post_process, qconfig: None
+Module: layer3.1, qconfig: None
+Module: layer3.1.module, qconfig: None
+Module: layer3.1.module.conv1, qconfig: None
+Module: layer3.1.module.bn1, qconfig: None
+Module: layer3.1.module.relu, qconfig: None
+Module: layer3.1.module.conv2, qconfig: None
+Module: layer3.1.module.bn2, qconfig: None
+Module: layer3.1.skip_add, qconfig: None
+Module: layer3.1.skip_add.activation_post_process, qconfig: None
+Module: layer4, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C70A0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C70A0>})
+Module: layer4.0, qconfig: None
+Module: layer4.0.module, qconfig: None
+Module: layer4.0.module.conv1, qconfig: None
+Module: layer4.0.module.bn1, qconfig: None
+Module: layer4.0.module.relu, qconfig: None
+Module: layer4.0.module.conv2, qconfig: None
+Module: layer4.0.module.bn2, qconfig: None
+Module: layer4.0.module.downsample, qconfig: None
+Module: layer4.0.module.downsample.0, qconfig: None
+Module: layer4.0.module.downsample.1, qconfig: None
+Module: layer4.0.skip_add, qconfig: None
+Module: layer4.0.skip_add.activation_post_process, qconfig: None
+Module: layer4.1, qconfig: None
+Module: layer4.1.module, qconfig: None
+Module: layer4.1.module.conv1, qconfig: None
+Module: layer4.1.module.bn1, qconfig: None
+Module: layer4.1.module.relu, qconfig: None
+Module: layer4.1.module.conv2, qconfig: None
+Module: layer4.1.module.bn2, qconfig: None
+Module: layer4.1.skip_add, qconfig: None
+Module: layer4.1.skip_add.activation_post_process, qconfig: None
+Module: avgpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C65F0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C65F0>})
+Module: fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C72E0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000002416D4C72E0>})
+[DATA] Example input shape: torch.Size([64, 3, 32, 32])
+[PREPARE] Model prepared successfully.
+[HOOK] Performing QAT training hook.
+[HOOK] QAT epoch 1/5 started.
+[HOOK][Epoch: 1] Batch 1 Loss: 0.4121
+[HOOK][Epoch: 1] Batch 51 Loss: 0.2544
+[HOOK][Epoch: 1] Batch 101 Loss: 0.3925
+[HOOK][Epoch: 1] Batch 151 Loss: 0.0281
+[HOOK][Epoch: 1] Batch 201 Loss: 0.2010
+[HOOK][Epoch: 1] Batch 251 Loss: 0.0690
+[HOOK][Epoch: 1] Batch 301 Loss: 0.3616
+[HOOK][Epoch: 1] Batch 351 Loss: 0.1419
+[HOOK][Epoch: 1] Batch 401 Loss: 0.0701
+[HOOK][Epoch: 1] Batch 451 Loss: 0.2127
+[HOOK][Epoch: 1] Batch 501 Loss: 0.3056
+[HOOK][Epoch: 1] Batch 551 Loss: 0.1941
+Generations:   0%|                                                                                                                                                            | 0/10000 [04:13<?, ?gen/s]

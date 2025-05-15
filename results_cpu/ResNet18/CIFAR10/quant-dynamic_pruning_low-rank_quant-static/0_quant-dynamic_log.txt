@@ -1,0 +1,1443 @@
+
+>>> PEFT step 1: quant-dynamic
+Creating Dask Server
+Generations:   0%|                                                                                                                                                            | 0/10000 [00:00<?, ?gen/s][QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.1' wrapped with ResidualAddWrapper.
+Module: , qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FC28700>})
+Module: conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FC28AF0>})
+Module: bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FC29A20>})
+Module: relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD695ABAC0>})
+Module: maxpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD695AAEF0>})
+Module: layer1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD695AAB90>})
+Module: layer1.0, qconfig: None
+Module: layer1.0.module, qconfig: None
+Module: layer1.0.module.conv1, qconfig: None
+Module: layer1.0.module.bn1, qconfig: None
+Module: layer1.0.module.relu, qconfig: None
+Module: layer1.0.module.conv2, qconfig: None
+Module: layer1.0.module.bn2, qconfig: None
+Module: layer1.0.skip_add, qconfig: None
+Module: layer1.0.skip_add.activation_post_process, qconfig: None
+Module: layer1.1, qconfig: None
+Module: layer1.1.module, qconfig: None
+Module: layer1.1.module.conv1, qconfig: None
+Module: layer1.1.module.bn1, qconfig: None
+Module: layer1.1.module.relu, qconfig: None
+Module: layer1.1.module.conv2, qconfig: None
+Module: layer1.1.module.bn2, qconfig: None
+Module: layer1.1.skip_add, qconfig: None
+Module: layer1.1.skip_add.activation_post_process, qconfig: None
+Module: layer2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDA680>})
+Module: layer2.0, qconfig: None
+Module: layer2.0.module, qconfig: None
+Module: layer2.0.module.conv1, qconfig: None
+Module: layer2.0.module.bn1, qconfig: None
+Module: layer2.0.module.relu, qconfig: None
+Module: layer2.0.module.conv2, qconfig: None
+Module: layer2.0.module.bn2, qconfig: None
+Module: layer2.0.module.downsample, qconfig: None
+Module: layer2.0.module.downsample.0, qconfig: None
+Module: layer2.0.module.downsample.1, qconfig: None
+Module: layer2.0.skip_add, qconfig: None
+Module: layer2.0.skip_add.activation_post_process, qconfig: None
+Module: layer2.1, qconfig: None
+Module: layer2.1.module, qconfig: None
+Module: layer2.1.module.conv1, qconfig: None
+Module: layer2.1.module.bn1, qconfig: None
+Module: layer2.1.module.relu, qconfig: None
+Module: layer2.1.module.conv2, qconfig: None
+Module: layer2.1.module.bn2, qconfig: None
+Module: layer2.1.skip_add, qconfig: None
+Module: layer2.1.skip_add.activation_post_process, qconfig: None
+Module: layer3, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFD9240>})
+Module: layer3.0, qconfig: None
+Module: layer3.0.module, qconfig: None
+Module: layer3.0.module.conv1, qconfig: None
+Module: layer3.0.module.bn1, qconfig: None
+Module: layer3.0.module.relu, qconfig: None
+Module: layer3.0.module.conv2, qconfig: None
+Module: layer3.0.module.bn2, qconfig: None
+Module: layer3.0.module.downsample, qconfig: None
+Module: layer3.0.module.downsample.0, qconfig: None
+Module: layer3.0.module.downsample.1, qconfig: None
+Module: layer3.0.skip_add, qconfig: None
+Module: layer3.0.skip_add.activation_post_process, qconfig: None
+Module: layer3.1, qconfig: None
+Module: layer3.1.module, qconfig: None
+Module: layer3.1.module.conv1, qconfig: None
+Module: layer3.1.module.bn1, qconfig: None
+Module: layer3.1.module.relu, qconfig: None
+Module: layer3.1.module.conv2, qconfig: None
+Module: layer3.1.module.bn2, qconfig: None
+Module: layer3.1.skip_add, qconfig: None
+Module: layer3.1.skip_add.activation_post_process, qconfig: None
+Module: layer4, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDB130>})
+Module: layer4.0, qconfig: None
+Module: layer4.0.module, qconfig: None
+Module: layer4.0.module.conv1, qconfig: None
+Module: layer4.0.module.bn1, qconfig: None
+Module: layer4.0.module.relu, qconfig: None
+Module: layer4.0.module.conv2, qconfig: None
+Module: layer4.0.module.bn2, qconfig: None
+Module: layer4.0.module.downsample, qconfig: None
+Module: layer4.0.module.downsample.0, qconfig: None
+Module: layer4.0.module.downsample.1, qconfig: None
+Module: layer4.0.skip_add, qconfig: None
+Module: layer4.0.skip_add.activation_post_process, qconfig: None
+Module: layer4.1, qconfig: None
+Module: layer4.1.module, qconfig: None
+Module: layer4.1.module.conv1, qconfig: None
+Module: layer4.1.module.bn1, qconfig: None
+Module: layer4.1.module.relu, qconfig: None
+Module: layer4.1.module.conv2, qconfig: None
+Module: layer4.1.module.bn2, qconfig: None
+Module: layer4.1.skip_add, qconfig: None
+Module: layer4.1.skip_add.activation_post_process, qconfig: None
+Module: avgpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFD9120>})
+Module: fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDB0A0>})
+[DATA] Example input shape: torch.Size([64, 3, 32, 32])
+[PREPARE] Model prepared successfully.
+[HOOK] Performing Dynamic PTQ hook operations.
+[HOOK] Dynamic PTQ setup completed.
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.1' wrapped with ResidualAddWrapper.
+Module: , qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFD9120>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFD9120>})
+Module: conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDBE20>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDBE20>})
+Module: bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDB130>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDB130>})
+Module: relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDA170>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDA170>})
+Module: maxpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFD8790>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFD8790>})
+Module: layer1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFD9240>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFD9240>})
+Module: layer1.0, qconfig: None
+Module: layer1.0.module, qconfig: None
+Module: layer1.0.module.conv1, qconfig: None
+Module: layer1.0.module.bn1, qconfig: None
+Module: layer1.0.module.relu, qconfig: None
+Module: layer1.0.module.conv2, qconfig: None
+Module: layer1.0.module.bn2, qconfig: None
+Module: layer1.0.skip_add, qconfig: None
+Module: layer1.0.skip_add.activation_post_process, qconfig: None
+Module: layer1.1, qconfig: None
+Module: layer1.1.module, qconfig: None
+Module: layer1.1.module.conv1, qconfig: None
+Module: layer1.1.module.bn1, qconfig: None
+Module: layer1.1.module.relu, qconfig: None
+Module: layer1.1.module.conv2, qconfig: None
+Module: layer1.1.module.bn2, qconfig: None
+Module: layer1.1.skip_add, qconfig: None
+Module: layer1.1.skip_add.activation_post_process, qconfig: None
+Module: layer2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDA680>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDA680>})
+Module: layer2.0, qconfig: None
+Module: layer2.0.module, qconfig: None
+Module: layer2.0.module.conv1, qconfig: None
+Module: layer2.0.module.bn1, qconfig: None
+Module: layer2.0.module.relu, qconfig: None
+Module: layer2.0.module.conv2, qconfig: None
+Module: layer2.0.module.bn2, qconfig: None
+Module: layer2.0.module.downsample, qconfig: None
+Module: layer2.0.module.downsample.0, qconfig: None
+Module: layer2.0.module.downsample.1, qconfig: None
+Module: layer2.0.skip_add, qconfig: None
+Module: layer2.0.skip_add.activation_post_process, qconfig: None
+Module: layer2.1, qconfig: None
+Module: layer2.1.module, qconfig: None
+Module: layer2.1.module.conv1, qconfig: None
+Module: layer2.1.module.bn1, qconfig: None
+Module: layer2.1.module.relu, qconfig: None
+Module: layer2.1.module.conv2, qconfig: None
+Module: layer2.1.module.bn2, qconfig: None
+Module: layer2.1.skip_add, qconfig: None
+Module: layer2.1.skip_add.activation_post_process, qconfig: None
+Module: layer3, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDB6D0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDB6D0>})
+Module: layer3.0, qconfig: None
+Module: layer3.0.module, qconfig: None
+Module: layer3.0.module.conv1, qconfig: None
+Module: layer3.0.module.bn1, qconfig: None
+Module: layer3.0.module.relu, qconfig: None
+Module: layer3.0.module.conv2, qconfig: None
+Module: layer3.0.module.bn2, qconfig: None
+Module: layer3.0.module.downsample, qconfig: None
+Module: layer3.0.module.downsample.0, qconfig: None
+Module: layer3.0.module.downsample.1, qconfig: None
+Module: layer3.0.skip_add, qconfig: None
+Module: layer3.0.skip_add.activation_post_process, qconfig: None
+Module: layer3.1, qconfig: None
+Module: layer3.1.module, qconfig: None
+Module: layer3.1.module.conv1, qconfig: None
+Module: layer3.1.module.bn1, qconfig: None
+Module: layer3.1.module.relu, qconfig: None
+Module: layer3.1.module.conv2, qconfig: None
+Module: layer3.1.module.bn2, qconfig: None
+Module: layer3.1.skip_add, qconfig: None
+Module: layer3.1.skip_add.activation_post_process, qconfig: None
+Module: layer4, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDAF80>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDAF80>})
+Module: layer4.0, qconfig: None
+Module: layer4.0.module, qconfig: None
+Module: layer4.0.module.conv1, qconfig: None
+Module: layer4.0.module.bn1, qconfig: None
+Module: layer4.0.module.relu, qconfig: None
+Module: layer4.0.module.conv2, qconfig: None
+Module: layer4.0.module.bn2, qconfig: None
+Module: layer4.0.module.downsample, qconfig: None
+Module: layer4.0.module.downsample.0, qconfig: None
+Module: layer4.0.module.downsample.1, qconfig: None
+Module: layer4.0.skip_add, qconfig: None
+Module: layer4.0.skip_add.activation_post_process, qconfig: None
+Module: layer4.1, qconfig: None
+Module: layer4.1.module, qconfig: None
+Module: layer4.1.module.conv1, qconfig: None
+Module: layer4.1.module.bn1, qconfig: None
+Module: layer4.1.module.relu, qconfig: None
+Module: layer4.1.module.conv2, qconfig: None
+Module: layer4.1.module.bn2, qconfig: None
+Module: layer4.1.skip_add, qconfig: None
+Module: layer4.1.skip_add.activation_post_process, qconfig: None
+Module: avgpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDA7A0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDA7A0>})
+Module: fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDB520>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD5FFDB520>})
+[DATA] Example input shape: torch.Size([64, 3, 32, 32])
+[PREPARE] Model prepared successfully.
+[HOOK] Performing QAT training hook.
+[HOOK] QAT epoch 1/5 started.
+[HOOK][Epoch: 1] Batch 1 Loss: 0.7147
+[HOOK][Epoch: 1] Batch 51 Loss: 0.0654
+[HOOK][Epoch: 1] Batch 101 Loss: 0.1781
+[HOOK][Epoch: 1] Batch 151 Loss: 0.7365
+[HOOK][Epoch: 1] Batch 201 Loss: 0.0632
+[HOOK][Epoch: 1] Batch 251 Loss: 0.3275
+[HOOK][Epoch: 1] Batch 301 Loss: 0.1209
+[HOOK][Epoch: 1] Batch 351 Loss: 0.3451
+[HOOK][Epoch: 1] Batch 401 Loss: 0.2203
+[HOOK][Epoch: 1] Batch 451 Loss: 0.0402
+[HOOK][Epoch: 1] Batch 501 Loss: 0.1939
+[HOOK][Epoch: 1] Batch 551 Loss: 0.5076
+[HOOK][Epoch: 1] Batch 601 Loss: 0.1620
+[HOOK] QAT epoch 2/5 started.
+[HOOK][Epoch: 2] Batch 1 Loss: 0.0743
+[HOOK][Epoch: 2] Batch 51 Loss: 0.0259
+[HOOK][Epoch: 2] Batch 101 Loss: 0.0098
+[HOOK][Epoch: 2] Batch 151 Loss: 0.0852
+[HOOK][Epoch: 2] Batch 201 Loss: 0.0411
+[HOOK][Epoch: 2] Batch 251 Loss: 0.5544
+[HOOK][Epoch: 2] Batch 301 Loss: 0.1093
+[HOOK][Epoch: 2] Batch 351 Loss: 0.0526
+[HOOK][Epoch: 2] Batch 401 Loss: 0.0115
+[HOOK][Epoch: 2] Batch 451 Loss: 0.1960
+[HOOK][Epoch: 2] Batch 501 Loss: 0.0544
+[HOOK][Epoch: 2] Batch 551 Loss: 0.0533
+[HOOK][Epoch: 2] Batch 601 Loss: 0.1781
+[HOOK] QAT epoch 3/5 started.
+[HOOK][Epoch: 3] Batch 1 Loss: 0.0256
+[HOOK][Epoch: 3] Batch 51 Loss: 0.0085
+[HOOK][Epoch: 3] Batch 101 Loss: 0.0030
+[HOOK][Epoch: 3] Batch 151 Loss: 0.0164
+[HOOK][Epoch: 3] Batch 201 Loss: 0.0100
+[HOOK][Epoch: 3] Batch 251 Loss: 0.0217
+[HOOK][Epoch: 3] Batch 301 Loss: 0.0079
+[HOOK][Epoch: 3] Batch 351 Loss: 0.0637
+[HOOK][Epoch: 3] Batch 401 Loss: 0.0367
+[HOOK][Epoch: 3] Batch 451 Loss: 0.1701
+[HOOK][Epoch: 3] Batch 501 Loss: 0.0248
+[HOOK][Epoch: 3] Batch 551 Loss: 0.0612
+[HOOK][Epoch: 3] Batch 601 Loss: 0.2027
+[HOOK] QAT epoch 4/5 started.
+[HOOK][Epoch: 4] Batch 1 Loss: 0.0173
+[HOOK][Epoch: 4] Batch 51 Loss: 0.0252
+[HOOK][Epoch: 4] Batch 101 Loss: 0.0089
+[HOOK][Epoch: 4] Batch 151 Loss: 0.0004
+[HOOK][Epoch: 4] Batch 201 Loss: 0.0007
+[HOOK][Epoch: 4] Batch 251 Loss: 0.1173
+[HOOK][Epoch: 4] Batch 301 Loss: 0.0183
+[HOOK][Epoch: 4] Batch 351 Loss: 0.0158
+[HOOK][Epoch: 4] Batch 401 Loss: 0.0052
+[HOOK][Epoch: 4] Batch 451 Loss: 0.0046
+[HOOK][Epoch: 4] Batch 501 Loss: 0.0014
+[HOOK][Epoch: 4] Batch 551 Loss: 0.0019
+[HOOK][Epoch: 4] Batch 601 Loss: 0.0083
+[HOOK] QAT epoch 5/5 started.
+[HOOK][Epoch: 5] Batch 1 Loss: 0.0404
+[HOOK][Epoch: 5] Batch 51 Loss: 0.0041
+[HOOK][Epoch: 5] Batch 101 Loss: 0.0004
+[HOOK][Epoch: 5] Batch 151 Loss: 0.0410
+[HOOK][Epoch: 5] Batch 201 Loss: 0.0050
+[HOOK][Epoch: 5] Batch 251 Loss: 0.1185
+[HOOK][Epoch: 5] Batch 301 Loss: 0.0155
+[HOOK][Epoch: 5] Batch 351 Loss: 0.0136
+[HOOK][Epoch: 5] Batch 401 Loss: 0.0028
+[HOOK][Epoch: 5] Batch 451 Loss: 0.0114
+[HOOK][Epoch: 5] Batch 501 Loss: 0.0142
+[HOOK][Epoch: 5] Batch 551 Loss: 0.0011
+[HOOK][Epoch: 5] Batch 601 Loss: 0.0257
+[HOOK] QAT training completed.
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.1' wrapped with ResidualAddWrapper.
+Module: , qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD697283A0>})
+Module: conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD69729870>})
+Module: bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A0E0>})
+Module: relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A320>})
+Module: maxpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B880>})
+Module: layer1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B7F0>})
+Module: layer1.0, qconfig: None
+Module: layer1.0.module, qconfig: None
+Module: layer1.0.module.conv1, qconfig: None
+Module: layer1.0.module.bn1, qconfig: None
+Module: layer1.0.module.relu, qconfig: None
+Module: layer1.0.module.conv2, qconfig: None
+Module: layer1.0.module.bn2, qconfig: None
+Module: layer1.0.skip_add, qconfig: None
+Module: layer1.0.skip_add.activation_post_process, qconfig: None
+Module: layer1.1, qconfig: None
+Module: layer1.1.module, qconfig: None
+Module: layer1.1.module.conv1, qconfig: None
+Module: layer1.1.module.bn1, qconfig: None
+Module: layer1.1.module.relu, qconfig: None
+Module: layer1.1.module.conv2, qconfig: None
+Module: layer1.1.module.bn2, qconfig: None
+Module: layer1.1.skip_add, qconfig: None
+Module: layer1.1.skip_add.activation_post_process, qconfig: None
+Module: layer2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972BD00>})
+Module: layer2.0, qconfig: None
+Module: layer2.0.module, qconfig: None
+Module: layer2.0.module.conv1, qconfig: None
+Module: layer2.0.module.bn1, qconfig: None
+Module: layer2.0.module.relu, qconfig: None
+Module: layer2.0.module.conv2, qconfig: None
+Module: layer2.0.module.bn2, qconfig: None
+Module: layer2.0.module.downsample, qconfig: None
+Module: layer2.0.module.downsample.0, qconfig: None
+Module: layer2.0.module.downsample.1, qconfig: None
+Module: layer2.0.skip_add, qconfig: None
+Module: layer2.0.skip_add.activation_post_process, qconfig: None
+Module: layer2.1, qconfig: None
+Module: layer2.1.module, qconfig: None
+Module: layer2.1.module.conv1, qconfig: None
+Module: layer2.1.module.bn1, qconfig: None
+Module: layer2.1.module.relu, qconfig: None
+Module: layer2.1.module.conv2, qconfig: None
+Module: layer2.1.module.bn2, qconfig: None
+Module: layer2.1.skip_add, qconfig: None
+Module: layer2.1.skip_add.activation_post_process, qconfig: None
+Module: layer3, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972BB50>})
+Module: layer3.0, qconfig: None
+Module: layer3.0.module, qconfig: None
+Module: layer3.0.module.conv1, qconfig: None
+Module: layer3.0.module.bn1, qconfig: None
+Module: layer3.0.module.relu, qconfig: None
+Module: layer3.0.module.conv2, qconfig: None
+Module: layer3.0.module.bn2, qconfig: None
+Module: layer3.0.module.downsample, qconfig: None
+Module: layer3.0.module.downsample.0, qconfig: None
+Module: layer3.0.module.downsample.1, qconfig: None
+Module: layer3.0.skip_add, qconfig: None
+Module: layer3.0.skip_add.activation_post_process, qconfig: None
+Module: layer3.1, qconfig: None
+Module: layer3.1.module, qconfig: None
+Module: layer3.1.module.conv1, qconfig: None
+Module: layer3.1.module.bn1, qconfig: None
+Module: layer3.1.module.relu, qconfig: None
+Module: layer3.1.module.conv2, qconfig: None
+Module: layer3.1.module.bn2, qconfig: None
+Module: layer3.1.skip_add, qconfig: None
+Module: layer3.1.skip_add.activation_post_process, qconfig: None
+Module: layer4, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD69729510>})
+Module: layer4.0, qconfig: None
+Module: layer4.0.module, qconfig: None
+Module: layer4.0.module.conv1, qconfig: None
+Module: layer4.0.module.bn1, qconfig: None
+Module: layer4.0.module.relu, qconfig: None
+Module: layer4.0.module.conv2, qconfig: None
+Module: layer4.0.module.bn2, qconfig: None
+Module: layer4.0.module.downsample, qconfig: None
+Module: layer4.0.module.downsample.0, qconfig: None
+Module: layer4.0.module.downsample.1, qconfig: None
+Module: layer4.0.skip_add, qconfig: None
+Module: layer4.0.skip_add.activation_post_process, qconfig: None
+Module: layer4.1, qconfig: None
+Module: layer4.1.module, qconfig: None
+Module: layer4.1.module.conv1, qconfig: None
+Module: layer4.1.module.bn1, qconfig: None
+Module: layer4.1.module.relu, qconfig: None
+Module: layer4.1.module.conv2, qconfig: None
+Module: layer4.1.module.bn2, qconfig: None
+Module: layer4.1.skip_add, qconfig: None
+Module: layer4.1.skip_add.activation_post_process, qconfig: None
+Module: avgpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A830>})
+Module: fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B640>})
+[DATA] Example input shape: torch.Size([64, 3, 32, 32])
+[PREPARE] Model prepared successfully.
+[HOOK] Performing Dynamic PTQ hook operations.
+[HOOK] Dynamic PTQ setup completed.
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A
+  1%|##                                                                                                                                                                  | 2/157 [00:00<00:09, 16.44it/s][A
+  3%|####1                                                                                                                                                               | 4/157 [00:00<00:09, 16.52it/s][A
+  4%|######2                                                                                                                                                             | 6/157 [00:00<00:09, 16.64it/s][A
+  5%|########3                                                                                                                                                           | 8/157 [00:00<00:08, 16.57it/s][A
+  6%|##########3                                                                                                                                                        | 10/157 [00:00<00:08, 16.52it/s][A
+  8%|############4                                                                                                                                                      | 12/157 [00:00<00:08, 16.33it/s][A
+  9%|##############5                                                                                                                                                    | 14/157 [00:00<00:08, 16.26it/s][A
+ 10%|################6                                                                                                                                                  | 16/157 [00:00<00:08, 16.19it/s][A
+ 11%|##################6                                                                                                                                                | 18/157 [00:01<00:08, 15.50it/s][A
+ 13%|####################7                                                                                                                                              | 20/157 [00:01<00:09, 15.12it/s][A
+ 14%|######################8                                                                                                                                            | 22/157 [00:01<00:09, 14.98it/s][A
+ 15%|########################9                                                                                                                                          | 24/157 [00:01<00:08, 15.05it/s][A
+ 17%|##########################9                                                                                                                                        | 26/157 [00:01<00:08, 15.32it/s][A
+ 18%|#############################                                                                                                                                      | 28/157 [00:01<00:08, 15.68it/s][A
+ 19%|###############################1                                                                                                                                   | 30/157 [00:01<00:07, 15.92it/s][A
+ 20%|#################################2                                                                                                                                 | 32/157 [00:02<00:07, 16.08it/s][A
+ 22%|###################################2                                                                                                                               | 34/157 [00:02<00:07, 16.32it/s][A
+ 23%|#####################################3                                                                                                                             | 36/157 [00:02<00:07, 16.44it/s][A
+ 24%|#######################################4                                                                                                                           | 38/157 [00:02<00:07, 16.50it/s][A
+ 25%|#########################################5                                                                                                                         | 40/157 [00:02<00:07, 16.59it/s][A
+ 27%|###########################################6                                                                                                                       | 42/157 [00:02<00:06, 16.48it/s][A
+ 28%|#############################################6                                                                                                                     | 44/157 [00:02<00:06, 16.64it/s][A
+ 29%|###############################################7                                                                                                                   | 46/157 [00:02<00:06, 16.66it/s][A
+ 31%|#################################################8                                                                                                                 | 48/157 [00:02<00:06, 16.72it/s][A
+ 32%|###################################################9                                                                                                               | 50/157 [00:03<00:06, 16.68it/s][A
+ 33%|#####################################################9                                                                                                             | 52/157 [00:03<00:06, 16.69it/s][A
+ 34%|########################################################                                                                                                           | 54/157 [00:03<00:06, 16.57it/s][A
+ 36%|##########################################################1                                                                                                        | 56/157 [00:03<00:06, 16.60it/s][A
+ 37%|############################################################2                                                                                                      | 58/157 [00:03<00:06, 16.15it/s][A
+ 38%|##############################################################2                                                                                                    | 60/157 [00:03<00:05, 16.44it/s][A
+ 39%|################################################################3                                                                                                  | 62/157 [00:03<00:05, 16.54it/s][A
+ 41%|##################################################################4                                                                                                | 64/157 [00:03<00:05, 16.64it/s][A
+ 42%|####################################################################5                                                                                              | 66/157 [00:04<00:05, 16.77it/s][A
+ 43%|######################################################################5                                                                                            | 68/157 [00:04<00:05, 16.97it/s][A
+ 45%|########################################################################6                                                                                          | 70/157 [00:04<00:05, 16.92it/s][A
+ 46%|##########################################################################7                                                                                        | 72/157 [00:04<00:04, 17.07it/s][A
+ 47%|############################################################################8                                                                                      | 74/157 [00:04<00:04, 16.96it/s][A
+ 48%|##############################################################################9                                                                                    | 76/157 [00:04<00:04, 17.00it/s][A
+ 50%|################################################################################9                                                                                  | 78/157 [00:04<00:04, 16.96it/s][A
+ 51%|###################################################################################                                                                                | 80/157 [00:04<00:04, 16.89it/s][A
+ 52%|#####################################################################################1                                                                             | 82/157 [00:04<00:04, 16.90it/s][A
+ 54%|#######################################################################################2                                                                           | 84/157 [00:05<00:04, 16.80it/s][A
+ 55%|#########################################################################################2                                                                         | 86/157 [00:05<00:04, 16.72it/s][A
+ 56%|###########################################################################################3                                                                       | 88/157 [00:05<00:04, 16.72it/s][A
+ 57%|#############################################################################################4                                                                     | 90/157 [00:05<00:04, 16.66it/s][A
+ 59%|###############################################################################################5                                                                   | 92/157 [00:05<00:03, 16.76it/s][A
+ 60%|#################################################################################################5                                                                 | 94/157 [00:05<00:03, 16.85it/s][A
+ 61%|###################################################################################################6                                                               | 96/157 [00:05<00:03, 16.90it/s][A
+ 62%|#####################################################################################################7                                                             | 98/157 [00:05<00:03, 16.93it/s][A
+ 64%|#######################################################################################################1                                                          | 100/157 [00:06<00:03, 16.97it/s][A
+ 65%|#########################################################################################################2                                                        | 102/157 [00:06<00:03, 17.00it/s][A
+ 66%|###########################################################################################################3                                                      | 104/157 [00:06<00:03, 16.90it/s][A
+ 68%|#############################################################################################################3                                                    | 106/157 [00:06<00:03, 16.86it/s][A
+ 69%|###############################################################################################################4                                                  | 108/157 [00:06<00:02, 16.95it/s][A
+ 70%|#################################################################################################################5                                                | 110/157 [00:06<00:02, 17.18it/s][A
+ 71%|###################################################################################################################5                                              | 112/157 [00:06<00:02, 17.46it/s][A
+ 73%|#####################################################################################################################6                                            | 114/157 [00:06<00:02, 17.53it/s][A
+ 74%|#######################################################################################################################6                                          | 116/157 [00:06<00:02, 17.76it/s][A
+ 75%|#########################################################################################################################7                                        | 118/157 [00:07<00:02, 17.95it/s][A
+ 76%|###########################################################################################################################8                                      | 120/157 [00:07<00:02, 17.89it/s][A
+ 78%|#############################################################################################################################8                                    | 122/157 [00:07<00:01, 17.95it/s][A
+ 79%|###############################################################################################################################9                                  | 124/157 [00:07<00:01, 18.05it/s][A
+ 80%|##################################################################################################################################                                | 126/157 [00:07<00:01, 17.95it/s][A
+ 82%|####################################################################################################################################                              | 128/157 [00:07<00:01, 18.06it/s][A
+ 83%|######################################################################################################################################1                           | 130/157 [00:07<00:01, 18.05it/s][A
+ 84%|########################################################################################################################################2                         | 132/157 [00:07<00:01, 18.13it/s][A
+ 85%|##########################################################################################################################################2                       | 134/157 [00:07<00:01, 18.14it/s][A
+ 87%|############################################################################################################################################3                     | 136/157 [00:08<00:01, 18.13it/s][A
+ 88%|##############################################################################################################################################3                   | 138/157 [00:08<00:01, 18.20it/s][A
+ 89%|################################################################################################################################################4                 | 140/157 [00:08<00:00, 18.09it/s][A
+ 90%|##################################################################################################################################################5               | 142/157 [00:08<00:00, 18.04it/s][A
+ 92%|####################################################################################################################################################5             | 144/157 [00:08<00:00, 17.93it/s][A
+ 93%|######################################################################################################################################################6           | 146/157 [00:08<00:00, 18.04it/s][A
+ 94%|########################################################################################################################################################7         | 148/157 [00:08<00:00, 18.16it/s][A
+ 96%|##########################################################################################################################################################7       | 150/157 [00:08<00:00, 18.08it/s][A
+ 97%|############################################################################################################################################################8     | 152/157 [00:08<00:00, 18.11it/s][A
+ 98%|##############################################################################################################################################################9   | 154/157 [00:09<00:00, 18.17it/s][A
+ 99%|################################################################################################################################################################9 | 156/157 [00:09<00:00, 18.00it/s][A100%|##################################################################################################################################################################| 157/157 [00:09<00:00, 17.00it/s]
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A
+  1%|##                                                                                                                                                                  | 2/157 [00:00<00:08, 17.69it/s][A
+  3%|####1                                                                                                                                                               | 4/157 [00:00<00:08, 17.94it/s][A
+  4%|######2                                                                                                                                                             | 6/157 [00:00<00:08, 17.93it/s][A
+  5%|########3                                                                                                                                                           | 8/157 [00:00<00:08, 18.00it/s][A
+  6%|##########3                                                                                                                                                        | 10/157 [00:00<00:08, 18.06it/s][A
+  8%|############4                                                                                                                                                      | 12/157 [00:00<00:08, 18.04it/s][A
+  9%|##############5                                                                                                                                                    | 14/157 [00:00<00:07, 18.21it/s][A
+ 10%|################6                                                                                                                                                  | 16/157 [00:00<00:07, 18.20it/s][A
+ 11%|##################6                                                                                                                                                | 18/157 [00:00<00:07, 18.03it/s][A
+ 13%|####################7                                                                                                                                              | 20/157 [00:01<00:07, 18.16it/s][A
+ 14%|######################8                                                                                                                                            | 22/157 [00:01<00:07, 18.21it/s][A
+ 15%|########################9                                                                                                                                          | 24/157 [00:01<00:07, 18.22it/s][A
+ 17%|##########################9                                                                                                                                        | 26/157 [00:01<00:07, 18.26it/s][A
+ 18%|#############################                                                                                                                                      | 28/157 [00:01<00:07, 18.23it/s][A
+ 19%|###############################1                                                                                                                                   | 30/157 [00:01<00:06, 18.16it/s][A
+ 20%|#################################2                                                                                                                                 | 32/157 [00:01<00:06, 18.24it/s][A
+ 22%|###################################2                                                                                                                               | 34/157 [00:01<00:06, 18.15it/s][A
+ 23%|#####################################3                                                                                                                             | 36/157 [00:01<00:06, 17.91it/s][A
+ 24%|#######################################4                                                                                                                           | 38/157 [00:02<00:06, 17.96it/s][A
+ 25%|#########################################5                                                                                                                         | 40/157 [00:02<00:06, 18.12it/s][A
+ 27%|###########################################6                                                                                                                       | 42/157 [00:02<00:06, 18.20it/s][A
+ 28%|#############################################6                                                                                                                     | 44/157 [00:02<00:06, 18.11it/s][A
+ 29%|###############################################7                                                                                                                   | 46/157 [00:02<00:06, 18.09it/s][A
+ 31%|#################################################8                                                                                                                 | 48/157 [00:02<00:05, 18.18it/s][A
+ 32%|###################################################9                                                                                                               | 50/157 [00:02<00:05, 18.28it/s][A
+ 33%|#####################################################9                                                                                                             | 52/157 [00:02<00:05, 18.21it/s][A
+ 34%|########################################################                                                                                                           | 54/157 [00:02<00:05, 17.92it/s][A
+ 36%|##########################################################1                                                                                                        | 56/157 [00:03<00:05, 18.01it/s][A
+ 37%|############################################################2                                                                                                      | 58/157 [00:03<00:05, 18.19it/s][A
+ 38%|##############################################################2                                                                                                    | 60/157 [00:03<00:05, 18.27it/s][A
+ 39%|################################################################3                                                                                                  | 62/157 [00:03<00:05, 18.30it/s][A
+ 41%|##################################################################4                                                                                                | 64/157 [00:03<00:05, 18.31it/s][A
+ 42%|####################################################################5                                                                                              | 66/157 [00:03<00:04, 18.24it/s][A
+ 43%|######################################################################5                                                                                            | 68/157 [00:03<00:04, 18.27it/s][A
+ 45%|########################################################################6                                                                                          | 70/157 [00:03<00:04, 18.31it/s][A
+ 46%|##########################################################################7                                                                                        | 72/157 [00:03<00:04, 18.17it/s][A
+ 47%|############################################################################8                                                                                      | 74/157 [00:04<00:04, 17.95it/s][A
+ 48%|##############################################################################9                                                                                    | 76/157 [00:04<00:04, 18.10it/s][A
+ 50%|################################################################################9                                                                                  | 78/157 [00:04<00:04, 18.15it/s][A
+ 51%|###################################################################################                                                                                | 80/157 [00:04<00:04, 18.21it/s][A
+ 52%|#####################################################################################1                                                                             | 82/157 [00:04<00:04, 18.21it/s][A
+ 54%|#######################################################################################2                                                                           | 84/157 [00:04<00:03, 18.28it/s][A
+ 55%|#########################################################################################2                                                                         | 86/157 [00:04<00:03, 18.41it/s][A
+ 56%|###########################################################################################3                                                                       | 88/157 [00:04<00:03, 18.45it/s][A
+ 57%|#############################################################################################4                                                                     | 90/157 [00:04<00:03, 18.33it/s][A
+ 59%|###############################################################################################5                                                                   | 92/157 [00:05<00:03, 18.18it/s][A
+ 60%|#################################################################################################5                                                                 | 94/157 [00:05<00:03, 18.28it/s][A
+ 61%|###################################################################################################6                                                               | 96/157 [00:05<00:03, 18.22it/s][A
+ 62%|#####################################################################################################7                                                             | 98/157 [00:05<00:03, 18.31it/s][A
+ 64%|#######################################################################################################1                                                          | 100/157 [00:05<00:03, 18.34it/s][A
+ 65%|#########################################################################################################2                                                        | 102/157 [00:05<00:02, 18.37it/s][A
+ 66%|###########################################################################################################3                                                      | 104/157 [00:05<00:02, 18.37it/s][A
+ 68%|#############################################################################################################3                                                    | 106/157 [00:05<00:02, 18.31it/s][A
+ 69%|###############################################################################################################4                                                  | 108/157 [00:05<00:02, 18.39it/s][A
+ 70%|#################################################################################################################5                                                | 110/157 [00:06<00:02, 18.17it/s][A
+ 71%|###################################################################################################################5                                              | 112/157 [00:06<00:02, 18.25it/s][A
+ 73%|#####################################################################################################################6                                            | 114/157 [00:06<00:02, 18.18it/s][A
+ 74%|#######################################################################################################################6                                          | 116/157 [00:06<00:02, 18.11it/s][A
+ 75%|#########################################################################################################################7                                        | 118/157 [00:06<00:02, 18.13it/s][A
+ 76%|###########################################################################################################################8                                      | 120/157 [00:06<00:02, 18.35it/s][A
+ 78%|#############################################################################################################################8                                    | 122/157 [00:06<00:01, 18.33it/s][A
+ 79%|###############################################################################################################################9                                  | 124/157 [00:06<00:01, 18.23it/s][A
+ 80%|##################################################################################################################################                                | 126/157 [00:06<00:01, 18.08it/s][A
+ 82%|####################################################################################################################################                              | 128/157 [00:07<00:01, 17.91it/s][A
+ 83%|######################################################################################################################################1                           | 130/157 [00:07<00:01, 18.04it/s][A
+ 84%|########################################################################################################################################2                         | 132/157 [00:07<00:01, 18.10it/s][A
+ 85%|##########################################################################################################################################2                       | 134/157 [00:07<00:01, 18.22it/s][A
+ 87%|############################################################################################################################################3                     | 136/157 [00:07<00:01, 18.37it/s][A
+ 88%|##############################################################################################################################################3                   | 138/157 [00:07<00:01, 18.35it/s][A
+ 89%|################################################################################################################################################4                 | 140/157 [00:07<00:00, 18.31it/s][A
+ 90%|##################################################################################################################################################5               | 142/157 [00:07<00:00, 18.27it/s][A
+ 92%|####################################################################################################################################################5             | 144/157 [00:07<00:00, 18.36it/s][A
+ 93%|######################################################################################################################################################6           | 146/157 [00:08<00:00, 18.08it/s][A
+ 94%|########################################################################################################################################################7         | 148/157 [00:08<00:00, 18.05it/s][A
+ 96%|##########################################################################################################################################################7       | 150/157 [00:08<00:00, 18.01it/s][A
+ 97%|############################################################################################################################################################8     | 152/157 [00:08<00:00, 18.21it/s][A
+ 98%|##############################################################################################################################################################9   | 154/157 [00:08<00:00, 18.26it/s][A
+ 99%|################################################################################################################################################################9 | 156/157 [00:08<00:00, 18.26it/s][A100%|##################################################################################################################################################################| 157/157 [00:08<00:00, 18.24it/s]
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A
+  1%|##                                                                                                                                                                  | 2/157 [00:00<00:08, 18.06it/s][A
+  3%|####1                                                                                                                                                               | 4/157 [00:00<00:08, 18.53it/s][A
+  4%|######2                                                                                                                                                             | 6/157 [00:00<00:08, 17.73it/s][A
+  5%|########3                                                                                                                                                           | 8/157 [00:00<00:08, 18.35it/s][A
+  6%|##########3                                                                                                                                                        | 10/157 [00:00<00:07, 18.62it/s][A
+  8%|############4                                                                                                                                                      | 12/157 [00:00<00:07, 18.85it/s][A
+  9%|##############5                                                                                                                                                    | 14/157 [00:00<00:07, 19.04it/s][A
+ 10%|################6                                                                                                                                                  | 16/157 [00:00<00:07, 19.08it/s][A
+ 11%|##################6                                                                                                                                                | 18/157 [00:00<00:07, 19.29it/s][A
+ 13%|####################7                                                                                                                                              | 20/157 [00:01<00:07, 19.30it/s][A
+ 14%|######################8                                                                                                                                            | 22/157 [00:01<00:07, 19.16it/s][A
+ 15%|########################9                                                                                                                                          | 24/157 [00:01<00:06, 19.15it/s][A
+ 17%|##########################9                                                                                                                                        | 26/157 [00:01<00:06, 19.00it/s][A
+ 18%|#############################                                                                                                                                      | 28/157 [00:01<00:06, 18.98it/s][A
+ 19%|###############################1                                                                                                                                   | 30/157 [00:01<00:06, 19.00it/s][A
+ 20%|#################################2                                                                                                                                 | 32/157 [00:01<00:06, 19.09it/s][A
+ 22%|###################################2                                                                                                                               | 34/157 [00:01<00:06, 19.30it/s][A
+ 23%|#####################################3                                                                                                                             | 36/157 [00:01<00:06, 19.36it/s][A
+ 24%|#######################################4                                                                                                                           | 38/157 [00:01<00:06, 19.35it/s][A
+ 25%|#########################################5                                                                                                                         | 40/157 [00:02<00:06, 19.47it/s][A
+ 27%|###########################################6                                                                                                                       | 42/157 [00:02<00:09, 11.73it/s][A
+ 28%|#############################################6                                                                                                                     | 44/157 [00:02<00:08, 13.31it/s][A
+ 29%|###############################################7                                                                                                                   | 46/157 [00:02<00:07, 14.58it/s][A
+ 31%|#################################################8                                                                                                                 | 48/157 [00:02<00:06, 15.72it/s][A
+ 32%|###################################################9                                                                                                               | 50/157 [00:02<00:06, 16.56it/s][A
+ 33%|#####################################################9                                                                                                             | 52/157 [00:02<00:06, 17.21it/s][A
+ 34%|########################################################                                                                                                           | 54/157 [00:03<00:05, 17.74it/s][A
+ 36%|##########################################################1                                                                                                        | 56/157 [00:03<00:05, 18.06it/s][A
+ 37%|############################################################2                                                                                                      | 58/157 [00:03<00:05, 18.46it/s][A
+ 38%|##############################################################2                                                                                                    | 60/157 [00:03<00:05, 18.53it/s][A
+ 39%|################################################################3                                                                                                  | 62/157 [00:03<00:05, 18.56it/s][A
+ 41%|##################################################################4                                                                                                | 64/157 [00:03<00:05, 18.52it/s][A
+ 42%|####################################################################5                                                                                              | 66/157 [00:03<00:04, 18.51it/s][A
+ 43%|######################################################################5                                                                                            | 68/157 [00:03<00:04, 18.47it/s][A
+ 45%|########################################################################6                                                                                          | 70/157 [00:03<00:04, 18.47it/s][A
+ 46%|##########################################################################7                                                                                        | 72/157 [00:04<00:04, 18.42it/s][A
+ 47%|############################################################################8                                                                                      | 74/157 [00:04<00:04, 18.35it/s][A
+ 48%|##############################################################################9                                                                                    | 76/157 [00:04<00:04, 18.11it/s][A
+ 50%|################################################################################9                                                                                  | 78/157 [00:04<00:04, 17.98it/s][A
+ 51%|###################################################################################                                                                                | 80/157 [00:04<00:04, 17.94it/s][A
+ 52%|#####################################################################################1                                                                             | 82/157 [00:04<00:04, 17.90it/s][A
+ 54%|#######################################################################################2                                                                           | 84/157 [00:04<00:04, 18.04it/s][A
+ 55%|#########################################################################################2                                                                         | 86/157 [00:04<00:03, 18.09it/s][A
+ 56%|###########################################################################################3                                                                       | 88/157 [00:04<00:03, 18.17it/s][A
+ 57%|#############################################################################################4                                                                     | 90/157 [00:05<00:03, 18.16it/s][A
+ 59%|###############################################################################################5                                                                   | 92/157 [00:05<00:03, 18.16it/s][A
+ 60%|#################################################################################################5                                                                 | 94/157 [00:05<00:03, 18.20it/s][A
+ 61%|###################################################################################################6                                                               | 96/157 [00:05<00:03, 18.04it/s][A
+ 62%|#####################################################################################################7                                                             | 98/157 [00:05<00:03, 18.11it/s][A
+ 64%|#######################################################################################################1                                                          | 100/157 [00:05<00:03, 18.03it/s][A
+ 65%|#########################################################################################################2                                                        | 102/157 [00:05<00:03, 18.18it/s][A
+ 66%|###########################################################################################################3                                                      | 104/157 [00:05<00:02, 18.07it/s][A
+ 68%|#############################################################################################################3                                                    | 106/157 [00:05<00:02, 18.20it/s][A
+ 69%|###############################################################################################################4                                                  | 108/157 [00:06<00:02, 18.10it/s][A
+ 70%|#################################################################################################################5                                                | 110/157 [00:06<00:02, 18.17it/s][A
+ 71%|###################################################################################################################5                                              | 112/157 [00:06<00:02, 18.08it/s][A
+ 73%|#####################################################################################################################6                                            | 114/157 [00:06<00:02, 17.97it/s][A
+ 74%|#######################################################################################################################6                                          | 116/157 [00:06<00:02, 18.04it/s][A
+ 75%|#########################################################################################################################7                                        | 118/157 [00:06<00:02, 18.00it/s][A
+ 76%|###########################################################################################################################8                                      | 120/157 [00:06<00:02, 18.00it/s][A
+ 78%|#############################################################################################################################8                                    | 122/157 [00:06<00:01, 17.96it/s][A
+ 79%|###############################################################################################################################9                                  | 124/157 [00:06<00:01, 17.98it/s][A
+ 80%|##################################################################################################################################                                | 126/157 [00:07<00:01, 18.15it/s][A
+ 82%|####################################################################################################################################                              | 128/157 [00:07<00:01, 18.11it/s][A
+ 83%|######################################################################################################################################1                           | 130/157 [00:07<00:01, 18.23it/s][A
+ 84%|########################################################################################################################################2                         | 132/157 [00:07<00:01, 18.04it/s][A
+ 85%|##########################################################################################################################################2                       | 134/157 [00:07<00:01, 17.55it/s][A
+ 87%|############################################################################################################################################3                     | 136/157 [00:07<00:01, 17.22it/s][A
+ 88%|##############################################################################################################################################3                   | 138/157 [00:07<00:01, 17.14it/s][A
+ 89%|################################################################################################################################################4                 | 140/157 [00:07<00:00, 17.50it/s][A
+ 90%|##################################################################################################################################################5               | 142/157 [00:07<00:00, 17.66it/s][A
+ 92%|####################################################################################################################################################5             | 144/157 [00:08<00:00, 17.53it/s][A
+ 93%|######################################################################################################################################################6           | 146/157 [00:08<00:00, 17.53it/s][A
+ 94%|########################################################################################################################################################7         | 148/157 [00:08<00:00, 17.62it/s][A
+ 96%|##########################################################################################################################################################7       | 150/157 [00:08<00:00, 17.52it/s][A
+ 97%|############################################################################################################################################################8     | 152/157 [00:08<00:00, 17.75it/s][A
+ 98%|##############################################################################################################################################################9   | 154/157 [00:08<00:00, 17.95it/s][A
+ 99%|################################################################################################################################################################9 | 156/157 [00:08<00:00, 18.12it/s][A100%|##################################################################################################################################################################| 157/157 [00:08<00:00, 17.97it/s]
+
+  0%|                                                                                                                                                                            | 0/313 [00:00<?, ?it/s][A
+  0%|5                                                                                                                                                                   | 1/313 [00:00<01:16,  4.08it/s][A
+  1%|#                                                                                                                                                                   | 2/313 [00:00<01:17,  4.04it/s][A
+  1%|#5                                                                                                                                                                  | 3/313 [00:00<01:15,  4.11it/s][A
+  1%|##                                                                                                                                                                  | 4/313 [00:00<01:13,  4.23it/s][A
+  2%|##6                                                                                                                                                                 | 5/313 [00:01<01:11,  4.33it/s][A
+  2%|###1                                                                                                                                                                | 6/313 [00:01<01:11,  4.29it/s][A
+  2%|###6                                                                                                                                                                | 7/313 [00:01<01:10,  4.33it/s][A
+  3%|####1                                                                                                                                                               | 8/313 [00:01<01:11,  4.27it/s][A
+  3%|####7                                                                                                                                                               | 9/313 [00:02<01:11,  4.28it/s][A
+  3%|#####2                                                                                                                                                             | 10/313 [00:02<01:09,  4.38it/s][A
+  4%|#####7                                                                                                                                                             | 11/313 [00:02<01:07,  4.47it/s][A
+  4%|######2                                                                                                                                                            | 12/313 [00:02<01:08,  4.42it/s][A
+  4%|######7                                                                                                                                                            | 13/313 [00:03<01:08,  4.40it/s][A
+  4%|#######2                                                                                                                                                           | 14/313 [00:03<01:08,  4.35it/s][A
+  5%|#######8                                                                                                                                                           | 15/313 [00:03<01:08,  4.34it/s][A
+  5%|########3                                                                                                                                                          | 16/313 [00:03<01:09,  4.30it/s][A
+  5%|########8                                                                                                                                                          | 17/313 [00:03<01:13,  4.05it/s][A
+  6%|#########3                                                                                                                                                         | 18/313 [00:04<01:18,  3.75it/s][A
+  6%|#########8                                                                                                                                                         | 19/313 [00:04<01:19,  3.68it/s][A
+  6%|##########4                                                                                                                                                        | 20/313 [00:04<01:19,  3.70it/s][A
+  7%|##########9                                                                                                                                                        | 21/313 [00:05<01:17,  3.79it/s][A
+  7%|###########4                                                                                                                                                       | 22/313 [00:05<01:15,  3.86it/s][A
+  7%|###########9                                                                                                                                                       | 23/313 [00:05<01:12,  3.98it/s][A
+  8%|############4                                                                                                                                                      | 24/313 [00:05<01:10,  4.08it/s][A
+  8%|#############                                                                                                                                                      | 25/313 [00:06<01:09,  4.15it/s][A
+  8%|#############5                                                                                                                                                     | 26/313 [00:06<01:09,  4.15it/s][A
+  9%|##############                                                                                                                                                     | 27/313 [00:06<01:15,  3.80it/s][A
+  9%|##############5                                                                                                                                                    | 28/313 [00:06<01:23,  3.43it/s][A
+  9%|###############1                                                                                                                                                   | 29/313 [00:07<01:22,  3.46it/s][A
+ 10%|###############6                                                                                                                                                   | 30/313 [00:07<01:29,  3.17it/s][A
+ 10%|################1                                                                                                                                                  | 31/313 [00:07<01:23,  3.38it/s][A
+ 10%|################6                                                                                                                                                  | 32/313 [00:08<01:19,  3.53it/s][A 10%|################6                                                                                                                                                  | 32/313 [00:08<01:11,  3.93it/s]
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A
+  1%|##                                                                                                                                                                  | 2/157 [00:00<00:08, 17.56it/s][A
+  3%|####1                                                                                                                                                               | 4/157 [00:00<00:08, 17.63it/s][A
+  4%|######2                                                                                                                                                             | 6/157 [00:00<00:08, 18.43it/s][A
+  5%|########3                                                                                                                                                           | 8/157 [00:00<00:07, 18.80it/s][A
+  6%|##########3                                                                                                                                                        | 10/157 [00:00<00:07, 18.88it/s][A
+  8%|############4                                                                                                                                                      | 12/157 [00:00<00:07, 18.57it/s][A
+  9%|##############5                                                                                                                                                    | 14/157 [00:00<00:07, 18.16it/s][A
+ 10%|################6                                                                                                                                                  | 16/157 [00:00<00:07, 18.06it/s][A
+ 11%|##################6                                                                                                                                                | 18/157 [00:00<00:07, 17.82it/s][A
+ 13%|####################7                                                                                                                                              | 20/157 [00:01<00:08, 17.09it/s][A
+ 14%|######################8                                                                                                                                            | 22/157 [00:01<00:08, 15.77it/s][A
+ 15%|########################9                                                                                                                                          | 24/157 [00:01<00:08, 14.85it/s][A
+ 17%|##########################9                                                                                                                                        | 26/157 [00:01<00:08, 15.53it/s][A
+ 18%|#############################                                                                                                                                      | 28/157 [00:01<00:08, 15.99it/s][A
+ 19%|###############################1                                                                                                                                   | 30/157 [00:01<00:08, 15.70it/s][A
+ 20%|#################################2                                                                                                                                 | 32/157 [00:01<00:07, 16.06it/s][A
+ 22%|###################################2                                                                                                                               | 34/157 [00:02<00:07, 16.53it/s][A
+ 23%|#####################################3                                                                                                                             | 36/157 [00:02<00:07, 16.82it/s][A
+ 24%|#######################################4                                                                                                                           | 38/157 [00:02<00:07, 15.25it/s][A
+ 25%|#########################################5                                                                                                                         | 40/157 [00:02<00:07, 15.81it/s][A
+ 27%|###########################################6                                                                                                                       | 42/157 [00:02<00:07, 16.09it/s][A
+ 28%|#############################################6                                                                                                                     | 44/157 [00:02<00:06, 16.32it/s][A
+ 29%|###############################################7                                                                                                                   | 46/157 [00:02<00:06, 16.54it/s][A
+ 31%|#################################################8                                                                                                                 | 48/157 [00:02<00:07, 15.53it/s][A
+ 32%|###################################################9                                                                                                               | 50/157 [00:03<00:06, 15.94it/s][A
+ 33%|#####################################################9                                                                                                             | 52/157 [00:03<00:06, 16.21it/s][A
+ 34%|########################################################                                                                                                           | 54/157 [00:03<00:06, 16.26it/s][A
+ 36%|##########################################################1                                                                                                        | 56/157 [00:03<00:06, 16.39it/s][A
+ 37%|############################################################2                                                                                                      | 58/157 [00:03<00:06, 16.39it/s][A
+ 38%|##############################################################2                                                                                                    | 60/157 [00:03<00:05, 16.69it/s][A
+ 39%|################################################################3                                                                                                  | 62/157 [00:03<00:05, 16.51it/s][A
+ 41%|##################################################################4                                                                                                | 64/157 [00:03<00:05, 16.37it/s][A
+ 42%|####################################################################5                                                                                              | 66/157 [00:03<00:05, 16.68it/s][A
+ 43%|######################################################################5                                                                                            | 68/157 [00:04<00:05, 16.88it/s][A
+ 45%|########################################################################6                                                                                          | 70/157 [00:04<00:05, 16.96it/s][A
+ 46%|##########################################################################7                                                                                        | 72/157 [00:04<00:04, 17.08it/s][A
+ 47%|############################################################################8                                                                                      | 74/157 [00:04<00:04, 17.24it/s][A
+ 48%|##############################################################################9                                                                                    | 76/157 [00:04<00:04, 17.30it/s][A
+ 50%|################################################################################9                                                                                  | 78/157 [00:04<00:04, 17.19it/s][A
+ 51%|###################################################################################                                                                                | 80/157 [00:04<00:04, 17.12it/s][A
+ 52%|#####################################################################################1                                                                             | 82/157 [00:04<00:04, 17.04it/s][A
+ 54%|#######################################################################################2                                                                           | 84/157 [00:05<00:04, 17.32it/s][A
+ 55%|#########################################################################################2                                                                         | 86/157 [00:05<00:04, 17.54it/s][A
+ 56%|###########################################################################################3                                                                       | 88/157 [00:05<00:03, 17.56it/s][A
+ 57%|#############################################################################################4                                                                     | 90/157 [00:05<00:03, 17.65it/s][A
+ 59%|###############################################################################################5                                                                   | 92/157 [00:05<00:03, 17.69it/s][A
+ 60%|#################################################################################################5                                                                 | 94/157 [00:05<00:03, 17.74it/s][A
+ 61%|###################################################################################################6                                                               | 96/157 [00:05<00:03, 17.65it/s][A
+ 62%|#####################################################################################################7                                                             | 98/157 [00:05<00:03, 17.76it/s][A
+ 64%|#######################################################################################################1                                                          | 100/157 [00:05<00:03, 17.74it/s][A
+ 65%|#########################################################################################################2                                                        | 102/157 [00:06<00:03, 17.77it/s][A
+ 66%|###########################################################################################################3                                                      | 104/157 [00:06<00:02, 17.84it/s][A
+ 68%|#############################################################################################################3                                                    | 106/157 [00:06<00:02, 17.93it/s][A
+ 69%|###############################################################################################################4                                                  | 108/157 [00:06<00:02, 17.39it/s][A
+ 70%|#################################################################################################################5                                                | 110/157 [00:06<00:02, 16.56it/s][A
+ 71%|###################################################################################################################5                                              | 112/157 [00:06<00:02, 15.86it/s][A
+ 73%|#####################################################################################################################6                                            | 114/157 [00:06<00:02, 15.36it/s][A
+ 74%|#######################################################################################################################6                                          | 116/157 [00:06<00:02, 15.24it/s][A
+ 75%|#########################################################################################################################7                                        | 118/157 [00:07<00:02, 15.35it/s][A
+ 76%|###########################################################################################################################8                                      | 120/157 [00:07<00:02, 15.52it/s][A
+ 78%|#############################################################################################################################8                                    | 122/157 [00:07<00:02, 15.99it/s][A
+ 79%|###############################################################################################################################9                                  | 124/157 [00:07<00:02, 16.28it/s][A
+ 80%|##################################################################################################################################                                | 126/157 [00:07<00:01, 16.49it/s][A
+ 82%|####################################################################################################################################                              | 128/157 [00:07<00:01, 16.58it/s][A
+ 83%|######################################################################################################################################1                           | 130/157 [00:07<00:01, 16.83it/s][A
+ 84%|########################################################################################################################################2                         | 132/157 [00:07<00:01, 17.04it/s][A
+ 85%|##########################################################################################################################################2                       | 134/157 [00:07<00:01, 17.07it/s][A
+ 87%|############################################################################################################################################3                     | 136/157 [00:08<00:01, 17.40it/s][A
+ 88%|##############################################################################################################################################3                   | 138/157 [00:08<00:01, 17.59it/s][A
+ 89%|################################################################################################################################################4                 | 140/157 [00:08<00:00, 17.81it/s][A
+ 90%|##################################################################################################################################################5               | 142/157 [00:08<00:00, 17.91it/s][A
+ 92%|####################################################################################################################################################5             | 144/157 [00:08<00:00, 16.14it/s][A
+ 93%|######################################################################################################################################################6           | 146/157 [00:08<00:00, 16.21it/s][A
+ 94%|########################################################################################################################################################7         | 148/157 [00:08<00:00, 16.26it/s][A
+ 96%|##########################################################################################################################################################7       | 150/157 [00:08<00:00, 16.19it/s][A
+ 97%|############################################################################################################################################################8     | 152/157 [00:09<00:00, 16.48it/s][A
+ 98%|##############################################################################################################################################################9   | 154/157 [00:09<00:00, 16.74it/s][A
+ 99%|################################################################################################################################################################9 | 156/157 [00:09<00:00, 17.14it/s][A100%|##################################################################################################################################################################| 157/157 [00:09<00:00, 16.81it/s]
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A
+  1%|##                                                                                                                                                                  | 2/157 [00:00<00:12, 12.81it/s][A
+  3%|####1                                                                                                                                                               | 4/157 [00:00<00:10, 15.08it/s][A
+  4%|######2                                                                                                                                                             | 6/157 [00:00<00:09, 16.14it/s][A
+  5%|########3                                                                                                                                                           | 8/157 [00:00<00:09, 16.44it/s][A
+  6%|##########3                                                                                                                                                        | 10/157 [00:00<00:08, 16.98it/s][A
+  8%|############4                                                                                                                                                      | 12/157 [00:00<00:08, 17.03it/s][A
+  9%|##############5                                                                                                                                                    | 14/157 [00:00<00:08, 16.90it/s][A
+ 10%|################6                                                                                                                                                  | 16/157 [00:00<00:08, 16.40it/s][A
+ 11%|##################6                                                                                                                                                | 18/157 [00:01<00:08, 16.63it/s][A
+ 13%|####################7                                                                                                                                              | 20/157 [00:01<00:08, 16.85it/s][A
+ 14%|######################8                                                                                                                                            | 22/157 [00:01<00:07, 16.94it/s][A
+ 15%|########################9                                                                                                                                          | 24/157 [00:01<00:08, 16.25it/s][A
+ 17%|##########################9                                                                                                                                        | 26/157 [00:01<00:08, 16.18it/s][A
+ 18%|#############################                                                                                                                                      | 28/157 [00:01<00:07, 16.31it/s][A
+ 19%|###############################1                                                                                                                                   | 30/157 [00:01<00:07, 16.31it/s][A
+ 20%|#################################2                                                                                                                                 | 32/157 [00:01<00:07, 16.63it/s][A
+ 22%|###################################2                                                                                                                               | 34/157 [00:02<00:07, 16.83it/s][A
+ 23%|#####################################3                                                                                                                             | 36/157 [00:02<00:07, 17.26it/s][A
+ 24%|#######################################4                                                                                                                           | 38/157 [00:02<00:06, 17.57it/s][A
+ 25%|#########################################5                                                                                                                         | 40/157 [00:02<00:06, 17.47it/s][A
+ 27%|###########################################6                                                                                                                       | 42/157 [00:02<00:06, 17.39it/s][A
+ 28%|#############################################6                                                                                                                     | 44/157 [00:02<00:06, 17.51it/s][A
+ 29%|###############################################7                                                                                                                   | 46/157 [00:02<00:06, 17.58it/s][A
+ 31%|#################################################8                                                                                                                 | 48/157 [00:02<00:06, 17.68it/s][A
+ 32%|###################################################9                                                                                                               | 50/157 [00:02<00:06, 17.75it/s][A
+ 33%|#####################################################9                                                                                                             | 52/157 [00:03<00:05, 17.87it/s][A
+ 34%|########################################################                                                                                                           | 54/157 [00:03<00:05, 17.90it/s][A
+ 36%|##########################################################1                                                                                                        | 56/157 [00:03<00:05, 17.84it/s][A
+ 37%|############################################################2                                                                                                      | 58/157 [00:03<00:05, 17.99it/s][A
+ 38%|##############################################################2                                                                                                    | 60/157 [00:03<00:05, 17.87it/s][A
+ 39%|################################################################3                                                                                                  | 62/157 [00:03<00:05, 17.94it/s][A
+ 41%|##################################################################4                                                                                                | 64/157 [00:03<00:05, 18.05it/s][A
+ 42%|####################################################################5                                                                                              | 66/157 [00:03<00:05, 18.05it/s][A
+ 43%|######################################################################5                                                                                            | 68/157 [00:03<00:04, 18.13it/s][A
+ 45%|########################################################################6                                                                                          | 70/157 [00:04<00:04, 18.23it/s][A
+ 46%|##########################################################################7                                                                                        | 72/157 [00:04<00:04, 18.26it/s][A
+ 47%|############################################################################8                                                                                      | 74/157 [00:04<00:04, 18.13it/s][A
+ 48%|##############################################################################9                                                                                    | 76/157 [00:04<00:04, 17.94it/s][A
+ 50%|################################################################################9                                                                                  | 78/157 [00:04<00:04, 17.87it/s][A
+ 51%|###################################################################################                                                                                | 80/157 [00:04<00:04, 17.85it/s][A
+ 52%|#####################################################################################1                                                                             | 82/157 [00:04<00:04, 17.80it/s][A
+ 54%|#######################################################################################2                                                                           | 84/157 [00:04<00:04, 17.71it/s][A
+ 55%|#########################################################################################2                                                                         | 86/157 [00:04<00:04, 17.74it/s][A
+ 56%|###########################################################################################3                                                                       | 88/157 [00:05<00:04, 17.24it/s][A
+ 57%|#############################################################################################4                                                                     | 90/157 [00:05<00:03, 17.51it/s][A
+ 59%|###############################################################################################5                                                                   | 92/157 [00:05<00:03, 17.71it/s][A
+ 60%|#################################################################################################5                                                                 | 94/157 [00:05<00:03, 17.11it/s][A
+ 61%|###################################################################################################6                                                               | 96/157 [00:05<00:03, 16.76it/s][A
+ 62%|#####################################################################################################7                                                             | 98/157 [00:05<00:03, 16.81it/s][A
+ 64%|#######################################################################################################1                                                          | 100/157 [00:05<00:03, 16.97it/s][A
+ 65%|#########################################################################################################2                                                        | 102/157 [00:05<00:03, 17.31it/s][A
+ 66%|###########################################################################################################3                                                      | 104/157 [00:06<00:03, 17.27it/s][A
+ 68%|#############################################################################################################3                                                    | 106/157 [00:06<00:02, 17.43it/s][A
+ 69%|###############################################################################################################4                                                  | 108/157 [00:06<00:02, 17.63it/s][A
+ 70%|#################################################################################################################5                                                | 110/157 [00:06<00:02, 17.85it/s][A
+ 71%|###################################################################################################################5                                              | 112/157 [00:06<00:02, 18.07it/s][A
+ 73%|#####################################################################################################################6                                            | 114/157 [00:06<00:02, 16.55it/s][A
+ 74%|#######################################################################################################################6                                          | 116/157 [00:06<00:02, 16.83it/s][A
+ 75%|#########################################################################################################################7                                        | 118/157 [00:06<00:02, 17.10it/s][A
+ 76%|###########################################################################################################################8                                      | 120/157 [00:06<00:02, 17.36it/s][A
+ 78%|#############################################################################################################################8                                    | 122/157 [00:07<00:01, 17.51it/s][A
+ 79%|###############################################################################################################################9                                  | 124/157 [00:07<00:01, 17.72it/s][A
+ 80%|##################################################################################################################################                                | 126/157 [00:07<00:01, 17.88it/s][A
+ 82%|####################################################################################################################################                              | 128/157 [00:07<00:01, 17.97it/s][A
+ 83%|######################################################################################################################################1                           | 130/157 [00:07<00:01, 17.92it/s][A
+ 84%|########################################################################################################################################2                         | 132/157 [00:07<00:01, 17.94it/s][A
+ 85%|##########################################################################################################################################2                       | 134/157 [00:07<00:01, 16.35it/s][A
+ 87%|############################################################################################################################################3                     | 136/157 [00:07<00:01, 16.14it/s][A
+ 88%|##############################################################################################################################################3                   | 138/157 [00:08<00:01, 16.29it/s][A
+ 89%|################################################################################################################################################4                 | 140/157 [00:08<00:01, 16.62it/s][A
+ 90%|##################################################################################################################################################5               | 142/157 [00:08<00:00, 16.84it/s][A
+ 92%|####################################################################################################################################################5             | 144/157 [00:08<00:00, 17.11it/s][A
+ 93%|######################################################################################################################################################6           | 146/157 [00:08<00:00, 17.34it/s][A
+ 94%|########################################################################################################################################################7         | 148/157 [00:08<00:00, 17.31it/s][A
+ 96%|##########################################################################################################################################################7       | 150/157 [00:08<00:00, 17.51it/s][A
+ 97%|############################################################################################################################################################8     | 152/157 [00:08<00:00, 17.51it/s][A
+ 98%|##############################################################################################################################################################9   | 154/157 [00:08<00:00, 17.69it/s][A
+ 99%|################################################################################################################################################################9 | 156/157 [00:09<00:00, 17.89it/s][A100%|##################################################################################################################################################################| 157/157 [00:09<00:00, 17.35it/s]
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A
+  1%|##                                                                                                                                                                  | 2/157 [00:00<00:08, 18.22it/s][A
+  3%|####1                                                                                                                                                               | 4/157 [00:00<00:08, 18.84it/s][A
+  4%|######2                                                                                                                                                             | 6/157 [00:00<00:08, 18.33it/s][A
+  5%|########3                                                                                                                                                           | 8/157 [00:00<00:08, 18.53it/s][A
+  6%|##########3                                                                                                                                                        | 10/157 [00:00<00:08, 17.22it/s][A
+  8%|############4                                                                                                                                                      | 12/157 [00:00<00:08, 16.78it/s][A
+  9%|##############5                                                                                                                                                    | 14/157 [00:00<00:08, 16.92it/s][A
+ 10%|################6                                                                                                                                                  | 16/157 [00:00<00:08, 17.28it/s][A
+ 11%|##################6                                                                                                                                                | 18/157 [00:01<00:07, 17.57it/s][A
+ 13%|####################7                                                                                                                                              | 20/157 [00:01<00:07, 17.84it/s][A
+ 14%|######################8                                                                                                                                            | 22/157 [00:01<00:07, 17.79it/s][A
+ 15%|########################9                                                                                                                                          | 24/157 [00:01<00:07, 18.03it/s][A
+ 17%|##########################9                                                                                                                                        | 26/157 [00:01<00:07, 17.97it/s][A
+ 18%|#############################                                                                                                                                      | 28/157 [00:01<00:07, 17.71it/s][A
+ 19%|###############################1                                                                                                                                   | 30/157 [00:01<00:07, 16.91it/s][A
+ 20%|#################################2                                                                                                                                 | 32/157 [00:01<00:07, 17.43it/s][A
+ 22%|###################################2                                                                                                                               | 34/157 [00:01<00:06, 17.83it/s][A
+ 23%|#####################################3                                                                                                                             | 36/157 [00:02<00:06, 17.88it/s][A
+ 24%|#######################################4                                                                                                                           | 38/157 [00:02<00:10, 11.15it/s][A
+ 25%|#########################################5                                                                                                                         | 40/157 [00:02<00:09, 12.69it/s][A
+ 27%|###########################################6                                                                                                                       | 42/157 [00:02<00:08, 13.95it/s][A
+ 28%|#############################################6                                                                                                                     | 44/157 [00:02<00:07, 14.76it/s][A
+ 29%|###############################################7                                                                                                                   | 46/157 [00:02<00:07, 15.40it/s][A
+ 31%|#################################################8                                                                                                                 | 48/157 [00:02<00:06, 15.89it/s][A
+ 32%|###################################################9                                                                                                               | 50/157 [00:03<00:06, 16.35it/s][A
+ 33%|#####################################################9                                                                                                             | 52/157 [00:03<00:06, 16.66it/s][A
+ 34%|########################################################                                                                                                           | 54/157 [00:03<00:06, 17.13it/s][A
+ 36%|##########################################################1                                                                                                        | 56/157 [00:03<00:05, 17.50it/s][A
+ 37%|############################################################2                                                                                                      | 58/157 [00:03<00:05, 17.76it/s][A
+ 38%|##############################################################2                                                                                                    | 60/157 [00:03<00:05, 17.34it/s][A
+ 39%|################################################################3                                                                                                  | 62/157 [00:03<00:05, 16.96it/s][A
+ 41%|##################################################################4                                                                                                | 64/157 [00:03<00:05, 16.88it/s][A
+ 42%|####################################################################5                                                                                              | 66/157 [00:03<00:05, 16.94it/s][A
+ 43%|######################################################################5                                                                                            | 68/157 [00:04<00:05, 16.90it/s][A
+ 45%|########################################################################6                                                                                          | 70/157 [00:04<00:05, 17.15it/s][A
+ 46%|##########################################################################7                                                                                        | 72/157 [00:04<00:04, 17.13it/s][A
+ 47%|############################################################################8                                                                                      | 74/157 [00:04<00:04, 17.18it/s][A
+ 48%|##############################################################################9                                                                                    | 76/157 [00:04<00:04, 17.26it/s][A
+ 50%|################################################################################9                                                                                  | 78/157 [00:04<00:04, 17.34it/s][A
+ 51%|###################################################################################                                                                                | 80/157 [00:04<00:04, 17.55it/s][A
+ 52%|#####################################################################################1                                                                             | 82/157 [00:04<00:04, 17.50it/s][A
+ 54%|#######################################################################################2                                                                           | 84/157 [00:05<00:04, 17.58it/s][A
+ 55%|#########################################################################################2                                                                         | 86/157 [00:05<00:04, 17.70it/s][A
+ 56%|###########################################################################################3                                                                       | 88/157 [00:05<00:03, 17.67it/s][A
+ 57%|#############################################################################################4                                                                     | 90/157 [00:05<00:03, 17.65it/s][A
+ 59%|###############################################################################################5                                                                   | 92/157 [00:05<00:03, 17.69it/s][A
+ 60%|#################################################################################################5                                                                 | 94/157 [00:05<00:03, 17.48it/s][A
+ 61%|###################################################################################################6                                                               | 96/157 [00:05<00:03, 17.38it/s][A
+ 62%|#####################################################################################################7                                                             | 98/157 [00:05<00:03, 17.54it/s][A
+ 64%|#######################################################################################################1                                                          | 100/157 [00:05<00:03, 17.65it/s][A
+ 65%|#########################################################################################################2                                                        | 102/157 [00:06<00:03, 17.71it/s][A
+ 66%|###########################################################################################################3                                                      | 104/157 [00:06<00:02, 17.87it/s][A
+ 68%|#############################################################################################################3                                                    | 106/157 [00:06<00:02, 17.86it/s][A
+ 69%|###############################################################################################################4                                                  | 108/157 [00:06<00:02, 17.71it/s][A
+ 70%|#################################################################################################################5                                                | 110/157 [00:06<00:02, 17.75it/s][A
+ 71%|###################################################################################################################5                                              | 112/157 [00:06<00:02, 17.77it/s][A
+ 73%|#####################################################################################################################6                                            | 114/157 [00:06<00:02, 17.65it/s][A
+ 74%|#######################################################################################################################6                                          | 116/157 [00:06<00:02, 17.80it/s][A
+ 75%|#########################################################################################################################7                                        | 118/157 [00:06<00:02, 17.77it/s][A
+ 76%|###########################################################################################################################8                                      | 120/157 [00:07<00:02, 17.81it/s][A
+ 78%|#############################################################################################################################8                                    | 122/157 [00:07<00:01, 17.70it/s][A
+ 79%|###############################################################################################################################9                                  | 124/157 [00:07<00:01, 17.74it/s][A
+ 80%|##################################################################################################################################                                | 126/157 [00:07<00:01, 17.56it/s][A
+ 82%|####################################################################################################################################                              | 128/157 [00:07<00:01, 17.64it/s][A
+ 83%|######################################################################################################################################1                           | 130/157 [00:07<00:01, 17.68it/s][A
+ 84%|########################################################################################################################################2                         | 132/157 [00:07<00:01, 17.68it/s][A
+ 85%|##########################################################################################################################################2                       | 134/157 [00:07<00:01, 17.85it/s][A
+ 87%|############################################################################################################################################3                     | 136/157 [00:07<00:01, 17.82it/s][A
+ 88%|##############################################################################################################################################3                   | 138/157 [00:08<00:01, 17.97it/s][A
+ 89%|################################################################################################################################################4                 | 140/157 [00:08<00:00, 17.96it/s][A
+ 90%|##################################################################################################################################################5               | 142/157 [00:08<00:00, 18.02it/s][A
+ 92%|####################################################################################################################################################5             | 144/157 [00:08<00:00, 17.84it/s][A
+ 93%|######################################################################################################################################################6           | 146/157 [00:08<00:00, 17.91it/s][A
+ 94%|########################################################################################################################################################7         | 148/157 [00:08<00:00, 17.96it/s][A
+ 96%|##########################################################################################################################################################7       | 150/157 [00:08<00:00, 18.03it/s][A
+ 97%|############################################################################################################################################################8     | 152/157 [00:08<00:00, 18.03it/s][A
+ 98%|##############################################################################################################################################################9   | 154/157 [00:08<00:00, 18.01it/s][A
+ 99%|################################################################################################################################################################9 | 156/157 [00:09<00:00, 18.10it/s][A100%|##################################################################################################################################################################| 157/157 [00:09<00:00, 17.28it/s]
+
+  0%|                                                                                                                                                                            | 0/313 [00:00<?, ?it/s][A
+  0%|5                                                                                                                                                                   | 1/313 [00:00<01:12,  4.30it/s][A
+  1%|#                                                                                                                                                                   | 2/313 [00:00<01:13,  4.24it/s][A
+  1%|#5                                                                                                                                                                  | 3/313 [00:00<01:13,  4.21it/s][A
+  1%|##                                                                                                                                                                  | 4/313 [00:00<01:17,  3.96it/s][A
+  2%|##6                                                                                                                                                                 | 5/313 [00:01<01:19,  3.88it/s][A
+  2%|###1                                                                                                                                                                | 6/313 [00:01<01:18,  3.90it/s][A
+  2%|###6                                                                                                                                                                | 7/313 [00:01<01:18,  3.90it/s][A
+  3%|####1                                                                                                                                                               | 8/313 [00:02<01:17,  3.92it/s][A
+  3%|####7                                                                                                                                                               | 9/313 [00:02<01:16,  3.96it/s][A
+  3%|#####2                                                                                                                                                             | 10/313 [00:02<01:15,  4.03it/s][A
+  4%|#####7                                                                                                                                                             | 11/313 [00:02<01:13,  4.11it/s][A
+  4%|######2                                                                                                                                                            | 12/313 [00:02<01:13,  4.11it/s][A
+  4%|######7                                                                                                                                                            | 13/313 [00:03<01:12,  4.13it/s][A
+  4%|#######2                                                                                                                                                           | 14/313 [00:03<01:12,  4.13it/s][A
+  5%|#######8                                                                                                                                                           | 15/313 [00:03<01:11,  4.16it/s][A
+  5%|########3                                                                                                                                                          | 16/313 [00:03<01:11,  4.18it/s][A
+  5%|########8                                                                                                                                                          | 17/313 [00:04<01:10,  4.18it/s][A
+  6%|#########3                                                                                                                                                         | 18/313 [00:04<01:09,  4.22it/s][A
+  6%|#########8                                                                                                                                                         | 19/313 [00:04<01:08,  4.27it/s][A
+  6%|##########4                                                                                                                                                        | 20/313 [00:04<01:07,  4.32it/s][A
+  7%|##########9                                                                                                                                                        | 21/313 [00:05<01:08,  4.29it/s][A
+  7%|###########4                                                                                                                                                       | 22/313 [00:05<01:07,  4.32it/s][A
+  7%|###########9                                                                                                                                                       | 23/313 [00:05<01:06,  4.33it/s][A
+  8%|############4                                                                                                                                                      | 24/313 [00:05<01:07,  4.30it/s][A
+  8%|#############                                                                                                                                                      | 25/313 [00:06<01:05,  4.38it/s][A
+  8%|#############5                                                                                                                                                     | 26/313 [00:06<01:04,  4.44it/s][A
+  9%|##############                                                                                                                                                     | 27/313 [00:06<01:04,  4.42it/s][A
+  9%|##############5                                                                                                                                                    | 28/313 [00:06<01:05,  4.37it/s][A
+  9%|###############1                                                                                                                                                   | 29/313 [00:06<01:05,  4.35it/s][A
+ 10%|###############6                                                                                                                                                   | 30/313 [00:07<01:04,  4.42it/s][A
+ 10%|################1                                                                                                                                                  | 31/313 [00:07<01:03,  4.47it/s][A
+ 10%|################6                                                                                                                                                  | 32/313 [00:07<01:02,  4.48it/s][A 10%|################6                                                                                                                                                  | 32/313 [00:07<01:06,  4.22it/s]
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.1' wrapped with ResidualAddWrapper.
+Module: , qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A200>})
+Module: conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B490>})
+Module: bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A290>})
+Module: relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B880>})
+Module: maxpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B520>})
+Module: layer1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD69729870>})
+Module: layer1.0, qconfig: None
+Module: layer1.0.module, qconfig: None
+Module: layer1.0.module.conv1, qconfig: None
+Module: layer1.0.module.bn1, qconfig: None
+Module: layer1.0.module.relu, qconfig: None
+Module: layer1.0.module.conv2, qconfig: None
+Module: layer1.0.module.bn2, qconfig: None
+Module: layer1.0.skip_add, qconfig: None
+Module: layer1.0.skip_add.activation_post_process, qconfig: None
+Module: layer1.1, qconfig: None
+Module: layer1.1.module, qconfig: None
+Module: layer1.1.module.conv1, qconfig: None
+Module: layer1.1.module.bn1, qconfig: None
+Module: layer1.1.module.relu, qconfig: None
+Module: layer1.1.module.conv2, qconfig: None
+Module: layer1.1.module.bn2, qconfig: None
+Module: layer1.1.skip_add, qconfig: None
+Module: layer1.1.skip_add.activation_post_process, qconfig: None
+Module: layer2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A320>})
+Module: layer2.0, qconfig: None
+Module: layer2.0.module, qconfig: None
+Module: layer2.0.module.conv1, qconfig: None
+Module: layer2.0.module.bn1, qconfig: None
+Module: layer2.0.module.relu, qconfig: None
+Module: layer2.0.module.conv2, qconfig: None
+Module: layer2.0.module.bn2, qconfig: None
+Module: layer2.0.module.downsample, qconfig: None
+Module: layer2.0.module.downsample.0, qconfig: None
+Module: layer2.0.module.downsample.1, qconfig: None
+Module: layer2.0.skip_add, qconfig: None
+Module: layer2.0.skip_add.activation_post_process, qconfig: None
+Module: layer2.1, qconfig: None
+Module: layer2.1.module, qconfig: None
+Module: layer2.1.module.conv1, qconfig: None
+Module: layer2.1.module.bn1, qconfig: None
+Module: layer2.1.module.relu, qconfig: None
+Module: layer2.1.module.conv2, qconfig: None
+Module: layer2.1.module.bn2, qconfig: None
+Module: layer2.1.skip_add, qconfig: None
+Module: layer2.1.skip_add.activation_post_process, qconfig: None
+Module: layer3, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD69729510>})
+Module: layer3.0, qconfig: None
+Module: layer3.0.module, qconfig: None
+Module: layer3.0.module.conv1, qconfig: None
+Module: layer3.0.module.bn1, qconfig: None
+Module: layer3.0.module.relu, qconfig: None
+Module: layer3.0.module.conv2, qconfig: None
+Module: layer3.0.module.bn2, qconfig: None
+Module: layer3.0.module.downsample, qconfig: None
+Module: layer3.0.module.downsample.0, qconfig: None
+Module: layer3.0.module.downsample.1, qconfig: None
+Module: layer3.0.skip_add, qconfig: None
+Module: layer3.0.skip_add.activation_post_process, qconfig: None
+Module: layer3.1, qconfig: None
+Module: layer3.1.module, qconfig: None
+Module: layer3.1.module.conv1, qconfig: None
+Module: layer3.1.module.bn1, qconfig: None
+Module: layer3.1.module.relu, qconfig: None
+Module: layer3.1.module.conv2, qconfig: None
+Module: layer3.1.module.bn2, qconfig: None
+Module: layer3.1.skip_add, qconfig: None
+Module: layer3.1.skip_add.activation_post_process, qconfig: None
+Module: layer4, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972AB90>})
+Module: layer4.0, qconfig: None
+Module: layer4.0.module, qconfig: None
+Module: layer4.0.module.conv1, qconfig: None
+Module: layer4.0.module.bn1, qconfig: None
+Module: layer4.0.module.relu, qconfig: None
+Module: layer4.0.module.conv2, qconfig: None
+Module: layer4.0.module.bn2, qconfig: None
+Module: layer4.0.module.downsample, qconfig: None
+Module: layer4.0.module.downsample.0, qconfig: None
+Module: layer4.0.module.downsample.1, qconfig: None
+Module: layer4.0.skip_add, qconfig: None
+Module: layer4.0.skip_add.activation_post_process, qconfig: None
+Module: layer4.1, qconfig: None
+Module: layer4.1.module, qconfig: None
+Module: layer4.1.module.conv1, qconfig: None
+Module: layer4.1.module.bn1, qconfig: None
+Module: layer4.1.module.relu, qconfig: None
+Module: layer4.1.module.conv2, qconfig: None
+Module: layer4.1.module.bn2, qconfig: None
+Module: layer4.1.skip_add, qconfig: None
+Module: layer4.1.skip_add.activation_post_process, qconfig: None
+Module: avgpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B1C0>})
+Module: fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD697283A0>})
+[DATA] Example input shape: torch.Size([64, 3, 32, 32])
+[PREPARE] Model prepared successfully.
+[HOOK] Performing Dynamic PTQ hook operations.
+[HOOK] Dynamic PTQ setup completed.
+[FIT] Quantization performed successfully.
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: dynamic, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.observer.PlaceholderObserver'>, dtype=torch.quint8, quant_min=0, quant_max=255, is_dynamic=True){}, weight=functools.partial(<class 'torch.ao.quantization.observer.MinMaxObserver'>, dtype=torch.qint8, qscheme=torch.per_tensor_symmetric){})}
+[QCONFIG] Created qconfig mapping: QConfigMapping (
+ global_qconfig
+  QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})
+ object_type_qconfigs
+  OrderedDict()
+ module_name_regex_qconfigs
+  OrderedDict()
+ module_name_qconfigs
+  OrderedDict()
+ module_name_object_type_order_qconfigs
+  OrderedDict()
+)
+[INIT] quant_type: qat, backend: fbgemm, device: cpu
+[INIT] dtype: torch.qint8, allow_embedding: False, allow_convolution: True
+[INIT] qconfig: {'': QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){})}
+[MODEL] Model initialized and copied for quantization.
+[ParentalReassembler] Residual block 'layer1.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.1' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.0' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.1' wrapped with ResidualAddWrapper.
+Module: , qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B520>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B520>})
+Module: conv1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD697284C0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD697284C0>})
+Module: bn1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD69729870>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD69729870>})
+Module: relu, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD69729D80>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD69729D80>})
+Module: maxpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B880>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B880>})
+Module: layer1, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A290>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A290>})
+Module: layer1.0, qconfig: None
+Module: layer1.0.module, qconfig: None
+Module: layer1.0.module.conv1, qconfig: None
+Module: layer1.0.module.bn1, qconfig: None
+Module: layer1.0.module.relu, qconfig: None
+Module: layer1.0.module.conv2, qconfig: None
+Module: layer1.0.module.bn2, qconfig: None
+Module: layer1.0.skip_add, qconfig: None
+Module: layer1.0.skip_add.activation_post_process, qconfig: None
+Module: layer1.1, qconfig: None
+Module: layer1.1.module, qconfig: None
+Module: layer1.1.module.conv1, qconfig: None
+Module: layer1.1.module.bn1, qconfig: None
+Module: layer1.1.module.relu, qconfig: None
+Module: layer1.1.module.conv2, qconfig: None
+Module: layer1.1.module.bn2, qconfig: None
+Module: layer1.1.skip_add, qconfig: None
+Module: layer1.1.skip_add.activation_post_process, qconfig: None
+Module: layer2, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B490>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B490>})
+Module: layer2.0, qconfig: None
+Module: layer2.0.module, qconfig: None
+Module: layer2.0.module.conv1, qconfig: None
+Module: layer2.0.module.bn1, qconfig: None
+Module: layer2.0.module.relu, qconfig: None
+Module: layer2.0.module.conv2, qconfig: None
+Module: layer2.0.module.bn2, qconfig: None
+Module: layer2.0.module.downsample, qconfig: None
+Module: layer2.0.module.downsample.0, qconfig: None
+Module: layer2.0.module.downsample.1, qconfig: None
+Module: layer2.0.skip_add, qconfig: None
+Module: layer2.0.skip_add.activation_post_process, qconfig: None
+Module: layer2.1, qconfig: None
+Module: layer2.1.module, qconfig: None
+Module: layer2.1.module.conv1, qconfig: None
+Module: layer2.1.module.bn1, qconfig: None
+Module: layer2.1.module.relu, qconfig: None
+Module: layer2.1.module.conv2, qconfig: None
+Module: layer2.1.module.bn2, qconfig: None
+Module: layer2.1.skip_add, qconfig: None
+Module: layer2.1.skip_add.activation_post_process, qconfig: None
+Module: layer3, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B9A0>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B9A0>})
+Module: layer3.0, qconfig: None
+Module: layer3.0.module, qconfig: None
+Module: layer3.0.module.conv1, qconfig: None
+Module: layer3.0.module.bn1, qconfig: None
+Module: layer3.0.module.relu, qconfig: None
+Module: layer3.0.module.conv2, qconfig: None
+Module: layer3.0.module.bn2, qconfig: None
+Module: layer3.0.module.downsample, qconfig: None
+Module: layer3.0.module.downsample.0, qconfig: None
+Module: layer3.0.module.downsample.1, qconfig: None
+Module: layer3.0.skip_add, qconfig: None
+Module: layer3.0.skip_add.activation_post_process, qconfig: None
+Module: layer3.1, qconfig: None
+Module: layer3.1.module, qconfig: None
+Module: layer3.1.module.conv1, qconfig: None
+Module: layer3.1.module.bn1, qconfig: None
+Module: layer3.1.module.relu, qconfig: None
+Module: layer3.1.module.conv2, qconfig: None
+Module: layer3.1.module.bn2, qconfig: None
+Module: layer3.1.skip_add, qconfig: None
+Module: layer3.1.skip_add.activation_post_process, qconfig: None
+Module: layer4, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B010>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972B010>})
+Module: layer4.0, qconfig: None
+Module: layer4.0.module, qconfig: None
+Module: layer4.0.module.conv1, qconfig: None
+Module: layer4.0.module.bn1, qconfig: None
+Module: layer4.0.module.relu, qconfig: None
+Module: layer4.0.module.conv2, qconfig: None
+Module: layer4.0.module.bn2, qconfig: None
+Module: layer4.0.module.downsample, qconfig: None
+Module: layer4.0.module.downsample.0, qconfig: None
+Module: layer4.0.module.downsample.1, qconfig: None
+Module: layer4.0.skip_add, qconfig: None
+Module: layer4.0.skip_add.activation_post_process, qconfig: None
+Module: layer4.1, qconfig: None
+Module: layer4.1.module, qconfig: None
+Module: layer4.1.module.conv1, qconfig: None
+Module: layer4.1.module.bn1, qconfig: None
+Module: layer4.1.module.relu, qconfig: None
+Module: layer4.1.module.conv2, qconfig: None
+Module: layer4.1.module.bn2, qconfig: None
+Module: layer4.1.skip_add, qconfig: None
+Module: layer4.1.skip_add.activation_post_process, qconfig: None
+Module: avgpool, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A170>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A170>})
+Module: fc, qconfig: QConfig(activation=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAverageMinMaxObserver'>, quant_min=0, quant_max=255, reduce_range=True){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A200>}, weight=functools.partial(<class 'torch.ao.quantization.fake_quantize.FusedMovingAvgObsFakeQuantize'>, observer=<class 'torch.ao.quantization.observer.MovingAveragePerChannelMinMaxObserver'>, quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric){'factory_kwargs': <function _add_module_to_qconfig_obs_ctr.<locals>.get_factory_kwargs_based_on_module_device at 0x000001BD6972A200>})
+[DATA] Example input shape: torch.Size([64, 3, 32, 32])
+[PREPARE] Model prepared successfully.
+[HOOK] Performing QAT training hook.
+[HOOK] QAT epoch 1/5 started.
+[HOOK][Epoch: 1] Batch 1 Loss: 0.4003
+[HOOK][Epoch: 1] Batch 51 Loss: 0.5835
+[HOOK][Epoch: 1] Batch 101 Loss: 0.0574
+[HOOK][Epoch: 1] Batch 151 Loss: 0.0972
+[HOOK][Epoch: 1] Batch 201 Loss: 0.3507
+[HOOK][Epoch: 1] Batch 251 Loss: 0.0681
+[HOOK][Epoch: 1] Batch 301 Loss: 0.2319
+[HOOK][Epoch: 1] Batch 351 Loss: 0.3372
+[HOOK][Epoch: 1] Batch 401 Loss: 0.4653
+[HOOK][Epoch: 1] Batch 451 Loss: 0.0722
+[HOOK][Epoch: 1] Batch 501 Loss: 0.2175
+[HOOK][Epoch: 1] Batch 551 Loss: 0.2324
+[HOOK][Epoch: 1] Batch 601 Loss: 0.1644
+[HOOK] QAT epoch 2/5 started.
+[HOOK][Epoch: 2] Batch 1 Loss: 0.0793
+[HOOK][Epoch: 2] Batch 51 Loss: 0.1643
+[HOOK][Epoch: 2] Batch 101 Loss: 0.1098
+[HOOK][Epoch: 2] Batch 151 Loss: 0.1050
+[HOOK][Epoch: 2] Batch 201 Loss: 0.1283
+[HOOK][Epoch: 2] Batch 251 Loss: 0.0406
+[HOOK][Epoch: 2] Batch 301 Loss: 0.1016
+[HOOK][Epoch: 2] Batch 351 Loss: 0.0470
+[HOOK][Epoch: 2] Batch 401 Loss: 0.1126
+[HOOK][Epoch: 2] Batch 451 Loss: 0.1671
+[HOOK][Epoch: 2] Batch 501 Loss: 0.0309
+[HOOK][Epoch: 2] Batch 551 Loss: 0.0259
+[HOOK][Epoch: 2] Batch 601 Loss: 0.0222
+[HOOK] QAT epoch 3/5 started.
+[HOOK][Epoch: 3] Batch 1 Loss: 0.0212
+[HOOK][Epoch: 3] Batch 51 Loss: 0.0151
+[HOOK][Epoch: 3] Batch 101 Loss: 0.0118
+[HOOK][Epoch: 3] Batch 151 Loss: 0.0552
+[HOOK][Epoch: 3] Batch 201 Loss: 0.0310
+[HOOK][Epoch: 3] Batch 251 Loss: 0.0882
+[HOOK][Epoch: 3] Batch 301 Loss: 0.1677
+[HOOK][Epoch: 3] Batch 351 Loss: 0.0059
+[HOOK][Epoch: 3] Batch 401 Loss: 0.0410
+[HOOK][Epoch: 3] Batch 451 Loss: 0.0690
+[HOOK][Epoch: 3] Batch 501 Loss: 0.0489
+[HOOK][Epoch: 3] Batch 551 Loss: 0.0270
+[HOOK][Epoch: 3] Batch 601 Loss: 0.0464
+[HOOK] QAT epoch 4/5 started.
+[HOOK][Epoch: 4] Batch 1 Loss: 0.0060
+[HOOK][Epoch: 4] Batch 51 Loss: 0.0198
+[HOOK][Epoch: 4] Batch 101 Loss: 0.0095
+[HOOK][Epoch: 4] Batch 151 Loss: 0.0060
+[HOOK][Epoch: 4] Batch 201 Loss: 0.0477
+[HOOK][Epoch: 4] Batch 251 Loss: 0.0172
+[HOOK][Epoch: 4] Batch 301 Loss: 0.0910
+[HOOK][Epoch: 4] Batch 351 Loss: 0.0173
+[HOOK][Epoch: 4] Batch 401 Loss: 0.0091
+[HOOK][Epoch: 4] Batch 451 Loss: 0.0022
+[HOOK][Epoch: 4] Batch 501 Loss: 0.0039
+[HOOK][Epoch: 4] Batch 551 Loss: 0.0838
+[HOOK][Epoch: 4] Batch 601 Loss: 0.0629
+[HOOK] QAT epoch 5/5 started.
+[HOOK][Epoch: 5] Batch 1 Loss: 0.0036
+[HOOK][Epoch: 5] Batch 51 Loss: 0.0029
+[HOOK][Epoch: 5] Batch 101 Loss: 0.0037
+[HOOK][Epoch: 5] Batch 151 Loss: 0.0048
+[HOOK][Epoch: 5] Batch 201 Loss: 0.0018
+[HOOK][Epoch: 5] Batch 251 Loss: 0.0150
+[HOOK][Epoch: 5] Batch 301 Loss: 0.0903
+[HOOK][Epoch: 5] Batch 351 Loss: 0.0112
+[HOOK][Epoch: 5] Batch 401 Loss: 0.0003
+[HOOK][Epoch: 5] Batch 451 Loss: 0.0023
+[HOOK][Epoch: 5] Batch 501 Loss: 0.0003
+Generations:   0%|                                                                                                                                                            | 0/10000 [26:28<?, ?gen/s]

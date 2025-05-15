@@ -1,0 +1,883 @@
+
+>>> PEFT step 2: pruning
+Reassembling pruned model
+[ParentalReassembler] Residual block 'layer1.base.0.module' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer1.base.1.module' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.0.module' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer2.1.module' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.0.module' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer3.1.module' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.0.module' wrapped with ResidualAddWrapper.
+[ParentalReassembler] Residual block 'layer4.1.module' wrapped with ResidualAddWrapper.
+Creating Dask Server
+Generations:   0%|                                                                                                                                                            | 0/10000 [00:00<?, ?gen/s]
+
+>>> CATCHED MUTATION:
+['importance_norm', 'pruning_ratio', 'importance', 'importance_normalize']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['importance_norm', 'pruning_ratio', 'importance_reduction', 'importance', 'importance_normalize']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['importance_norm', 'pruning_ratio', 'importance_reduction', 'importance']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['importance_norm', 'pruning_ratio', 'importance_reduction', 'importance']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['importance_norm', 'pruning_ratio', 'importance_reduction', 'importance']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['pruning_ratio', 'importance_reduction', 'importance', 'importance_normalize']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['pruning_ratio', 'importance_reduction', 'importance']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['importance_norm', 'pruning_ratio', 'importance_reduction', 'importance']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['importance_norm', 'pruning_ratio', 'importance_reduction', 'importance', 'importance_normalize']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['importance_norm', 'pruning_ratio', 'importance_reduction', 'importance_normalize']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['importance_norm', 'pruning_ratio', 'importance_reduction', 'importance']
+
+<<<<
+
+
+>>> CATCHED MUTATION:
+['importance_norm', 'pruning_ratio', 'importance_reduction', 'importance', 'importance_normalize']
+
+<<<<
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+====================== Pruning importance - group_taylor =======================
+============================= Pruning ratio - 0.15 =============================
+========================= Pruning importance norm -  2 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\group_norm_pruner.py", line 84, in __init__
+    super(GroupNormPruner, self).__init__(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+======================== Pruning importance - bn_scale =========================
+====================== Pruning ratio - 0.6071428571428571 ======================
+========================= Pruning importance norm -  2 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\batchnorm_scale_pruner.py", line 85, in __init__
+    super(BNScalePruner, self).__init__(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+======================== Pruning importance - magnitude ========================
+====================== Pruning ratio - 0.8928571428571429 ======================
+========================= Pruning importance norm -  0 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+========================= Pruning importance - random ==========================
+====================== Pruning ratio - 0.3214285714285714 ======================
+========================= Pruning importance norm -  2 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+====================== Pruning importance - group_hessian ======================
+====================== Pruning ratio - 0.3214285714285714 ======================
+========================= Pruning importance norm -  0 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\group_norm_pruner.py", line 84, in __init__
+    super(GroupNormPruner, self).__init__(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+===================== Pruning importance - group_magnitude =====================
+============================= Pruning ratio - 0.95 =============================
+========================= Pruning importance norm -  1 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\group_norm_pruner.py", line 84, in __init__
+    super(GroupNormPruner, self).__init__(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+====================== Pruning importance - group_hessian ======================
+====================== Pruning ratio - 0.6071428571428571 ======================
+========================= Pruning importance norm -  1 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\group_norm_pruner.py", line 84, in __init__
+    super(GroupNormPruner, self).__init__(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+====================== Pruning importance - group_taylor =======================
+====================== Pruning ratio - 0.5499999999999999 ======================
+========================= Pruning importance norm -  0 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\group_norm_pruner.py", line 84, in __init__
+    super(GroupNormPruner, self).__init__(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+====================== Pruning importance - group_taylor =======================
+============================= Pruning ratio - 0.95 =============================
+========================= Pruning importance norm -  2 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\group_norm_pruner.py", line 84, in __init__
+    super(GroupNormPruner, self).__init__(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+===================== Pruning importance - group_magnitude =====================
+====================== Pruning ratio - 0.7214285714285714 ======================
+========================= Pruning importance norm -  2 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\group_norm_pruner.py", line 84, in __init__
+    super(GroupNormPruner, self).__init__(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+========================= Pruning importance - random ==========================
+====================== Pruning ratio - 0.7214285714285714 ======================
+========================= Pruning importance norm -  2 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+======================== Pruning importance - bn_scale =========================
+====================== Pruning ratio - 0.6071428571428571 ======================
+========================= Pruning importance norm -  0 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\batchnorm_scale_pruner.py", line 85, in __init__
+    super(BNScalePruner, self).__init__(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+=======================Prepare original model for pruning=======================
+================= Initialisation of meta_pruner pruning agent ==================
+======================== Pruning importance - magnitude ========================
+============================= Pruning ratio - 0.5 ==============================
+========================= Pruning importance norm -  1 =========================
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 783, in _trace
+    out = model(*example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: ResNet.forward() takes 2 positional arguments but 65 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\pruning\pruners.py", line 145, in fit
+    self.pruner = self.pruner(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\pruner\algorithms\base_pruner.py", line 133, in __init__
+    self.DG = dependency.DependencyGraph().build_dependency(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 386, in build_dependency
+    self.module2node = self._trace(
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch_pruning\dependency.py", line 785, in _trace
+    out = model(example_inputs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torchvision\models\resnet.py", line 273, in _forward_impl
+    x = self.layer1(x)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 453, in __call__
+    result = super().__call__(*input, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 443, in forward
+    out = module(x, *args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Python\Fedcore\fedcore\fedcore\algorithm\quantization\utils.py", line 196, in forward
+    out = self.module.conv1(x)
+  File "D:\Python\Fedcore\.venv\lib\site-packages\torch\nn\modules\module.py", line 1709, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'ResidualAddWrapper' object has no attribute 'conv1'
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+
+  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s][A  0%|                                                                                                                                                                            | 0/157 [00:00<?, ?it/s]
+Generations:   0%|                                                                                                                                                            | 0/10000 [00:17<?, ?gen/s]
