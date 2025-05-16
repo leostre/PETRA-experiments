@@ -8,12 +8,13 @@
 \toprule
 \textbf{Pipeline} & \textbf{f1} & \textbf{CPU Latency (ms)} & \textbf{GPU Latency (ms)} & \textbf{CPU Throughput (IPS)} & \textbf{GPU Throughput (IPS)} & \textbf{Model Size (MB)} \
 \midrule
-pruning_quant-static_low-rank_quant-qat & GPU & 0.477 / +2068.2\% & $\infty$ & 2.057 / +49.9\% & $\infty$ & 17 / +68.3\% & 10.453 / -75.5\% \\
+low-rank_quant-qat_pruning_quant-static & GPU & 0.632 / +35.3\% & $\infty$ & 1.995 / +29.4\% & $\infty$ & 18 / +64.6\% & 9.960 / -76.6\% \\
 \cmidrule{1-7}
-pruning_quant-dynamic_low-rank_quant-qat & GPU & 0.472 / +2045.5\% & $\infty$ & 1.991 / +11.5\% & $\infty$ & 18 / +93.9\% & 10.453 / -75.5\% \\
-pruning_quant-static_low-rank_quant-dynamic & GPU & 0.467 / +2022.7\% & $\infty$ & 2.004 / +38.3\% & $\infty$ & 17 / +57.6\% & 10.453 / -75.5\% \\
-pruning_quant-dynamic_low-rank_quant-static & GPU & 0.462 / +2000.0\% & $\infty$ & 2.016 / +39.0\% & $\infty$ & 17 / +68.2\% & 10.453 / -75.5\% \\
-pruning_quant-qat_low-rank_quant-dynamic & GPU & 0.461 / +1995.5\% & $\infty$ & 2.007 / +43.9\% & $\infty$ & 17 / +60.6\% & 10.453 / -75.5\% \\
+quant-dynamic_pruning_quant-static_low-rank & GPU & 0.500 / +2172.7\% & $\infty$ & 2.306 / +47.8\% & $\infty$ & 16 / +44.1\% & 10.453 / -75.5\% \\
+low-rank_quant-qat_pruning_quant-dynamic & GPU & 0.498 / +6.6\% & $\infty$ & 1.948 / +37.9\% & $\infty$ & 18 / +61.5\% & 9.960 / -76.6\% \\
+low-rank_quant-qat_pruning_quant-static & CPU & 0.732 / +50.0\% & 0.014 / +2.1\% & $\infty$ & 208 / +35.8\% & $\infty$ & 40.852 / -4.2\% \\
+low-rank_quant-qat_pruning_quant-dynamic & CPU & 0.709 / +45.3\% & 0.014 / +1.7\% & $\infty$ & 214 / +35.0\% & $\infty$ & 40.852 / -4.2\% \\
+low-rank_quant-dynamic_pruning_quant-qat & CPU & 0.704 / +44.3\% & 0.013 / +4.3\% & $\infty$ & 226 / +38.3\% & $\infty$ & 40.852 / -4.2\% \\
 \bottomrule
 \end{tabular}
 }
